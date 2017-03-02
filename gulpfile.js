@@ -1,3 +1,4 @@
+var yargs = require('yargs').argv;
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var header = require('gulp-header');
@@ -8,6 +9,8 @@ var ejs = require("gulp-ejs");
 var uglify = require('gulp-uglify');
 var ext_replace = require('gulp-ext-replace');
 var cssmin = require('gulp-cssmin');
+var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync');
 
 var pkg = require("./package.json");
 
@@ -83,9 +86,27 @@ gulp.task('uglify', ["js"], function() {
 
 gulp.task('less', function () {
   return gulp.src(['./src/less/jquery-weui.less'])
-  .pipe(less())
+  .pipe(sourcemaps.init())
+  .pipe(less().on('error', function (e) {
+      console.error(e.message);
+      this.emit('end');
+  }))
   .pipe(autoprefixer())
   .pipe(header(banner))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('myless', function () {
+  return gulp.src(['./axb3/css/*.less', '!./axb3/css/_*.less'])
+  .pipe(sourcemaps.init())
+  .pipe(less().on('error', function (e) {
+      console.error(e.message);
+      this.emit('end');
+  }))
+  .pipe(autoprefixer())
+  .pipe(header(banner))
+  .pipe(sourcemaps.write())
   .pipe(gulp.dest('./dist/css/'));
 });
 
@@ -103,6 +124,12 @@ gulp.task('ejs', function () {
     .pipe(gulp.dest("./dist/demos/"));
 });
 
+gulp.task('myejs', function () {
+  return gulp.src(["./axb3/*.html", "!./axb3/_*.html"])
+    .pipe(ejs({}))
+    .pipe(gulp.dest("./dist/axb3/"));
+});
+
 gulp.task('copy', function() {
   gulp.src(['./src/lib/**/*'])
     .pipe(gulp.dest('./dist/lib/'));
@@ -110,8 +137,11 @@ gulp.task('copy', function() {
   gulp.src(['./demos/images/*.*'])
     .pipe(gulp.dest('./dist/demos/images/'));
 
-  gulp.src(['./demos/css/*.css'])
-    .pipe(gulp.dest('./dist/demos/css/'));
+  gulp.src(['./axb3/images/*.*'])
+    .pipe(gulp.dest('./dist/images/axb3/'));
+
+  /*gulp.src(['./demos/css/*.css'])
+    .pipe(gulp.dest('./dist/demos/css/'));*/
 });
 
 gulp.task('watch', function () {
@@ -119,10 +149,30 @@ gulp.task('watch', function () {
   gulp.watch('src/less/**/*.less', ['less']);
   gulp.watch('demos/*.html', ['ejs']);
   gulp.watch('demos/css/*.css', ['copy']);
+  gulp.watch('axb3/css/*.less', ['myless']);
+  gulp.watch('axb3/*.html', ['myejs']);
 });
 
-gulp.task('server', function () {
+/*gulp.task('server', function () {
   connect.server();
+});*/
+gulp.task('server', function () {
+    yargs.p = yargs.p || 8080;
+    browserSync.init({
+        server: {
+            baseDir: "./dist",
+            directory: true
+        },
+        ui: {
+            port: yargs.p + 1,
+            weinre: {
+                port: yargs.p + 2
+            }
+        },
+        port: yargs.p,
+        startPath: '/axb3'
+    });
 });
+
 gulp.task("default", ['watch', 'server']);
-gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs']);
+gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs']);
