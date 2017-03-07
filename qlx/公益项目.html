@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>爱心帮-公益项目</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    <div id="menu">
+        <ul>
+            <li class="item">
+                <div class="menu-li">网页特效</div>
+                <span>
+                    <a href="http://www.17sucai.com">html5模板</a>
+                    <a href="http://www.17sucai.com">手机js特效</a>
+                    <a href="http://www.17sucai.com">微测试</a>
+                    <a href="http://www.17sucai.com">微游戏</a>
+                </span>
+            </li>
+            <li class="item">
+                <div class="menu-li">手机特效</div>
+                <span>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                </span>
+            </li>
+            <li class="item">
+                <div class="menu-li">手机app</div>
+                <span>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                    <a href="http://www.17sucai.com">咨询购买</a>
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="footer_front"></div>
+
+    <div class="weui-search-bar" id="searchBar">
+        <form class="weui-search-bar__form">
+            <div class="weui-search-bar__box">
+                <i class="weui-icon-search"></i>
+                <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+                <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+            </div>
+            <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                <i class="weui-icon-search"></i>
+                <span>搜索</span>
+            </label>
+        </form>
+        <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+    </div>
+
+
+    <% include _footer.html %>
+    <script type="text/javascript">
+    window.onload = function(){
+        $('#menu ul li').each(function(j){
+            $('#menu ul li').eq(j).removeClass("on");
+            $('#menu ul li span').eq(j).animate({bottom:-$('#menu ul li span').eq(j).height()},100);
+        });
+    }
+
+    $('#menu ul li').each(function(i){
+        $(this).click(function(){
+            if($(this).attr("class")!="on"){
+                $('#menu ul .on span').animate({bottom:-$('#menu ul .on span').height()},200);
+                $('#menu ul .on').removeClass("on");
+                $(this).addClass("on");
+                $('#menu ul li span').eq(i).animate({bottom:40},200);
+                $('.footer_front').show();
+            }else{
+                $('#menu ul li span').eq(i).animate({bottom:-$('#menu ul li span').eq(i).height()},200);
+                $(this).removeClass("on");
+                $('.footer_front').hide();
+            }
+        });
+    });
+    $('.footer_front').click(function(){
+        $('#menu ul .on span').animate({bottom:-$('#menu ul .on span').height()},200);
+        $('#menu ul .on').removeClass("on");
+        $(this).hide();
+    });
+    </script>
+</body>
+
+</html>

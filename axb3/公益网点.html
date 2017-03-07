@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>爱心帮-公益项目</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    <div class="axb-express" id="container">
+
+        <div class="pages">
+            <div class="page__hd">
+                <h2 class="page__title">合作机构</h2>
+            </div>
+            <div class="page__bd">
+                <div class="weui-search-bar" id="searchBar">
+                    <form class="weui-search-bar__form">
+                        <div class="weui-search-bar__box">
+                            <i class="weui-icon-search"></i>
+                            <input type="search" class="weui-search-bar__input" id="searchInput" name="num" placeholder="请输入省份" required/>
+                            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                        </div>
+                        <label class="weui-search-bar__label" id="searchText">
+                            <i class="weui-icon-search"></i>
+                            <span>请输入省份</span>
+                        </label>
+                    </form>
+                    <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+                </div>
+
+                <div class="project-count">
+                    <div class="hd">截至目前恩助自如患者援助项目</div>
+                    <div class="bd">
+                        <div class="count-item">
+                            <span class="axbicon axbicon-city s1"></span>
+                            <div class="sum">103</div>
+                            <div class="title">覆盖城市</div>
+                        </div>
+                        <div class="count-item">
+                            <span class="axbicon axbicon-patient s2"></span>
+                            <div class="sum">5936</div>
+                            <div class="title">申请援助患者</div>
+                        </div>
+                        <div class="count-item">
+                            <span class="axbicon axbicon-drug s3"></span>
+                            <div class="sum">5445</div>
+                            <div class="title">援助药品的患者</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <% include _footer.html %>
+</body>
+
+</html>

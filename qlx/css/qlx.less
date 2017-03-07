@@ -1,13 +1,14 @@
-@bggreen : #3ed697;
-@bggrass : #cdd773;
-@bgorange: #ff7f0d;
-@bgblue : #52a2fb;
-@bgyellow : #ffba00;
-@bgred: #fc6b6b;
-@fontred : #f00;
+@bggreen : #7bc697;
 @fontgreen: #5fad7b;
 @fontgreen-light: #e0ffec;
+@btngreen: #7cc798;
+@fontorange: #ff7f0d;
 @fontblue: #438bc3;
+@bgblue : #52a2fb;
+@fontyellow : #ffba00;
+@fontred : #f00;
+@bgred: #fc6b6b;
+
 @import "_icon.less";
 
 body, html { height: 100%; -webkit-tap-highlight-color: transparent;}
@@ -102,77 +103,38 @@ footer {
 }
 
 
-/* 爱心帮导航 */
-.axb3-quick-nav {
-    .weui-grid {
-        width: 25%; padding: 15px 2px;
-        .weui-grid__icon {
-            width: 38px; height: 38px;
-            .axbicon {
-                font-size: 30px; width: 38px; height: 38px; line-height: 40px; background-color: @bgorange; color: #fff; text-align: center;border-radius: 10px;
-                &.s1 { background-color: @bgblue;}
-                &.s2 { background-color: @bggreen;}
-                &.s3 { background-color: @bgyellow;}
-                &.s4 { background-color: @bgorange;}
-                &.s5 { background-color: @bgred;}
-            }
-        }
-        .weui-grid__label {
-            font-size: 13px;
-        }
-    }
-}
 
-.axb-express {
-    height: 100%;
-    background: @bggreen;
-    .pages {
-        height: 100%; background: url('/images/axb3/china.png') center center no-repeat; background-size: 100% auto;
-        .page__hd {
-            padding: 30px 20px 10px;
-            .page__title {
-                color: #fff; font-weight: normal;
+/*底部菜单*/
+#menu {
+    position:fixed; bottom:0px; width:100%; height:44px; line-height:44px; z-index:999; background: #f6f6f6;
+    &:before { .t-line; z-index:999; }
+    ul {
+        position: relative; margin:0 auto; list-style-type:none; width:100%; max-width:500px; height:100%; .display-flex; z-index: 998;
+        li.item {
+            position:relative; .flex-1; height:100%; text-align:center; font-size:14px;
+            .menu-li{
+                position:relative; z-index:20; width:100%; height:100%; color:#454545; background: #f6f6f6;
+                &:before { .l-line; }          
             }
-        }
-        .page__bd {
-            .weui-search-bar {
-                background: transparent;
-                &:before,&:after { display: none;}
-                .weui-search-bar__form {
-                    padding: 5px; background: transparent; border-radius: 40px;
-                    .weui-search-bar__label {
-                        padding: 5px 0; border-radius: 40px;
-                    }
-                    &:after { border-radius: 40px;}
+            &:first-child {
+                .menu-li:before { display: none;}
+            }
+            &.on {
+                .menu-li { background: #eee;}
+            }
+            span {
+                position:absolute; bottom:-300px; left:50%; width:104px; margin-left:-52px; margin-bottom:14px; height:auto; text-align:center; z-index:10; background: #f6f6f6; border: #e4e4e4 solid 1px; border-radius: #e4e4e4 solid 1px; border-radius: 5px;
+                &:after { position: absolute; .arrow-b; background: #f6f6f6; top:auto; bottom: -4px; left: 50%; right: auto; border-width: 1px 1px 0 0; margin-left: -3px;}
+                a{
+                    position: relative; display: block; width:100%; height:43px; line-height:43px; color:#454545;text-decoration:none;
+                    &:after { .b-line; width: auto; left: 5px; right: 5px;}
+                    &:last-child:after { display: none;}
                 }
-                .weui-search-bar__cancel-btn { padding: 5px 0; color: #fff;}
-            }
-            .searchbar-result {
-                border-radius: 10px; margin-left: 15px; margin-right: 15px; background: rgba(255, 255, 255, 0.7); padding: 10px 0;
             }
         }
     }
 }
-
-.project-count {
-    position: fixed; left: 15px; right: 15px; bottom: 15px; background: rgba(255, 255, 255, 0.25); border-radius: 10px; padding: 15px 10px; color: #fff;
-    .hd {
-        text-align: center; font-size: 18px; line-height: 24px; margin-bottom: 10px; padding: 0; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-    }
-    .bd {
-        .display-flex;
-        .count-item {
-            .flex-1; text-align: center; padding: 0;
-            .axbicon {
-                width: 60px; height: 60px; line-height: 60px; font-size: 28px; border: rgba(255, 255, 255, 0.5) solid 1px; border-radius: 60px; margin: 0 0 5px;
-            }
-            .sum { font-size: 16px; line-height: 20px;}
-            .title { font-size: 12px; line-height: 16px;}
-        }
-    }
-}
-
-
+.footer_front{ position:fixed; width:100%; height:100%; top:0px; left:0px; z-index:888; display:none; }
 
 
 
