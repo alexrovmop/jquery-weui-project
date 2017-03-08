@@ -35,6 +35,7 @@ footer {
 
 .display-flex { display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-orient: horizontal; -webkit-flex-direction: row; flex-direction: row;}
 .flex-1 { -webkit-box-flex: 1; -webkit-flex: 1; flex: 1;}
+.flex-0 { -webkit-box-flex: 0; -webkit-flex: 0; flex: 0;}
 
 ._setArrow(@arrowsize, @borderColor, @borderWidth){
     display: inline-block;
@@ -110,6 +111,13 @@ footer {
     &:before { .t-line; z-index:999; }
     ul {
         position: relative; margin:0 auto; list-style-type:none; width:100%; max-width:500px; height:100%; .display-flex; z-index: 998;
+        li.home {
+            position:relative; height:100%; text-align:center; font-size:14px; .flex-0;
+            .menu-li{
+                position:relative; z-index:20; height:100%; color:#454545; background: #f6f6f6; padding: 0 10px; white-space: nowrap;
+                &:before { .l-line; }          
+            }
+        }
         li.item {
             position:relative; .flex-1; height:100%; text-align:center; font-size:14px;
             .menu-li{
@@ -123,7 +131,7 @@ footer {
                 .menu-li { background: #eee;}
             }
             span {
-                position:absolute; bottom:-300px; left:50%; width:104px; margin-left:-52px; margin-bottom:14px; height:auto; text-align:center; z-index:10; background: #f6f6f6; border: #e4e4e4 solid 1px; border-radius: #e4e4e4 solid 1px; border-radius: 5px;
+                position:absolute; bottom:-400px; left:50%; width:94px; margin-left:-47px; margin-bottom:14px; height:auto; text-align:center; z-index:10; background: #f6f6f6; border: #e4e4e4 solid 1px; border-radius: #e4e4e4 solid 1px; border-radius: 5px;
                 &:after { position: absolute; .arrow-b; background: #f6f6f6; top:auto; bottom: -4px; left: 50%; right: auto; border-width: 1px 1px 0 0; margin-left: -3px;}
                 a{
                     position: relative; display: block; width:100%; height:43px; line-height:43px; color:#454545;text-decoration:none;
