@@ -101,6 +101,63 @@ footer {
     right: 2px;
 }
 
+/* 头部、底部以及页面包含头部和底部时yb-container的样式 */
+.axb3-header {
+    position: fixed; z-index: 1; top: 0; left: 0; right: 0; background: @bggreen;
+    .axb3-topbar {
+        .display-flex; height: 42px;
+        .axb3-logo {
+            width: 42px; height: 42px; overflow: hidden;
+            img {
+                vertical-align: middle; height: 36px; width: auto; margin: 3px;
+            }
+        }
+        .axb3-title {
+            .flex-1; color: #fff; height: 42px; overflow: hidden; .txt-line-one; font-size: 19px; line-height: 42px; font-weight: normal;
+        }
+        .axb3-menu {
+            position: relative; width: 42px; height: 42px; color: #fff; line-height: 42px; text-align: center; font-size: 16px;
+            &:before { .l-line; border-color: rgba(255, 255, 255, 0.2); }
+        }
+    }
+    .axb3-top-nav {
+        position: relative;
+        &:before { .t-line; border-color: rgba(255, 255, 255, 0.2); right: 41px;}
+        a.weui-flex__item {
+            position: relative; color: #fff; text-align: center; padding: 10px 2px; text-align: center;
+            &:after { .r-line; border-color: rgba(255, 255, 255, 0.2); top: 15px; bottom: 15px;}
+            .top-nav__icon {
+                width: 28px; height: 28px; margin: 0 auto; font-size: 28px;
+                .axbicon { display: block; top: 0; width: 28px; height: 28px; font-size: 24px; line-height: 28px; text-align: center; vertical-align: middle;}
+            }
+            .top-nav__label { font-size: 12px; height: 16px; line-height: 16px; overflow: hidden;}
+            &:active { background: rgba(0, 0, 0, 0.08) }
+        }
+    }
+}
+.axb3-footer {
+    position: fixed; z-index: 2; bottom: 0; left: 0; right: 0; height: 42px;
+    .weui_btn {
+        border-radius: 0;
+    }
+}
+
+.axb3-container {
+    position: relative; z-index: 0; overflow-y: auto; width: 100%; overflow-x: hidden; height: 100%;
+    &.with-hd {
+        border-top: #efefef solid 42px;
+    }
+    &.with-ft {
+        border-bottom: #efefef solid 42px;
+    }
+    &.with-ybzy-filter {
+        border-top: #efefef solid 82px;
+    }
+    &.with-only-ybzy-filter {
+        border-top: #efefef solid 40px;
+    }
+}
+
 
 /* 爱心帮导航 */
 .axb3-quick-nav {
