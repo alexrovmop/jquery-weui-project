@@ -2,99 +2,254 @@
 <html>
 
 <head>
-    <title>爱心帮-公益项目</title>
+    <title>学生玩吧-列表页</title>
     <% include _header.html %>
 </head>
 
 <body ontouchstart>
-    <div id="menu">
-        <ul>
-            <li class="item home">
-                <div class="menu-li">首页</div>
-                <span>
-                    <a href="#">html5模板</a>
-                    <a href="#">手机js特效</a>
-                    <a href="#">微测试</a>
-                    <a href="#">微游戏</a>
-                </span>
-            </li>
-            <li class="item">
-                <a href="#" class="menu-li">线路</a>
-                <span>
-                    <a href="#">html5模板</a>
-                    <a href="#">手机js特效</a>
-                    <a href="#">微测试</a>
-                    <a href="#">微游戏</a>
-                </span>
-            </li>
-            <li class="item">
-                <a href="#" class="menu-li">近期活动</a>
-                <span>
-                    <a href="#">咨询购买</a>
-                    <a href="#">咨询购买</a>
-                    <a href="#">咨询购买</a>
-                    <a href="#">咨询购买</a>
-                </span>
-            </li>
-            <li class="item">
-                <a href="#" class="menu-li">玩吧介绍</a>
-                <span>
-                    <a href="#">咨询购买</a>
-                    <a href="#">咨询购买</a>
-                    <a href="#">咨询购买</a>
-                    <a href="#">咨询购买</a>
-                    <a href="#">咨询购买</a>
-                </span>
-            </li>
-        </ul>
-    </div>
-    <div class="footer_front"></div>
 
-    <div class="weui-search-bar" id="searchBar">
-        <form class="weui-search-bar__form">
-            <div class="weui-search-bar__box">
-                <i class="weui-icon-search"></i>
-                <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
-                <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+    <div class="qlx-header">
+        <div class="qlx-topbar">
+            <div class="qlx-back"><span class="qlxicon qlxicon-back"></span></div>
+            <div class="qlx-title">学生玩吧</div>
+            <div class="qlx-city">武汉</div>
+            <div class="qlx-item"><span class="qlxicon qlxicon-search"></span></div>
+            <!-- <div class="qlx-item"><span class="qlxicon qlxicon-heart"></span></div>
+            <div class="qlx-item"><span class="qlxicon qlxicon-fav"></span></div> -->
+            <div class="qlx-item"><span class="qlxicon qlxicon-share"></span></div>
+        </div>
+        <div class="qlx-filter">
+            <div class="item active up">热度</div>
+            <div class="item down">价格</div>
+            <div class="item down">天数</div>
+            <div class="item down">评分</div>
+            <div class="item-filter">筛选<span class="qlxicon qlxicon-filter"></span></div>
+        </div>
+    </div>
+
+    <div class="qlx-footer">
+        <div class="qlx-nav">
+            <div class="mypanel">
+                <span class="qlxicon qlxicon-my"></span>
             </div>
-            <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
-                <i class="weui-icon-search"></i>
-                <span>搜索</span>
-            </label>
-        </form>
-        <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+            <a href="#" class="item active">线路</a>
+            <a href="#" class="item">近期活动</a>
+            <a href="#" class="item">玩吧介绍</a>
+        </div>
+    </div>
+    <div class="qlx-mypanel">
+        <div class="hd" style="background-image: url('/images/qlx/my_bg.jpg');">
+            <div class="myname">
+                <div class="avatar" style="background-image: url('/images/qlx/eduardo.jpg');"></div>
+                <div class="name">清风徐来</div>
+            </div>
+            <div class="myinfo">
+                <div class="item">
+                    经验值<p>9999</p>
+                </div>
+                <div class="item">
+                    分享金<p>999999</p>
+                </div>
+                <div class="item">
+                    级别<p>99</p>
+                </div>
+            </div>
+        </div>
+        <div class="bd">
+            <div class="mypanel-nav">
+                <div class="items">
+                    <a href="#" class="item"><span class="qlxicon qlxicon-order"></span>订单</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-fav"></span>收藏</a>
+                </div>
+                <div class="items">
+                    <a href="#" class="item"><span class="qlxicon qlxicon-card"></span>卡券箱</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-friend"></span>玩友</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-together"></span>一起玩</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-home"></span>主页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter-cont">
+        <div class="bd">
+            <div class="filter-title">价格区间</div>
+            <div class="weui-cells weui-cells_form filter-Interval">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" placeholder="最低价">
+                    </div>
+                    <div class="m-line">-</div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" placeholder="最高价">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-title">选择区域</div>
+            <div class="weui-cells_radio filter-radio">
+                <label class="weui-check__label" for="x11">
+                    <input type="radio" class="weui-check" name="radio1" id="x11">
+                    <span class="weui-icon-checked">周边游</span>
+                </label>
+                <label class="weui-check__label" for="x12">
+                    <input type="radio" name="radio1" class="weui-check" id="x12" checked="checked">
+                    <span class="weui-icon-checked">国内游</span>
+                </label>
+                <label class="weui-check__label" for="x13">
+                    <input type="radio" class="weui-check" name="radio1" id="x13">
+                    <span class="weui-icon-checked">境外游</span>
+                </label>
+                <label class="weui-check__label" for="x14">
+                    <input type="radio" name="radio1" class="weui-check" id="x14" checked="checked">
+                    <span class="weui-icon-checked">景美人少</span>
+                </label>
+            </div>
+
+            <div class="filter-title">路线特色</div>
+            <div class="weui-cells_checkbox filter-checkbox">
+                <label class="weui-check__label" for="s11">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s11" checked="checked">
+                    <i class="weui-icon-checked">品味古镇</i>
+                </label>
+                <label class="weui-check__label" for="s12">
+                    <input type="checkbox" name="checkbox1" class="weui-check" id="s12">
+                    <i class="weui-icon-checked">采摘体验</i>
+                </label>
+                <label class="weui-check__label" for="s13">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s13" checked="checked">
+                    <i class="weui-icon-checked">主题乐园</i>
+                </label>
+                <label class="weui-check__label" for="s14">
+                    <input type="checkbox" name="checkbox1" class="weui-check" id="s14">
+                    <i class="weui-icon-checked">赏花观景</i>
+                </label>
+                <label class="weui-check__label" for="s15">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s15" checked="checked">
+                    <i class="weui-icon-checked">游山玩水</i>
+                </label>
+                <label class="weui-check__label" for="s16">
+                    <input type="checkbox" name="checkbox1" class="weui-check" id="s16">
+                    <i class="weui-icon-checked">人文体验</i>
+                </label>
+            </div>
+        </div>
+
+        <div class="ft filter-btn">
+            <a href="#">重置</a>
+            <a href="#" class="submit">确定</a>
+        </div>
+    </div>
+    <div class="weui-mask"></div>
+
+
+    <div class="qlx-container with-filter with-ft">
+        <div class="product-list">
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/01.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p11"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/02.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p12"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/03.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p13"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/01.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p14"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/02.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p15"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/03.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p16"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/01.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p17"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+            <div class="item">
+                <div class="p-img" style="background-image: url('/images/qlx/02.jpg');"></div>
+                <div class="p-count">
+                    <div class="num"><span>249</span>人次参团</div>
+                    <div class="raty" id="p18"></div>
+                </div>
+                <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                <div class="p-price">￥<span>828.00</span>起</div>
+            </div>
+        </div>
     </div>
 
 
     <% include _footer.html %>
     <script type="text/javascript">
-    window.onload = function(){
-        $('#menu ul li').each(function(j){
-            $('#menu ul li').eq(j).removeClass("on");
-            $('#menu ul li span').eq(j).animate({bottom:-$('#menu ul li span').eq(j).height()},100);
-        });
-    }
-
-    $('#menu ul li').each(function(i){
-        $(this).click(function(){
-            if($(this).attr("class")!="on"){
-                $('#menu ul .on span').animate({bottom:-$('#menu ul .on span').height()},200);
-                $('#menu ul .on').removeClass("on");
-                $(this).addClass("on");
-                $('#menu ul li span').eq(i).animate({bottom:40},200);
-                $('.footer_front').show();
-            }else{
-                $('#menu ul li span').eq(i).animate({bottom:-$('#menu ul li span').eq(i).height()},200);
-                $(this).removeClass("on");
-                $('.footer_front').hide();
-            }
-        });
+    $('.mypanel').click(function(){
+        $('.qlx-mypanel').animate({left:0},200);
+        $('.weui-mask').addClass("weui-mask--visible");
     });
-    $('.footer_front').click(function(){
-        $('#menu ul .on span').animate({bottom:-$('#menu ul .on span').height()},200);
-        $('#menu ul .on').removeClass("on");
-        $(this).hide();
+    $('.weui-mask').click(function(){
+        $('.qlx-mypanel').animate({left:-$('.qlx-mypanel').width()},200);
+        $('.weui-mask').removeClass("weui-mask--visible");
     });
+    $('.item-filter').click(function(){
+        $('.filter-cont').animate({right:0},200);
+        $('.weui-mask').addClass("weui-mask--visible");
+    });
+    $('.weui-mask').click(function(){
+        $('.filter-cont').animate({right:-$('.filter-cont').width()},200);
+        $('.weui-mask').removeClass("weui-mask--visible");
+    });
+    </script>
+    
+    <script src="/js/raty.js"></script>
+    <script type="text/javascript">
+        $('#p11').raty({ readOnly: true, score: 3 });
+        $('#p12').raty({ readOnly: true, score: 4 });
+        $('#p13').raty({ readOnly: true, score: 5 });
+        $('#p14').raty({ readOnly: true, score: 3 });
+        $('#p15').raty({ readOnly: true, score: 4 });
+        $('#p16').raty({ readOnly: true, score: 5 });
+        $('#p17').raty({ readOnly: true, score: 5 });
+        $('#p18').raty({ readOnly: true, score: 5 });
     </script>
 </body>
 

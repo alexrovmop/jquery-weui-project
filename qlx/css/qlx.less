@@ -1,17 +1,22 @@
-@bggreen : #7bc697;
-@fontgreen: #5fad7b;
-@fontgreen-light: #e0ffec;
-@btngreen: #7cc798;
-@fontorange: #ff7f0d;
-@fontblue: #438bc3;
-@bgblue : #52a2fb;
-@fontyellow : #ffba00;
-@fontred : #f00;
-@bgred: #fc6b6b;
+@cyan: #4fc1e9;
+@cyan-d: #3bafda;
+@blue: #5d9cec;
+@blue-d: #4a89dc;
+@red: #ed5565;
+@red-d: #cf3c4b;
+@red-warn: #ff3c30;
+@purple: #ec87c0;
+@purple-d: #d770ad;
+@yellow: #ffce54;
+@yellow-d: #f6bb42;
+@green: #a0d468;
+@green-d: #80b448;
+@orange: #fc6e51;
+@orange-d: #e05034;
 
 @import "_icon.less";
 
-body, html { height: 100%; -webkit-tap-highlight-color: transparent;}
+body, html { height: 100%; -webkit-tap-highlight-color: transparent; background: #efefef;}
 .demos-title { text-align: center; font-size: 34px; color: #3cc51f; font-weight: 400; margin: 0 15%;}
 .demos-sub-title { text-align: center; color: #888; font-size: 14px;}
 .demos-header { padding: 35px 0;}
@@ -103,50 +108,508 @@ footer {
     right: 2px;
 }
 
+.weui-btn_warn {
+    background-color: @red;
+    &:not(.weui-btn_disabled):active {
+        background-color: @red-d;
+    }
+}
+.weui-btn_primary {
+    background-color: @green;
+    &:not(.weui-btn_disabled):active {
+        background-color: @green-d;
+    }
+}
+.weui-btn_orange {
+    background-color: @orange;
+    &:not(.weui-btn_disabled):active {
+        background-color: @orange-d;
+    }
+}
+.weui-btn_default {
+    color: @red;
+}
+.weui-btn_blue {
+    background-color: @blue;
+    &:not(.weui-btn_disabled):active {
+        background-color: @blue-d;
+    }
+}
+.weui-btn_disabled {
+    // &.weui-btn_default {
+    //     color: @weuiBtnDefaultDisabledFontColor;
+    //     background-color: @weuiBtnDefaultDisabledBg;
+    // }
+    &.weui-btn_warn {
+        background-color: @red-d;
+    }
+    &.weui-btn_primary {
+        background-color: @green-d;
+    }
+    &.weui-btn_orange {
+        background-color: @orange-d;
+    }
+}
 
+.weui-btn_plain-default {
+    color: #666;
+    border: 1px solid #ccc;
+    &:not(.weui-btn_plain-disabled):active {
+        color: #888;
+        border-color: #e4e4e4;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
 
-/*底部菜单*/
-#menu {
-    position:fixed; left:0; bottom:0px; width:100%; height:44px; line-height:44px; z-index:999; background: #f6f6f6;
-    &:before { .t-line; z-index:999; }
-    ul {
-        position: relative; margin:0 auto; list-style-type:none; width:100%; max-width:500px; height:100%; .display-flex; z-index: 998;
-        li.item {
-            position:relative; .flex-1; height:100%; text-align:center; font-size:14px;
-            .menu-li{
-                position:relative; display: block; z-index:20; width:100%; height:100%; color:@fontblue; background: #f6f6f6; white-space: nowrap; padding: 0 5px; box-sizing: border-box;
-                &:before { .l-line; }          
+.weui-btn_plain-warn {
+    color: @red;
+    border: 1px solid @red;
+    &:not(.weui-btn_plain-disabled):active {
+        color: @red-d;
+        border-color: @red-d;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+
+.weui-form-preview__btn_primary {
+    color: @green;
+}
+.weui-form-preview__btn_warn {
+    color: @red;
+}
+
+.swiper-container {
+    width: 100%;
+    img {
+        display: block;
+        width: 100%;
+    }
+    .swiper-pagination-bullet {
+        background: #fff; opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active {
+        background: @cyan; opacity: 1;
+    }
+}
+
+/* 头部、底部以及页面包含头部和底部时yb-container的样式 */
+.qlx-header {
+    position: fixed; z-index: 1; top: 0; left: 0; right: 0; background: @cyan;
+    .qlx-topbar {
+        .display-flex; height: 44px;
+        .qlx-back {
+            position: relative; width: 36px; height: 40px; line-height: 48px; text-align: center; overflow: hidden; color: #fff;
+            &:after { .r-line; border-color: rgba(255, 255, 255, 0.15); }
+            .qlxicon { font-size: 24px;}
+            &:active { background: @cyan-d;}
+        }
+        .qlx-title {
+            .flex-1; color: #fff; height: 44px; overflow: hidden; .txt-line-one; font-size: 19px; line-height: 44px; font-weight: normal; padding: 0 8px;
+        }
+        .qlx-city {
+            position: relative; height: 24px; line-height: 24px; color: #fff; padding: 0 20px 0 8px; margin: 10px 5px; background: @cyan-d; border-radius: 5px; box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); font-size: 14px;
+            &:after {
+                content: ""; .setArrow(down,6px,#fff,1px); position: absolute; top: 50%; margin-top: -6px; right: 8px;
             }
-            &:first-child {
-                .menu-li:before { display: none;}
+        }
+        .qlx-item {
+            position: relative; width: 40px; height: 44px; line-height: 48px; text-align: center; overflow: hidden; color: #fff;
+            &:before { .l-line; border-color: rgba(255, 255, 255, 0.15); }
+            .qlxicon { font-size: 24px;}
+            &:active { background: @cyan-d;}
+        }
+    }
+    .qlx-filter {
+        .display-flex; height: 40px; background: #fff; border-bottom: #e4e4e4 solid 3px; font-size: 15px;
+        .item {
+            .flex-1; text-align: center; line-height: 40px; color: #666;
+            &:after,&.down:after { content: ""; .setArrow(down,5px,#999,1px); margin-left: 4px;}
+            &.up:after { .setArrow(top,5px,#999,1px); top: 0;}
+            &.active {
+                color: @red;
+                &.down:after { .setArrow(down,5px,@red,1px);}
+                &.up:after { .setArrow(top,5px,@red,1px);}
             }
-            &.on {
-                .menu-li { background: #eee;}
+        }
+        .item-filter {
+            position: relative; white-space: nowrap; padding: 0 10px; line-height: 40px; color: #666;
+            &:before { .l-line;}
+            .qlxicon { font-size: 17px;}
+        }
+    }
+}
+.qlx-footer {
+    position: fixed; z-index: 2; bottom: 0; left: 0; right: 0;
+    .qlx-nav {
+        .display-flex; height: 44px; background: #f6f6f6;
+        .mypanel {
+            .qlxicon {
+                display: block; top: 0; font-size: 24px; color: #fff; background: @cyan; width: 44px; height: 44px; line-height: 44px; text-align: center;
             }
-            span {
-                position:absolute; bottom:-400px; left:50%; width:94px; margin-left:-47px; margin-bottom:14px; height:auto; text-align:center; z-index:10; background: #f6f6f6; border: #e4e4e4 solid 1px; border-radius: 5px;
-                &:after { position: absolute; .arrow-b; background: #f6f6f6; top:auto; bottom: -4px; left: 50%; right: auto; border-width: 1px 1px 0 0; margin-left: -3px;}
-                & > a {
-                    position: relative; display: block; width:100%; height:43px; line-height:43px; color:#454545;text-decoration:none;
-                    &:after { .b-line; width: auto; left: 5px; right: 5px;}
-                    &:last-child:after { display: none;}
-                }
+        }
+        .item {
+            .flex-1; text-align: center; line-height: 44px; color: #787878;
+            &:active { background: #eee;}
+            &.active { color: @cyan;}
+        }
+    }
+    .weui_btn {
+        border-radius: 0;
+    }
+    .qlx-cr {
+        position: relative; height: 20px; background: #fff;
+        &:before { .t-line; border-color: #f2f2f2;}
+    }
+}
+.qlx-mypanel {
+    position: fixed; top: 0; left: -70%; bottom: 0; width: 70%; z-index: 10000; background: #fff; overflow: auto;
+    .hd {
+        background: center center no-repeat; background-size: cover; padding-top: 33%;
+        .myname {
+            .display-flex; padding: 0 10px 10px;
+            .avatar {
+                width: 44px; height: 44px; border: #fff solid 2px; border-radius: 44px; background: center center no-repeat; background-size: cover; margin: -5px 10px 0 0;
             }
-            &.home {
-                .flex-0;
-                span {
-                    position: fixed; left: 0; margin-bottom: 0; margin-left: 0; width: 60%; border-radius: 0; border: noen; background: #fff;
-                }
-                &.on {
-                    span {
-                        top: 0; 
-                    }
+            .name {
+                .flex-1; font-size: 20px; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); line-height: 30px;
+            }
+        }
+        .myinfo {
+            position: relative; background: rgba(0, 0, 0, 0.5); .display-flex;
+            &:before { .t-line; border-color: rgba(255, 255, 255, 0.3); }
+            .item {
+                position: relative; white-space: nowrap; text-align: center; padding: 10px; .flex-1; color: rgba(255, 255, 255, 0.7); font-size: 13px; line-height: 15px;
+                &:before { .l-line; border-color: rgba(0, 0, 0, 0.1); }
+                &:after { .r-line; border-color: rgba(255, 255, 255, 0.1); }
+                &:first-child:before { display: none;}
+                &:last-child:after { display: none;}
+                p { font-size: 12px; padding: 5px 0; color: #fff;}
+            }
+        }
+    }
+    .bd {
+        .mypanel-nav {
+            padding: 15px 0;
+            .items {
+                margin-bottom: 15px;
+                a.item {
+                    display: block; padding: 10px 20px; .txt-line-one; line-height: 24px; font-size: 16px; color: #666;
+                    .qlxicon { color: @cyan-d; margin-right: 10px;}
+                    &:active { background: #f6f6f6;}
                 }
             }
         }
     }
 }
-.footer_front{ position:fixed; width:100%; height:100%; top:0px; left:0px; z-index:888; display:none; background: rgba(0, 0, 0, 0.1) }
+
+.filter-cont {
+    position: fixed; top: 0; right: -80%; bottom: 0; width: 80%; z-index: 10001; background: #fff;
+    .bd {
+        position: absolute; top: 0; left: 0; right: 0; bottom: 40px; overflow: auto;
+        .filter-title { padding: 5px 15px; line-height: 28px; font-size: 17px;}
+        .weui-cells {
+            margin: 0 0 10px;
+            &:before,&:after,.weui-cell:before { display: none;}
+        }
+        .filter-Interval {
+            .weui-cell {
+                padding: 5px 15px;
+                .weui-cell__bd {
+                    background: #eee; border-radius: 4px; padding: 6px; line-height: 13px;
+                    .weui-input { text-align: center; font-size: 12px; line-height: 13px;}
+                }
+                .m-line { padding: 0 5px; color: #ccc;}
+            }
+        }
+        .filter-radio {
+            padding: 0 15px; overflow: hidden;
+            .weui-check__label {
+                display: block; float: left; white-space: nowrap; margin: 0 10px 10px 0; height: 28px;
+                .weui-icon-checked {
+                    position: relative; display: block; float: left; background: #eee; border-radius: 5px; border: #eee solid 1px; padding: 0 10px 0 22px; height: 28px; line-height: 24px; font-size: 14px; box-sizing: content-box; color: #666;
+                    &:before {
+                        position: absolute; top: 7px; left: 3px; content: ""; height: 14px; width: 14px; line-height: 14px; font-size: 14px;
+                    }
+                }
+                .weui-check:checked+.weui-icon-checked {
+                    background: #fff; border: @red solid 1px; color: @red;
+                    &:before {
+                        content: "\EA08"; font-size: 14px; color: @red;
+                    }
+                }
+            }
+        }
+        .filter-checkbox {
+            padding: 0 15px;
+            .weui-check__label {
+                display: block; float: left; white-space: nowrap; margin: 0 10px 10px 0; height: 28px;
+                .weui-icon-checked {
+                    position: relative; display: block; float: left; background: #eee; border-radius: 5px; border: #eee solid 1px; padding: 0 10px 0 22px; height: 28px; line-height: 24px; font-size: 14px; box-sizing: content-box; color: #666;
+                    &:before {
+                        position: absolute; top: 7px; left: 3px; content: "\EA01"; height: 14px; width: 14px; line-height: 14px; font-size: 14px; color: #eee;
+                    }
+                }
+                .weui-check:checked+.weui-icon-checked {
+                    background: #fff; border: @red solid 1px; color: @red;
+                    &:before {
+                        content: "\EA06"; font-size: 14px; color: @red;
+                    }
+                }
+            }
+        }
+    }
+    .ft {
+        position: absolute; left: 0; right: 0; bottom: 0; height: 40px; .display-flex;
+        &:before { .t-line; border-color: #f2f2f2;}
+        &.filter-btn {
+            & > a {
+                .flex-1; display: block; line-height: 40px; text-align: center; color: #333;
+                &.submit {
+                    background: @red; color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.qlx-container {
+    position: relative; z-index: 0; overflow-y: auto; width: 100%; height: 100%; box-sizing: border-box; overflow-x: hidden;
+    &.with-hd {
+        border-top: transparent solid 44px;
+    }
+    &.with-ft {
+        border-bottom: transparent solid 44px;
+    }
+    &.with-cr {
+        border-bottom: transparent solid 64px;
+    }
+    &.with-only-cr {
+        border-bottom: transparent solid 20px;
+    }
+    &.with-filter {
+        border-top: transparent solid 87px;
+    }
+    &.with-only-filter {
+        border-top: transparent solid 43px;
+    }
+}
+
+/* 旅游产品列表 */
+.product-list {
+    .item {
+        display: block; float: left; width: 50%; box-sizing: border-box; border: #efefef solid 2px; background: #fff;
+        .p-img {
+            width: 100%; height: 0; background: center center no-repeat; background-size: cover; padding: 100% 0 0;
+        }
+        .p-count {
+            .display-flex; line-height:24px; padding:5px 5px 0;
+            .num {
+                .flex-1; font-size: 12px; color: #787878; white-space: nowrap;
+                span { margin-right: 4px; font-size: 13px;}
+            }
+            .raty {
+                font-size: 0; white-space: nowrap;
+                img { vertical-align: middle; width: 12px; height: 12px; border: 0; margin-top: -2px;}
+            }
+        }
+        .p-title {
+            padding: 0 5px; font-size: 16px; .txt-line-two; line-height: 24px; height: 48px;
+        }
+        .p-price {
+            padding: 5px 5px 8px; white-space: nowrap; .txt-line-one; color: @red; font-size: 12px;
+            span { font-size: 16px; margin: 0 3px;}
+        }
+        &:active {
+            background: #f6f6f6;
+        }
+    }
+}
+
+/* 旅游专题列表 */
+.subject-list {
+    .item {
+        display: block; background: #fff; margin-bottom: 10px; padding-bottom: 25px;
+        .s-img {
+            width: 100%;
+            img { vertical-align: middle; width: 100%; height: auto;}
+        }
+        .s-title {
+            padding: 15px; text-align: center; font-size: 19px; color: #555; line-height: 24px;
+        }
+        .s-desc {
+            padding: 0 15px; .txt-line-two; color: #787878; line-height: 20px; font-size: 14px;
+        }
+        &:active {
+            background: #f6f6f6;
+        }
+    }
+}
+
+/* 栏目介绍页样式 */
+.col-about {
+    padding: 0;
+    section > * {
+        background: #fff; margin: 8px; padding: 12px; border-radius: 10px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)
+    }
+}
+
+/* 个人中心 */
+.qlx-uc {
+    .hd {
+        background: #fff;
+        .uc-name {
+            .display-flex; background: center center no-repeat; background-size: cover; padding: 7% 15px 6%; overflow: hidden;
+            .avatar-border { float: left; margin: 0 20px 0 0; width: 80px; height: 80px; border-radius: 80px; border: rgba(255, 255, 255, 0.2) solid 6px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+                .avatar {
+                    width: 80px; height: 80px; border-radius: 80px; background: center center no-repeat; background-size: cover;
+                }
+            }
+            .name {
+                .flex-1; margin-top: 35px; font-size: 18px; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); line-height: 30px;
+                .city { font-size: 13px; line-height: 18px;}
+            }
+            
+        }
+        .uc-info {
+            position: relative; .display-flex;
+            .item {
+                position: relative; white-space: nowrap; text-align: center; padding: 6px 10px 7px; .flex-1; color: #999; font-size: 12px; line-height: 14px; border-bottom: #e4e4e4 solid 3px;
+                &:before { .l-line; border-color: #eee; bottom: -3px; }
+                &:first-child:before { display: none;}
+                p { font-size: 14px; padding: 2px 0 0; color: #787878;}
+                &.s1 { border-bottom-color: @orange;}
+                &.s2 { border-bottom-color: @green;}
+                &.s3 { border-bottom-color: @cyan;}
+            }
+        }
+    }
+    .bd {
+        margin-top: 10px;
+        .uc-nav {
+            position: relative; .display-flex; background: #fff;
+            &:after { .b-line; z-index: 10; }
+            a.item {
+                position: relative; .flex-1; padding: 8px 5px; .txt-line-one; line-height: 24px; font-size: 14px; color: #666; text-align: center; z-index: 11;
+                &:active { color: @cyan-d;}
+                &.active {
+                    color: @cyan-d;
+                    &:after { .b-line; left: 5px; right: 5px; border-bottom-color: @cyan-d; border-bottom-width: 2px;}
+                }
+            }
+        }
+    }
+}
+
+.shop-product-hori-list {
+    padding: 0 0 10px; overflow: hidden;
+    .item {
+        position: relative;
+        &:after { .b-line; }
+        .product-box {
+            position: relative; display: block; min-height: 90px; margin: 0; overflow: hidden; padding: 10px 10px 10px 105px;
+            &:active { background: #e9e9e9;}
+            .product-photo {
+                position: absolute; left: 10px; top: 10px; vertical-align: middle; width: 90px; height: 90px; border-radius: 4px;
+            }
+            .product-txt {
+                font-size: 16px; .txt-line-two; color: #555; margin-top: 3px; line-height: 17px; margin-bottom: 3px; padding: 0 4px;
+            }
+            .product-price {
+                padding: 0 4px; margin: 0; color: #999; font-size: 13px;
+                .price-sign { font-size: 13px; color: @red;}
+                .price-big { font-size: 15px; color: @red;}
+                .price-small { font-size: 13px; color: @red;}
+            }
+            .product-count,.product-info { font-size: 13px; color: #999; line-height: 15px; padding: 0 4px;}
+        }
+    }
+}
+
+/* 用户中心 订单列表 */
+.uc-order-list {
+    .item {
+        background: #fff; margin-bottom: 10px;
+        .uc-order-id {
+            .display-flex; align-items: center; padding: 8px 10px; border-top: #e4e4e4 solid 1px; border-bottom: #eee solid 1px; font-size: 14px;
+            .order-id {
+                -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; .txt-line-one;
+                a { color: #555;}
+            }
+            .order-status {
+                color: @red;
+                &.status-end { color: #999;}
+            }
+        }
+        &:first-child {
+            .uc-order-id { border-top: none;}
+        }
+        .uc-order-total-price {
+            text-align: right; padding: 6px 10px; font-size: 15px; color: #444;
+        }
+        .uc-order-operate {
+            position: relative; padding: 6px; border-top: #eee solid 1px; text-align: right;
+            .weui-btn { margin-top: 0;}
+        }
+    }
+}
+
+/* 用户中心 朋友列表 */
+.uc-friend-list {
+    overflow: hidden; background: #fff; padding: 10px 15px;
+    a.item {
+        display: block; float: left; margin: 0 8px 10px 0; width: 48px; text-align: center;
+        .friend-avatar {
+            background: center center no-repeat; background-size: cover; width: 48px; height: 48px; border-radius: 48px;
+        }
+        .friend-name {
+            .txt-line-one; font-size: 12px; line-height: 18px; color: #555;
+        }
+    }
+}
+
+.uc-share-amount {
+    background: #fff;
+    .amount-total {
+        padding: 10px 15px;
+        span {font-size: 12px; color: #999; margin-left: 4px;}
+        p { color: @cyan; font-size: 28px;}
+    }
+    .amount-list {
+        .weui-form-preview__bd {
+            font-size: 13px; line-height: 1.3; padding: 8px 15px;
+        }
+    }
+}
+
+/* 千里行导航 */
+.qlx-quick-nav {
+    background: #fff;
+    .weui-grid {
+        padding: 15px 2px;
+        &:before,&:after { border-bottom-color: #e4e4e4;}
+        .weui-grid__icon {
+            width: 38px; height: 38px;
+            .qlxicon {
+                font-size: 24px; width: 38px; height: 38px; line-height: 38px; background-color: @orange; color: #fff; text-align: center;border-radius: 10px;
+                &.s1 { background-color: @blue;}
+                &.s2 { background-color: @green;}
+                &.s3 { background-color: @yellow;}
+                &.s4 { background-color: @orange;}
+                &.s5 { background-color: @red;}
+            }
+        }
+        .weui-grid__label {
+            font-size: 13px; margin-top: 8px; line-height: 16px;
+            p { color: @orange;}
+        }
+    }
+}
+
+
 
 
 

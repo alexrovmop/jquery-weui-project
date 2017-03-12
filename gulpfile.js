@@ -72,6 +72,13 @@ gulp.task('js', function(cb) {
     .pipe(gulp.dest('./dist/js/'))
     .on("end", end);
 
+  gulp.src([
+    './qlx/js/jquery.raty.js',
+  ])
+    .pipe(concat({ path: 'raty.js'}))
+    .pipe(gulp.dest('./dist/js/'))
+    .on("end", end);
+
   
 });
 
