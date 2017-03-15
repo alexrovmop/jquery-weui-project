@@ -8,6 +8,11 @@
 <script src="/js/jquery-weui.js"></script>
 <script type="text/javascript">
     $('.axb3-menu').click(function(){
-        $('.axb3-top-nav').toggle('fast');
+        $('.axb3-top-nav').toggle(200);
+        $('.weui-mask').toggleClass("weui-mask--visible");
+    });
+    $('.weui-mask').click(function(){
+        $('.axb3-top-nav').hide(200);
+        $('.weui-mask').removeClass("weui-mask--visible");
     });
 </script>
