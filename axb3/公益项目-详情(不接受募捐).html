@@ -41,63 +41,9 @@
         <div class="footer-btn">
             <a href="javascript:;" class="weui-btn weui-btn_default"><span class="axbicon axbicon-share"></span> 转发</a>
             <a href="javascript:;" id="show-hotline" class="weui-btn weui-btn_default flex-1"><span class="axbicon axbicon-tel"></span> 热线电话</a>
-            <a href="javascript:;" class="weui-btn weui-btn_default flex-1 open-popup" data-target="#half"><span class="axbicon axbicon-heart"></span> 爱心捐助</a>
         </div>
     </div>
     <div class="weui-mask"></div>
-    <div id="half" class="weui-popup__container popup-bottom with-ft">
-        <div class="weui-popup__overlay"></div>
-        <div class="weui-popup__modal">
-            <div class="toolbar">
-                <div class="toolbar-inner">
-                    <a href="javascript:;" class="picker-button close-popup">关闭</a>
-                    <h1 class="title">请输入捐款金额</h1>
-                </div>
-            </div>
-            <div class="modal-content axb3-modal-content">
-                <div class="weui-cells weui-cells_form">
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <div class="axb3-actions-radio">
-                                <div class="item">
-                                    <input type="radio" class="actions-radio" name="radio1" id="q11"/>
-                                    <label class="actions-radio-label" for="q11" >20元</label>
-                                </div>
-                                <div class="item">
-                                    <input type="radio" class="actions-radio" name="radio1" id="q12"/>
-                                    <label class="actions-radio-label" for="q12">50元</label>
-                                </div>
-                                <div class="item">
-                                    <input type="radio" class="actions-radio" name="radio1" id="q13"/>
-                                    <label class="actions-radio-label" for="q13">100元</label>
-                                </div>
-                                <div class="item">
-                                    <input type="radio" class="actions-radio" name="radio1" id="q14"/>
-                                    <label class="actions-radio-label" for="q14">200元</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="其他金额">
-                        </div>
-                    </div>
-                </div>
-                <label for="weuiAgree" class="weui-agree">
-                    <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
-                    <span class="weui-agree__text">
-                        已阅读并同意<a href="javascript:void(0);">《爱心帮导航用户协议》</a>
-                    </span>
-                </label>
-                <div class="weui-cells__tips"><a href="#">大额转账流程及支付说明</a></div>
-                <div class="weui-btn-area">
-                    <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <div class="axb3-container with-hd with-ft">
         <div class="project-detail">
@@ -106,7 +52,7 @@
                     <img src="/images/axb3/banner3.jpg" alt="" class="detail-img">
                     <div class="detail-name">骨舞人生-严重骨质疏松患者援助项目</div>
                 </div>
-                <div class="detail-count">
+                <div class="detail-count detail-count-hori">
                     <div class="weui-flex">
                         <div class="weui-flex__item">
                             <div class="item-icon">
@@ -124,24 +70,6 @@
                             <div class="item-label">
                                 <div class="item-name">援助患者</div>
                                 <div class="item-sum">5243</div>
-                            </div>
-                        </div>
-                        <div class="weui-flex__item">
-                            <div class="item-icon">
-                                <span class="axbicon axbicon-d18 s3"></span>
-                            </div>
-                            <div class="item-label">
-                                <div class="item-name">爱心捐助</div>
-                                <div class="item-sum">6785432</div>
-                            </div>
-                        </div>
-                        <div class="weui-flex__item">
-                            <div class="item-icon">
-                                <span class="axbicon axbicon-people s4"></span>
-                            </div>
-                            <div class="item-label">
-                                <div class="item-name">捐助人次</div>
-                                <div class="item-sum">16452</div>
                             </div>
                         </div>
                     </div>
@@ -213,11 +141,6 @@
       $(document).on("click", "#show-hotline", function() {
         $.alert("确定拔打电话:4000186072吗?", "提示");
       });
-      $(document).on("open", ".weui-popup-modal", function() {
-            console.log("open popup");
-        }).on("close", ".weui-popup-modal", function() {
-            console.log("close popup");
-        });
     </script>
 </body>
 

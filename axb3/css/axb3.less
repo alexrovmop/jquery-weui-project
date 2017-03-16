@@ -1,10 +1,11 @@
 @bggreen : #3ed697;
 @bggrass : #cdd773;
-@bgorange: #ff7f0d;
+@bgorange: #fc6e51;
+@fontorange: #e05034;
 @bgblue : #52a2fb;
 @bgyellow : #ffba00;
-@bgred: #fc6b6b;
-@fontred : #f00;
+@bgred: #ed5565;
+@fontred : #cf3c4b;
 @fontgreen: #3bd596;
 @fontgreen-l: #7adbb0;
 @fontblue: #438bc3;
@@ -105,6 +106,44 @@ footer {
 .weui-search-bar:before { border-top-color: #e4e4e4;}
 .weui-search-bar__cancel-btn {
     color: @fontgreen;
+}
+
+.weui-article {
+    color: #555;
+    & > h1 {
+        position: relative; font-size: 17px; color: #444; margin-bottom: 20px; line-height: 24px; padding: 5px 0 5px 10px; border-bottom: #eee solid 1px; margin-top: -15px;
+        &:before { .l-line; border-width: 2px; border-color: @fontgreen; top: 11px; bottom: 11px;}
+    }
+    a { color: @fontgreen;}
+}
+
+.weui-popup__container {
+    &.with-ft {
+        border-bottom: #efefef solid 42px;
+    }
+}
+
+.toolbar .picker-button { color: @fontgreen;}
+
+.weui-cells {
+    font-size: 16px;
+}
+
+.weui-cells__tips {
+    a { color: @fontorange; text-decoration: underline;}
+}
+
+.weui-btn-area {
+    margin: 10px 15px 15px;
+}
+
+.weui-btn_primary {
+    background-color: @bggreen;
+}
+
+.weui-btn_primary:not(.weui-btn_disabled):active {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: darken(@bggreen, 10%);
 }
 
 /* 头部、底部以及页面包含头部和底部时yb-container的样式 */
@@ -263,6 +302,7 @@ footer {
 /* 项目详情 */
 .project-detail {
     .hd {
+        background: #f0f2f5;
         .detail-title {
             position: relative; min-height: 80px; z-index: 1;
             .detail-img {
@@ -273,8 +313,9 @@ footer {
                 background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
                 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(0, 0, 0, 0)', endColorstr='rgba(0, 0, 0, 1)');
                 background:-o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-                background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-                position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 15px; color: #fff; font-size: 16px; line-height: 24px; vertical-align: bottom;
+                // background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+                position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 15px; color: #fff; font-size: 16px; line-height: 24px; vertical-align: bottom; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+                p { font-size: 14px;}
             }
         }
         .detail-count {
@@ -282,16 +323,36 @@ footer {
             .weui-flex {
                 background: #fff; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); margin-top: -24px; border-radius: 3px;
                 .weui-flex__item {
+<<<<<<< HEAD
                     text-align: center; padding: 10px;
+=======
+                    text-align: center; padding: 15px 10px 10px;
+>>>>>>> 38e479ce2be658fe32692d1f38b09a135d70bf74
                     .item-icon {
-                        display: inline-block; color: @fontgreen;
-                        .axbicon { font-size: 40px;}
+                        display: inline-block; width: 38px; height: 38px; vertical-align: middle;
+                        .axbicon {
+                            font-size: 24px; width: 38px; height: 38px; line-height: 38px; background-color: @bgorange; color: #fff; text-align: center;border-radius: 10px;
+                            &.s1 { background-color: @bgred;}
+                            &.s2 { background-color: @bgblue;}
+                            &.s3 { background-color: @bgyellow;}
+                            &.s4 { background-color: @bgorange;}
+                        }
                     }
                     .item-label {
-                        display: inline-block; line-height: 16px; margin-top: 4px;
+                        display: inline-block; line-height: 16px; margin-top: 6px; vertical-align: middle;
                         .item-name { color: #787878; font-size: 12px;}
                         .item-sum {
-                            color: #666; font-size: 14px;
+                            color: @fontorange; font-size: 13px;
+                        }
+                    }
+                }
+            }
+            &.detail-count-hori {
+                .weui-flex {
+                    .weui-flex__item {
+                        padding: 15px 10px 20px;
+                        .item-label {
+                            text-align: left; margin-left: 5px;
                         }
                     }
                 }
@@ -301,8 +362,50 @@ footer {
     .bd {}
 }
 
+.axb3-actions-radio {
+    .item { display: inline-block; margin: 5px 10px 5px 0;}
+    .actions-radio { display: none;}
+    .actions-radio-label { display: inline-block; padding: 6px 15px; margin: 0; font-size: 14px; white-space: nowrap; border-radius: 5px; background: #fff; border: #e4e4e4 solid 1px; color: @fontorange;}
+    .actions-radio-label:before,.actions-radio-label:after { display: none;}
+    input.actions-radio:checked+.actions-radio-label { background-color: @bgorange; color: #fff; border-color: @bgorange; }
+}
 
+.axb3-modal-content {
+    background-color: #fff; font-size: 16px;
+}
 
-
-
+/* 我的 */
+.axb3-uc {
+    & > .hd {
+        background: #fff;
+        .uc-name {
+            background: center center no-repeat; background-size: cover; padding: 5% 15px; overflow: hidden;
+            .avatar-border { margin: 0 auto; width: 80px; height: 80px; border-radius: 80px; border: rgba(255, 255, 255, 0.2) solid 4px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+                .avatar {
+                    width: 80px; height: 80px; border-radius: 80px; background: center center no-repeat; background-size: cover;
+                }
+            }
+            .name {
+                margin-top: 5px; font-size: 18px; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); line-height: 30px; text-align: center;
+                .info { font-size: 13px; line-height: 18px;}
+            }
+            
+        }
+    }
+    & > .bd {
+        border-top: #f0f2f5 solid 10px;
+        .uc-nav {
+            padding: 0;
+            .items {
+                margin-bottom: 15px;
+                a.item {
+                    position: relative; display: block; padding: 10px 15px; .txt-line-one; line-height: 24px; font-size: 16px; color: #666;
+                    .axbicon { color: @bgblue; margin-right: 10px;}
+                    &:active { background: #f6f6f6;}
+                    &:after { .b-line; border-bottom-color: #eee;}
+                }
+            }
+        }
+    }
+}
 
