@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>爱心帮-发起筹款-登录</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    <div class="axb3-header">
+        <div class="axb3-topbar">
+            <div class="axb3-logo"><img src="/images/axb3/logo.png" alt=""></div>
+            <h1 class="axb3-title">爱心帮导航</h1>
+            <div class="axb3-menu"><span class="axbicon axbicon-menu"></span></div>
+        </div>
+        <div class="weui-flex axb3-top-nav" style="display: none;">
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-news"></span></div>
+                <div class="top-nav__label">最新动态</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-d8"></span></div>
+                <div class="top-nav__label">公益项目</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-postion"></span></div>
+                <div class="top-nav__label">公益网点</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-case"></span></div>
+                <div class="top-nav__label">个案援助</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-fund"></span></div>
+                <div class="top-nav__label">发起筹款</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="weui-mask"></div>
+
+    <div class="axb3-container with-hd">
+
+        <div class="weui-cells weui-cells_form axb3-form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">受助人</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请填写真实有效姓名">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">所患疾病</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请填写疾病名称">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">经济状况</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请填写受助人家庭平均收入">
+                </div>
+                <div class="weui-cell__ft unit">元</div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">手机号码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请填写有效手机号码">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">证件号码</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请填写有效证件号码">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <div class="weui-uploader">
+                        <div class="weui-uploader__hd">
+                            <p class="weui-uploader__title">证件照片</p>
+                            <div class="weui-uploader__info">0/2</div>
+                        </div>
+                        <div class="weui-flex">
+                            <div class="weui-flex__item">
+                                <div class="weui-uploader__bd">
+                                    <ul class="weui-uploader__files" id="uploaderFiles">
+                                        <li class="weui-uploader__file" style="background-image:url(/images/axb3/pic_160.png)"></li>
+                                        <li class="weui-uploader__file" style="background-image:url(/images/axb3/pic_160.png)"></li>
+                                    </ul>
+                                    <div class="weui-uploader__input-box">
+                                        <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-photo">
+                                <img src="/images/axb3/temp.jpg" alt="">
+                                <p>示例图片</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">众筹标题</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请填写众筹标题">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">筹款目标</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请填写金额">
+                </div>
+                <div class="weui-cell__ft unit">元</div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">详情描述</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请详细填写筹款原因、筹款目的、自身状况、善款用途等信息。描述内容中不得出现任何联系方式和银行卡等收款信息，否则项目验证和提现申请均不予通过！" rows="6"></textarea>
+                    <div class="weui-textarea-counter"><span>0</span>/200</div>
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <div class="weui-uploader">
+                        <div class="weui-uploader__hd">
+                            <p class="weui-uploader__title">上传图片</p>
+                            <div class="weui-uploader__info">0/2</div>
+                        </div>
+                        <div class="weui-uploader__bd">
+                            <ul class="weui-uploader__files" id="uploaderFiles">
+                                <li class="weui-uploader__file" style="background-image:url(/images/axb3/pic_160.png)"></li>
+                                <li class="weui-uploader__file" style="background-image:url(/images/axb3/pic_160.png)"></li>
+                                <li class="weui-uploader__file" style="background-image:url(/images/axb3/pic_160.png)"></li>
+                                <li class="weui-uploader__file weui-uploader__file_status" style="background-image:url(/images/axb3/pic_160.png)">
+                                    <div class="weui-uploader__file-content">
+                                        <i class="weui-icon-warn"></i>
+                                    </div>
+                                </li>
+                                <li class="weui-uploader__file weui-uploader__file_status" style="background-image:url(/images/axb3/pic_160.png)">
+                                    <div class="weui-uploader__file-content">50%</div>
+                                </li>
+                            </ul>
+                            <div class="weui-uploader__input-box">
+                                <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="weui-cells__tips">
+            <p>(最多6张,建议上传患者治疗中的照片,病前病后生活照对比,诊断证明等照片,提高可信度)</p>
+        </div>
+        <label for="weuiAgree" class="weui-agree">
+            <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
+            <span class="weui-agree__text">
+                已阅读并同意<a href="javascript:void(0);">《爱心帮众筹项目发起条款》</a>及<a href="javascript:void(0);">《发起人承诺书》</a>
+            </span>
+        </label>
+        <div class="weui-btn-area">
+            <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">提交</a>
+        </div>
+
+
+
+    </div>
+
+    <% include _footer.html %>
+</body>
+
+</html>

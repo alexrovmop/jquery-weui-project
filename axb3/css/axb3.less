@@ -123,9 +123,9 @@ footer {
     }
 }
 
-.toolbar .picker-button { color: @fontgreen;}
+.toolbar .picker-button,.weui-vcode-btn { color: @fontgreen;}
 
-.weui-cells {
+.weui-cells,.weui-vcode-btn {
     font-size: 16px;
 }
 
@@ -135,6 +135,10 @@ footer {
 
 .weui-btn-area {
     margin: 10px 15px 15px;
+}
+
+.weui-btn {
+    font-size: 16px;
 }
 
 .weui-btn_primary {
@@ -181,11 +185,11 @@ footer {
     }
 }
 .axb3-footer {
-    position: fixed; z-index: 1002; bottom: 0; left: 0; right: 0; height: 42px;
+    position: fixed; z-index: 1002; bottom: 0; left: 0; right: 0; height: 40px;
     .footer-btn {
         .display-flex;
         .weui-btn {
-            margin-top: 0; border-radius: 0; font-size: 16px; line-height: 44px;
+            margin-top: 0; border-radius: 0; font-size: 16px;
             &:after {
                 border-radius: 0; border-left-width: 0; border-bottom-width: 0;
             }
@@ -198,12 +202,12 @@ footer {
 }
 
 .axb3-container {
-    position: relative; z-index: 0; overflow-y: auto; width: 100%; overflow-x: hidden;
+    position: relative; z-index: 0; overflow-y: auto; width: 100%; height: 100%; box-sizing: border-box; overflow-x: hidden;
     &.with-hd {
         border-top: #efefef solid 42px;
     }
     &.with-ft {
-        border-bottom: #efefef solid 42px;
+        border-bottom: #efefef solid 40px;
     }
     &.with-filter {
         border-top: #efefef solid 82px;
@@ -323,11 +327,7 @@ footer {
             .weui-flex {
                 background: #fff; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); margin-top: -24px; border-radius: 3px;
                 .weui-flex__item {
-<<<<<<< HEAD
-                    text-align: center; padding: 10px;
-=======
                     text-align: center; padding: 15px 10px 10px;
->>>>>>> 38e479ce2be658fe32692d1f38b09a135d70bf74
                     .item-icon {
                         display: inline-block; width: 38px; height: 38px; vertical-align: middle;
                         .axbicon {
@@ -400,7 +400,7 @@ footer {
                 margin-bottom: 15px;
                 a.item {
                     position: relative; display: block; padding: 10px 15px; .txt-line-one; line-height: 24px; font-size: 16px; color: #666;
-                    .axbicon { color: @bgblue; margin-right: 10px;}
+                    .axbicon { color: @bggreen; margin-right: 10px;}
                     &:active { background: #f6f6f6;}
                     &:after { .b-line; border-bottom-color: #eee;}
                 }
@@ -409,3 +409,41 @@ footer {
     }
 }
 
+/* 登录 */
+.axb3-login {
+    height: 100%; background: #f0f2f5;
+    & > .hd {
+        .uc-name {
+            background: center center no-repeat; background-size: cover; padding: 5% 15px; overflow: hidden;
+            .avatar-border { margin: 0 auto; width: 80px; height: 80px; border-radius: 80px; border: rgba(0, 0, 0, 0.03) solid 5px; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+                .avatar {
+                    width: 80px; height: 80px; border-radius: 80px; background: center center no-repeat; background-size: cover;
+                }
+            }
+            .name {
+                margin-top: 5px; font-size: 16px; color: @fontgreen; line-height: 30px; text-align: center;
+                .info { font-size: 13px; line-height: 18px; color: #999;}
+            }
+            
+        }
+    }
+    & > .bd {
+    }
+}
+
+/* 表单 */
+.axb3-form {
+    color: #555; font-size: 15px;
+    .weui-cell {
+        .weui-cell__hd {
+            .weui-label { width: 85px;}
+        }
+        .weui-cell__ft.unit { font-size: 15px; padding-left: 4px; color: #555;}
+    }
+    .weui-uploader {
+        .example-photo {
+            width: 33%; text-align: center;
+            img { width: 100%; vertical-align: middle;}
+        }
+    }
+}

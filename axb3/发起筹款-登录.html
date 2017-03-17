@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>爱心帮-发起筹款-登录</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    <div class="axb3-header">
+        <div class="axb3-topbar">
+            <div class="axb3-logo"><img src="/images/axb3/logo.png" alt=""></div>
+            <h1 class="axb3-title">爱心帮导航</h1>
+            <div class="axb3-menu"><span class="axbicon axbicon-menu"></span></div>
+        </div>
+        <div class="weui-flex axb3-top-nav" style="display: none;">
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-news"></span></div>
+                <div class="top-nav__label">最新动态</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-d8"></span></div>
+                <div class="top-nav__label">公益项目</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-postion"></span></div>
+                <div class="top-nav__label">公益网点</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-case"></span></div>
+                <div class="top-nav__label">个案援助</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-fund"></span></div>
+                <div class="top-nav__label">发起筹款</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="weui-mask"></div>
+
+    <div class="axb3-container with-hd">
+        <div class="axb3-login">
+            <div class="hd">
+                <div class="uc-name">
+                    <div class="avatar-border"><div class="avatar" style="background-image: url('/images/axb3/eduardo.jpg');"></div></div>
+                    <div class="name">
+                        <p>清风徐来</p>
+                        <div class="info">只需验证手机号即可完成注册</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="bd">
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell weui-cell_select weui-cell_select-after">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">国家区号</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <select class="weui-select" name="select2">
+                                <option value="1">+86</option>
+                                <option value="2">+80</option>
+                                <option value="3">+84</option>
+                                <option value="4">+87</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_vcode">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">手机号</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="tel" placeholder="请输入手机号">
+                        </div>
+                        <div class="weui-cell__ft">
+                            <button class="weui-vcode-btn">获取验证码</button>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <label class="weui-label">验证码</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" placeholder="请输入验证码">
+                        </div>
+                    </div>
+                </div>
+                <label for="weuiAgree" class="weui-agree">
+                    <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
+                    <span class="weui-agree__text">
+                        已阅读并同意<a href="javascript:void(0);">《爱心帮导航用户协议》</a>
+                    </span>
+                </label>
+                <div class="weui-btn-area">
+                    <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">登录</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <% include _footer.html %>
+</body>
+
+</html>

@@ -207,5 +207,5 @@ gulp.task('server', function () {
     });
 });
 
-gulp.task("default", ['watch', 'server']);
-gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'qlxejs']);
+gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'qlxejs', 'watch', 'server']);
+/*gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'qlxejs']);*/
