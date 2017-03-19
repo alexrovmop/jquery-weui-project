@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>我要报名</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+
+    <div class="qlx-header">
+        <div class="qlx-topbar">
+            <div class="qlx-back"><span class="qlxicon qlxicon-back"></span></div>
+            <div class="qlx-title">我要报名</div>
+            <!-- <div class="qlx-item"><span class="qlxicon qlxicon-heart"></span></div> -->
+            <div class="qlx-item"><span class="qlxicon qlxicon-fav"></span></div>
+            <div class="qlx-item"><span class="qlxicon qlxicon-share"></span></div>
+        </div>
+    </div>
+
+    <div class="qlx-footer">
+        <div class="qlx-nav">
+            <div class="mypanel">
+                <span class="qlxicon qlxicon-my"></span>
+            </div>
+            <a href="#" class="item">咨询客服</a>
+            <a href="#" class="item">一起玩</a>
+            <a href="#" class="item active">我要报名</a>
+        </div>
+    </div>
+    <div class="qlx-mypanel">
+        <div class="hd" style="background-image: url('/images/qlx/my_bg.jpg');">
+            <div class="myname">
+                <div class="avatar" style="background-image: url('/images/qlx/eduardo.jpg');"></div>
+                <div class="name">清风徐来</div>
+            </div>
+            <div class="myinfo">
+                <div class="item">
+                    经验值<p>9999</p>
+                </div>
+                <div class="item">
+                    分享金<p>999999</p>
+                </div>
+                <div class="item">
+                    级别<p>99</p>
+                </div>
+            </div>
+        </div>
+        <div class="bd">
+            <div class="mypanel-nav">
+                <div class="items">
+                    <a href="#" class="item"><span class="qlxicon qlxicon-order"></span>订单</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-fav"></span>收藏</a>
+                </div>
+                <div class="items">
+                    <a href="#" class="item"><span class="qlxicon qlxicon-card"></span>卡券箱</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-friend"></span>玩友</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-together"></span>一起玩</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-home"></span>主页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-mask"></div>
+
+
+    <div class="qlx-container with-hd with-ft">
+        <div class="qlx-apply">
+            <div class="weui-cells__title">岛主归来-5天4晚-(3+1天游)【三亚往返】天天发班</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label for="" class="weui-label">日期</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="date" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="weui-cells__tips">当日仅剩 <span class="fontorange">0</span> 个名额</div>
+
+            <div class="weui-cells">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <p>成人</p><span>￥0.00/人</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <div class="apply-quantity">
+                            <input id="min2" name="" class="minbtn" type="button" value="-" />
+                            <input id="text_box2" name="" class="txtbox" type="text" value="1" style=" width:30px; text-align:center; border:1px solid #ccc;" />
+                            <input id="add2" name="" class="addbtn" type="button" value="+" />
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <p>儿童</p><span>￥0.00/人</span>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <div class="apply-quantity">
+                            <input id="min2" name="" class="minbtn" type="button" value="-" />
+                            <input id="text_box2" name="" class="txtbox" type="text" value="1" style=" width:30px; text-align:center; border:1px solid #ccc;" />
+                            <input id="add2" name="" class="addbtn" type="button" value="+" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell weui-cell_switch">
+                    <div class="weui-cell__bd">优惠<span>分享金可抵扣￥0.00</span></div>
+                    <div class="weui-cell__ft">
+                        <input class="weui-switch" type="checkbox">
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell weui-cell_switch">
+                    <div class="weui-cell__bd">保险<span>￥0.00/人</span></div>
+                    <div class="weui-cell__ft">
+                        <input class="weui-switch" type="checkbox">
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">联系人</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入联系人姓名">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">手机号</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="tel" placeholder="请输入手机号">
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_vcode">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">验证码</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" placeholder="请输入验证码">
+                    </div>
+                    <div class="weui-cell__ft">
+                        <img class="weui-vcode-img" src="/images/qlx/vcode.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell weui-cell_switch">
+                    <div class="weui-cell__bd">游客信息</div>
+                    <div class="weui-cell__ft">
+                        <input class="weui-switch" type="checkbox">
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells__title">第一位游客</div>
+            <div class="weui-cells weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">姓名</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入姓名">
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_select-after">
+                    <div class="weui-cell__hd">
+                        <label for="" class="weui-label">证件类型</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select class="weui-select" name="select2">
+                            <option value="1">身份证</option>
+                            <option value="2">军官证</option>
+                            <option value="3">护照</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">证件号码</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" placeholder="请输入证件号码">
+                    </div>
+                </div>
+                <a href="javascript:void(0);" class="weui-cell weui-cell_link">
+                    <div class="weui-cell__bd">添加更多</div>
+                </a>
+            </div>
+
+            <div class="weui-cells weui-cells_radio order-pay">
+                <div class="weui-cell">
+                    <div class="weui-cell__bd">
+                        <p>订单金额</p>
+                    </div>
+                    <div class="weui-cell__ft"><span class="fontorange">￥1234.00</span></div>
+                </div>
+                <label class="weui-cell weui-check__label" for="x14">
+                    <div class="weui-cell__hd"><img src="/images/qlx/wechat.jpg" alt="" style="width:24px;margin-right:5px;display:block"></div>
+                    <div class="weui-cell__bd">
+                        <p>微信支付</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1" id="x14">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label" for="x15">
+                    <div class="weui-cell__hd"><img src="/images/qlx/alipay.png" alt="" style="width:24px;margin-right:5px;display:block"></div>
+                    <div class="weui-cell__bd">
+                        <p>支付宝支付</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x15" checked="checked">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label" for="x11">
+                    <div class="weui-cell__bd">
+                        <p>在线支付</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x11" checked="checked">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label" for="x12">
+                    <div class="weui-cell__bd">
+                        <p>定金支付</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x12" checked="checked">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label" for="x13">
+                    <div class="weui-cell__bd">
+                        <p>线下支付</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x13" checked="checked">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+            </div>
+
+            <div class="weui-btn-area">
+                <a class="weui-btn weui-btn_primary" href="javascript:">提交订单</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <% include _footer.html %>
+    <script type="text/javascript">
+    $('.mypanel').click(function(){
+        $('.qlx-mypanel').animate({left:0},200);
+        $('.weui-mask').addClass("weui-mask--visible");
+    });
+    $('.weui-mask').click(function(){
+        $('.qlx-mypanel').animate({left:-$('.qlx-mypanel').width()},200);
+        $('.weui-mask').removeClass("weui-mask--visible");
+    });
+    </script>
+</body>
+
+</html>

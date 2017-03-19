@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>分享一起玩</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+
+    <div class="qlx-header">
+        <div class="qlx-topbar">
+            <div class="qlx-back"><span class="qlxicon qlxicon-back"></span></div>
+            <div class="qlx-title">邀人一起玩</div>
+            <!-- <div class="qlx-item"><span class="qlxicon qlxicon-heart"></span></div> -->
+            <div class="qlx-item"><span class="qlxicon qlxicon-fav"></span></div>
+            <div class="qlx-item"><span class="qlxicon qlxicon-share"></span></div>
+        </div>
+    </div>
+
+    <div class="qlx-footer">
+        <div class="qlx-nav">
+            <div class="mypanel">
+                <span class="qlxicon qlxicon-my"></span>
+            </div>
+            <a href="#" class="item">咨询客服</a>
+            <a href="#" class="item active">一起玩</a>
+            <a href="#" class="item">我要报名</a>
+        </div>
+    </div>
+    <div class="qlx-mypanel">
+        <div class="hd" style="background-image: url('/images/qlx/my_bg.jpg');">
+            <div class="myname">
+                <div class="avatar" style="background-image: url('/images/qlx/eduardo.jpg');"></div>
+                <div class="name">清风徐来</div>
+            </div>
+            <div class="myinfo">
+                <div class="item">
+                    经验值<p>9999</p>
+                </div>
+                <div class="item">
+                    分享金<p>999999</p>
+                </div>
+                <div class="item">
+                    级别<p>99</p>
+                </div>
+            </div>
+        </div>
+        <div class="bd">
+            <div class="mypanel-nav">
+                <div class="items">
+                    <a href="#" class="item"><span class="qlxicon qlxicon-order"></span>订单</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-fav"></span>收藏</a>
+                </div>
+                <div class="items">
+                    <a href="#" class="item"><span class="qlxicon qlxicon-card"></span>卡券箱</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-friend"></span>玩友</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-together"></span>一起玩</a>
+                    <a href="#" class="item"><span class="qlxicon qlxicon-home"></span>主页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui-mask"></div>
+
+
+    <div class="qlx-container with-hd with-ft">
+        <div class="product-share">
+            <div class="item">
+                <div class="share-hd">
+                    <img src="/images/qlx/01.jpg" alt="" class="share-img">
+                </div>
+                <div class="share-bd">
+                    <div class="share-info">
+                        <p>开团编号：<span>KT10012</span></p>
+                        <p>开团人：<span>清风徐来</span></p>
+                        <p>开团截至日期：<span>2017年03月10日</span></p>
+                    </div>
+                </div>
+                <div class="share-ft">
+                    <div class="share-count">
+                        <div class="count-t">剩余名额</div>
+                        <div class="count-sum"><span>5</span>人</div>
+                    </div>
+                    <div class="share-count">
+                        <div class="count-t">已参团</div>
+                        <div class="count-sum"><span>3</span>人</div>
+                    </div>
+                    <div class="share-btn">
+                        <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary">分享一起玩</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <% include _footer.html %>
+    <script type="text/javascript">
+    $('.mypanel').click(function(){
+        $('.qlx-mypanel').animate({left:0},200);
+        $('.weui-mask').addClass("weui-mask--visible");
+    });
+    $('.weui-mask').click(function(){
+        $('.qlx-mypanel').animate({left:-$('.qlx-mypanel').width()},200);
+        $('.weui-mask').removeClass("weui-mask--visible");
+    });
+    </script>
+</body>
+
+</html>
