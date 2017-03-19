@@ -13,6 +13,8 @@
 @green-d: #80b448;
 @orange: #fc6e51;
 @orange-d: #e05034;
+@gray: #f0f2f5;
+@gray-d: #e3e5e8;
 
 @import "_icon.less";
 
@@ -246,7 +248,7 @@ footer {
         }
     }
     .qlx-filter {
-        .display-flex; height: 40px; background: #fff; border-bottom: #e4e4e4 solid 3px; font-size: 15px;
+        .display-flex; height: 40px; background: #fff; border-bottom: @gray-d solid 3px; font-size: 15px;
         .item {
             .flex-1; text-align: center; line-height: 40px; color: #666;
             &:after,&.down:after { content: ""; .setArrow(down,5px,#999,1px); margin-left: 4px;}
@@ -267,7 +269,7 @@ footer {
 .qlx-footer {
     position: fixed; z-index: 2; bottom: 0; left: 0; right: 0; box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
     .qlx-nav {
-        .display-flex; height: 44px; background: #f0f2f5;
+        .display-flex; height: 44px; background: @gray;
         .mypanel {
             .qlxicon {
                 display: block; top: 0; font-size: 24px; color: #fff; background: @cyan; width: 44px; height: 44px; line-height: 44px; text-align: center;
@@ -275,7 +277,7 @@ footer {
         }
         .item {
             .flex-1; text-align: center; line-height: 44px; color: #787878;
-            &:active { background: #e3e5e8;}
+            &:active { background: @gray-d;}
             &.active { color: @cyan; background: #fff;}
         }
     }

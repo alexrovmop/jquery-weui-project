@@ -9,6 +9,8 @@
 @fontgreen: #3bd596;
 @fontgreen-l: #7adbb0;
 @fontblue: #438bc3;
+@gray: #f0f2f5;
+@gray-d: #e3e5e8;
 @import "_icon.less";
 
 body, html { height: 100%; -webkit-tap-highlight-color: transparent;}
@@ -111,7 +113,7 @@ footer {
 .weui-article {
     color: #555;
     & > h1 {
-        position: relative; font-size: 17px; color: #444; margin-bottom: 20px; line-height: 24px; padding: 5px 0 5px 10px; border-bottom: #eee solid 1px; margin-top: -15px;
+        position: relative; font-size: 17px; color: #444; margin-bottom: 20px; line-height: 28px; padding: 5px 0 5px 10px; border-bottom: #eee solid 1px; margin-top: -15px;
         &:before { .l-line; border-width: 2px; border-color: @fontgreen; top: 11px; bottom: 11px;}
     }
     a { color: @fontgreen;}
@@ -143,6 +145,10 @@ footer {
 
 .weui-btn_primary {
     background-color: @bggreen;
+}
+
+.weui-btn_default {
+    color: #444;
 }
 
 .weui-btn_primary:not(.weui-btn_disabled):active {
@@ -204,16 +210,19 @@ footer {
 .axb3-container {
     position: relative; z-index: 0; overflow-y: auto; width: 100%; height: 100%; box-sizing: border-box; overflow-x: hidden;
     &.with-hd {
-        border-top: #efefef solid 42px;
+        border-top: transparent solid 42px;
+    }
+    &.with-search {
+        border-top: transparent solid 92px;
     }
     &.with-ft {
-        border-bottom: #efefef solid 40px;
+        border-bottom: transparent solid 40px;
     }
     &.with-filter {
-        border-top: #efefef solid 82px;
+        border-top: transparent solid 82px;
     }
     &.with-only-filter {
-        border-top: #efefef solid 40px;
+        border-top: transparent solid 40px;
     }
 }
 
@@ -272,7 +281,7 @@ footer {
 }
 
 .project-count {
-    position: fixed; left: 15px; right: 15px; bottom: 15px; background: rgba(255, 255, 255, 0.25); border-radius: 10px; padding: 15px 10px; color: #fff;
+    position: absolute; left: 15px; right: 15px; bottom: 15px; background: rgba(255, 255, 255, 0.25); border-radius: 10px; padding: 15px 10px; color: #fff;
     .hd {
         text-align: center; font-size: 18px; line-height: 24px; margin-bottom: 10px; padding: 0; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
     }
@@ -291,11 +300,15 @@ footer {
 
 .project-list {
     margin-top: 0;
+    .weui-media-box_appmsg {
+        .weui-media-box__thumb { border-radius: 4px;}
+        .weui-media-box__title { color: #444;}
+    }
 }
 
 /*项目网点 选择城市*/
 .drugstore-city {
-    margin-top: 0; padding: 8px 10px; background: #efefef; font-size: 14px; color: #666;
+    margin-top: 0; padding: 8px 10px; background: @gray-d; font-size: 14px; color: #666;
     .weui-cell {
         padding: 8px; background: #fff; border-radius: 5px;
     }
