@@ -6,7 +6,7 @@
 @bgyellow : #ffba00;
 @bgred: #ed5565;
 @fontred : #cf3c4b;
-@fontgreen: #3bd596;
+@fontgreen: #31c78a;
 @fontgreen-l: #7adbb0;
 @fontblue: #438bc3;
 @gray: #f0f2f5;
@@ -132,7 +132,7 @@ footer {
 }
 
 .weui-cells__tips {
-    a { color: @fontorange; text-decoration: underline;}
+    a { color: @fontblue; text-decoration: underline;}
 }
 
 .weui-btn-area {
@@ -142,6 +142,7 @@ footer {
 .weui-btn {
     font-size: 16px;
 }
+.weui-btn_mini { font-size: 13px;}
 
 .weui-btn_primary {
     background-color: @bggreen;
@@ -154,6 +155,10 @@ footer {
 .weui-btn_primary:not(.weui-btn_disabled):active {
     color: rgba(255, 255, 255, 0.8);
     background-color: darken(@bggreen, 10%);
+}
+
+.weui-progress__inner-bar {
+    background-color: @bggreen;
 }
 
 /* 头部、底部以及页面包含头部和底部时yb-container的样式 */
@@ -202,13 +207,15 @@ footer {
             &:last-child:after {
                 border-right-width: 0;
             }
-            .axbicon { color: @fontgreen; font-size: 20px; }
+            &.weui-btn_default {
+                .axbicon { color: @fontgreen; font-size: 20px; }
+            }
         }
     }
 }
 
 .axb3-container {
-    position: relative; z-index: 0; overflow-y: auto; width: 100%; height: 100%; box-sizing: border-box; overflow-x: hidden;
+    position: relative; z-index: 0; overflow-y: auto; width: 100%; box-sizing: border-box; overflow-x: hidden;
     &.with-hd {
         border-top: transparent solid 42px;
     }
@@ -308,7 +315,7 @@ footer {
 
 /*项目网点 选择城市*/
 .drugstore-city {
-    margin-top: 0; padding: 8px 10px; background: @gray-d; font-size: 14px; color: #666;
+    position: fixed; top: 42px; left: 0; right: 0; margin-top: 0; padding: 8px 10px; background: @gray-d; font-size: 14px; color: #666; z-index: 1000;
     .weui-cell {
         padding: 8px; background: #fff; border-radius: 5px;
     }
@@ -444,6 +451,17 @@ footer {
     }
 }
 
+.axb3-cells__title {
+    .display-flex; line-height: 28px;
+    .title-bd {
+        .flex-1; font-weight: normal; font-size: 17px; color: @fontgreen;
+    }
+    .title-ft {
+        position: relative; padding: 0 15px 0 0; color: #666;
+        &:after { .arrow-r; }
+    }
+}
+
 /* 表单 */
 .axb3-form {
     color: #555; font-size: 15px;
@@ -459,4 +477,267 @@ footer {
             img { width: 100%; vertical-align: middle;}
         }
     }
+}
+
+/* 个案援助 */
+.case-list {
+    height: 100%; background: @gray-d; overflow: auto;
+    .case-item {
+        background: #fff; border-radius: 6px; margin: 10px; overflow: hidden;
+        .case-hd {
+            .display-flex; padding: 10px 10px 0; line-height: 26px; align-items: center;
+            .c-logo {
+                margin-right: 5px;
+                img { width: 26px; height: 26px; vertical-align: middle;}
+            }
+            .c-title { font-size: 15px; color: #787878; .flex-1;}
+            .c-btn {
+                .weui-btn_mini {
+                    line-height: 26px; vertical-align: middle; margin: 0; top: 0;
+                }
+            }
+        }
+        .case-bd {
+            display: block; padding: 10px; color: #444;
+            &:active { background: @gray;}
+            .case-img {
+                overflow: hidden;
+                .item {
+                    background: center center no-repeat; background-size: cover; float: left; width: 32%; margin: 0 0.66%; padding-top: 32%; height: 0; border-radius: 3px;
+                }
+            }
+            .case-title { font-size: 16px; padding: 10px 0; line-height: 20px; .txt-line-one;}
+            .case-progress {
+                margin-bottom: 10px;
+                .weui-progress__bar {
+                    height: 4px; border-radius: 2px; overflow: hidden;
+                    .weui-progress__inner-bar {
+                        background: @bgorange;
+                    }
+                }
+            }
+            .case-count {
+                .display-flex; line-height: 20px; font-size: 14px;
+                .item {
+                    position: relative; .flex-1; color: #787878; text-align: center;
+                    &:before { .l-line; top: 20%; bottom: 20%; border-color: #eee;}
+                    &:first-child:before { display: none;}
+                    p {
+                        font-size: 16px; color: @bgorange;
+                        span { font-size: 12px; margin-left: 3px;}
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* 个案详情 */
+.case-detail {
+    background: @gray;
+    .hd {
+        .detail-banner {
+            position: relative; min-height: 80px; z-index: 1;
+            .detail-img {
+                vertical-align: middle; width: 100%; height: auto;
+            }
+            .detail-name {
+                background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+                background: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(0, 0, 0, 0)', endColorstr='rgba(0, 0, 0, 0.5)');
+                background:-o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+                // background: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+                position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 15px 8px; color: #fff; font-size: 16px; line-height: 24px; vertical-align: bottom; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+                p { font-size: 14px;}
+            }
+        }
+        .detail-count {
+            position: relative; padding:10px; background: #fff;
+            &:after { .b-line;}
+            .case-progress {
+                margin-bottom: 10px;
+                .weui-progress__bar {
+                    height: 4px; border-radius: 2px; overflow: hidden;
+                    .weui-progress__inner-bar {
+                        background: @bgorange;
+                    }
+                }
+            }
+            .case-count {
+                .display-flex; line-height: 20px; font-size: 14px;
+                .item {
+                    position: relative; .flex-1; color: #787878; padding: 0 10px;
+                    &:before { .l-line; top: 20%; bottom: 20%; border-color: #eee;}
+                    &:first-child:before { display: none;}
+                    p {
+                        font-size: 16px; color: @bgorange;
+                        span { font-size: 12px; margin-left: 3px;}
+                    }
+                }
+            }
+        }
+    }
+    .bd {
+        position: relative; background: #fff; margin-top: 10px;
+        &:before { .t-line;}
+        .detail-cont {
+            padding: 5px 15px 20px;
+            & > h1 {
+                margin-top: 0; margin-bottom: 15px;
+                .fr {
+                    white-space: nowrap; float: right; font-size: 14px; color: @bgorange;
+                }
+            }
+        }
+    }
+}
+
+/* 评论 */
+.axb3-discuss {
+    background: #fff; position: relative;
+    .discuss-panel {
+        position: relative; padding: 10px 0;
+        &:after {
+            .b-line; left: 10px; right: 10px;
+
+        }
+        &:last-child:after { display: none;}
+        .discuss-user {
+            .display-flex; align-items: center;
+            .user-avatar {
+                img { height: 36px; width: 36px; border-radius: 36px; margin-right: 12px;}
+            }
+            .user-name {
+                .flex-1; color: @fontblue; font-size: 15px;
+            }
+            .user-point {
+                white-space: nowrap; color: #787878; font-size: 13px;
+                span.num { color: @fontorange; font-size: 15px; margin: 0 4px;}
+            }
+        }
+        .discuss-body {
+            margin-left: 48px; font-size: 15px; color: #444;
+            .discuss-cont {
+                line-height: 18px;
+            }
+            .discuss-date {
+                position: relative; .display-flex; padding: 8px 0 0; color: #787878; white-space: nowrap;
+                .date-bd {
+                    .flex-1;
+                }
+                .date-ft {
+                    text-align: right; font-size: 13px;
+                }
+            }
+            .discuss-reply {
+                padding: 8px 0;
+                .reply-hd {
+                    color: @fontblue; line-height: 18px;
+                    .ybzy-icon { vertical-align: middle; margin-right: 5px;}
+                }
+                .reply-form {
+                    .list-inset {
+                        margin: 0;
+                        .item-input { padding: 6px 8px 5px; margin-bottom: 5px;}
+                        .reply-btn {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.axb3-status-list {
+    margin-top: 0; margin-bottom: 20px;
+    &:before { display: none;}
+    .weui-media-box {
+        padding: 10px 0;
+        &:first-child { padding-top: 0;}
+        .weui-media-box__hd {
+            width: 32px; height: 32px; line-height: 32px;
+            .weui-icon-success,.weui-icon-warn {
+                width: 32px; height: 32px; font-size: 32px;
+                &:before { margin: 0;}
+            }
+            .weui-icon-success { color: @bggreen;}
+            .weui-icon-warn { color: @bgorange;}
+        }
+        .weui-media-box__bd {
+            .weui-media-box__title { font-size: 15px;}
+            p { margin-bottom: 0;}
+            a { text-decoration: underline;}
+        }
+        &.status-success {
+            .weui-media-box__bd {
+                .weui-media-box__desc {
+                    color: @fontgreen;
+                }
+            }
+        }
+        &.status-warn {
+            .weui-media-box__bd {
+                .weui-media-box__desc {
+                    color: @fontorange;
+                }
+            }
+        }
+    }
+}
+
+/* 展开更多 */
+[id*="cnt-"],[id^=cnt-] {
+    position: relative; height: 300px; overflow: hidden;
+}
+.more-btn {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 1)));
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, 0)', endColorstr='rgba(255, 255, 255, 1)');
+    background:-o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    // background: linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+    position: absolute; left: 0; right: 0; bottom: 0; text-align: center; padding: 50px 10px 15px; color: @fontgreen; text-shadow:0 1px 0 #fff;
+    &:after { .arrow-b; bottom: 8px; top: auto; right: 50%; margin-right: -3px; border-color: @fontgreen;}
+}
+
+/* 二维码 */
+.axb-qr {
+    display: table; margin: 10px auto; width: 92%; background-color: #fff; border: @bggreen dotted 2px; border-radius: 10px; box-sizing: border-box; padding: 5px;
+    .axb-qr-hd,.axb-qr-bd { display: table-cell; vertical-align: middle;}
+    .axb-qr-hd {
+        width: 40%;
+        .qr-img { width: 100%; vertical-align: middle;}
+    }
+    .axb-qr-bd {
+        font-size: 13px; color: #666; line-height: 16px;
+        p { color: @fontgreen; font-size: 17px; line-height: 20px;}
+    }
+}
+
+/* 捐款成功 */
+.axb3-tips .axb3-tips-box {
+  position: fixed; z-index: 1014; width: 100%;
+  .tips-share { width: 100%;}
+}
+
+.axb3-donation-success {
+    padding-top: 45%; background: url('/images/axb3/successbg1.png') center top no-repeat; background-color: #d4efd6; background-size: 100% auto; height: 100%; box-sizing: border-box;
+    .hd { padding: 0;}
+    .donation-success-box {
+    .donation-success-title {
+        position: relative; padding-top: 16%; background: url('/images/axb3/successbg2.png') center top no-repeat; background-size: 100% 100%; text-align: center; color: #fff;
+        h3 { position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 6% 15% 1%; font-size: 2.4vh; font-weight: normal; line-height: 2.4vh;}
+    }
+    .donation-success-info {
+        padding: 20px 40px; background: none; text-align: center; color: #326ea1; min-height: auto;
+    }
+    .donation-success-share {
+        padding: 10px 15px; text-align: center; font-size: 14px; color:#ff7f0d; line-height: 1.5;
+    }
+    .donation-success-link {
+        text-align: center; padding: 10px;
+        a { display: inline-block; margin: 0 5px; border: @fontorange solid 1px; color: @fontorange; border-radius: 10px; padding: 3px 8px; font-size: 14px;}
+    }
+  }
 }

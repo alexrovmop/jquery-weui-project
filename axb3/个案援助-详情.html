@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>爱心帮-个案援助-详情</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    <div class="axb3-header">
+        <div class="axb3-topbar">
+            <div class="axb3-logo"><img src="/images/axb3/logo.png" alt=""></div>
+            <h1 class="axb3-title">爱心帮导航</h1>
+            <div class="axb3-menu"><span class="axbicon axbicon-menu"></span></div>
+        </div>
+        <div class="weui-flex axb3-top-nav" style="display: none;">
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-news"></span></div>
+                <div class="top-nav__label">最新动态</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-d8"></span></div>
+                <div class="top-nav__label">公益项目</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-postion"></span></div>
+                <div class="top-nav__label">公益网点</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-case"></span></div>
+                <div class="top-nav__label">个案援助</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="top-nav__icon"><span class="axbicon axbicon-fund"></span></div>
+                <div class="top-nav__label">发起筹款</div>
+            </a>
+        </div>
+    </div>
+    <div class="weui-mask"></div>
+
+    <div class="axb3-footer">
+        <div class="footer-btn">
+            <a href="javascript:;" class="weui-btn weui-btn_default"><span class="axbicon axbicon-share"></span> 转发</a>
+            <a href="javascript:;" class="weui-btn weui-btn_default flex-1 open-popup" data-target="#half"><span class="axbicon axbicon-heart"></span> 帮助ta</a>
+        </div>
+    </div>
+    <div class="weui-mask"></div>
+    <div id="half" class="weui-popup__container popup-bottom with-ft">
+        <div class="weui-popup__overlay"></div>
+        <div class="weui-popup__modal">
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <a href="javascript:;" class="picker-button close-popup">关闭</a>
+                    <h1 class="title">帮助TA</h1>
+                </div>
+            </div>
+            <div class="modal-content axb3-modal-content">
+                <div class="weui-cells__title">您的爱心留言</div>
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <textarea class="weui-textarea" placeholder="请留下您的爱心留言" rows="3"></textarea>
+                            <div class="weui-textarea-counter"><span>0</span>/200</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-cells__title">请输入捐款金额</div>
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <div class="axb3-actions-radio">
+                                <div class="item">
+                                    <input type="radio" class="actions-radio" name="radio1" id="q11"/>
+                                    <label class="actions-radio-label" for="q11" >20元</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" class="actions-radio" name="radio1" id="q12"/>
+                                    <label class="actions-radio-label" for="q12">50元</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" class="actions-radio" name="radio1" id="q13"/>
+                                    <label class="actions-radio-label" for="q13">100元</label>
+                                </div>
+                                <div class="item">
+                                    <input type="radio" class="actions-radio" name="radio1" id="q14"/>
+                                    <label class="actions-radio-label" for="q14">200元</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" type="number" pattern="[0-9]*" placeholder="其他金额">
+                        </div>
+                    </div>
+                </div>
+                <label for="weuiAgree" class="weui-agree">
+                    <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
+                    <span class="weui-agree__text">
+                        已阅读并同意<a href="javascript:void(0);">《爱心帮导航用户协议》</a>
+                    </span>
+                </label>
+                <div class="weui-cells__tips"><a href="#">大额转账流程及支付说明</a></div>
+                <div class="weui-btn-area">
+                    <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="axb3-container with-hd with-ft">
+        <div class="case-detail">
+            <div class="hd">
+                <div class="detail-banner">
+                    <img src="/images/axb3/banner3.jpg" alt="" class="detail-img">
+                    <div class="detail-name">风雨飘摇的家庭,需要您的援助</div>
+                </div>
+                <div class="detail-count">
+                    <div class="weui-progress case-progress">
+                        <div class="weui-progress__bar">
+                            <div class="weui-progress__inner-bar js_progress" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                    <div class="case-count">
+                        <div class="item">
+                            目标<p>50000<span>元</span></p>
+                        </div>
+                        <div class="item">
+                            已筹<p>17451<span>元</span></p>
+                        </div>
+                        <div class="item">
+                            支持<p>984<span>次</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bd">
+                <article class="weui-article detail-cont">
+                    <h1>项目详情</h1>
+                    <section>
+                        <section id="cnt-01">
+                            <p><strong>项目目的</strong></p>
+                            <p>为了帮助确诊为非小细胞肺癌的患者得到及时有效的治疗，减轻患者经济负担，延长患者生命</p>
+                            <p>&nbsp;</p>
+                            <p><strong>医学条件</strong></p>
+                            <ul>
+                                <li>患者必须是经病理学或细胞学证实的符合吉非替尼片适应症的原发性IIIB或者IV期的非小细胞肺癌；</li>
+                                <li>患者在吉非替尼片治疗之前必须经影像学检查，确认存在病灶；</li>
+                                <li>一线适应症患者，EGFR检测结果必须为阳性的(组织标本或血液标本检测均可接受）；</li>
+                                <li>二线适应症患者服用吉非替尼片前必须接受过至少一次抗肿瘤的化学治疗；</li>
+                                <li>准备申请本项目的患者，服用吉非替尼片期间不得再进行其他抗肿瘤的化学治疗；</li>
+                                <li>患者必须没有其他与吉非替尼片治疗相抵触的临床状况；</li>
+                                <li>患者体力状态KPS&gt;60分；</li>
+                                <li>有足够的临床证据证实患者能够从吉非替尼片治疗中获益且无严重不良反应。（获益是指肿瘤病灶按照RECIST评价标准没有进展；无严重不良反应是指未发生因吉非替尼片治疗引起的不可逆转或者不可耐受的伤害)"。</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                            <p><strong>其他条件</strong></p>
+                            <ul>
+                                <li>本项目援助对象为持有中国人民共和国居民身份证/军官证的患者。</li>
+                                <li>符合本项目规定的低保及低收入患者。</li>
+                                <li>患者已使用的吉非替尼片必须是经国家药监局批准的药品。</li>
+                            </ul>
+                            <div id="open-01" class="more-btn">展开全文</div>
+                        </section>
+                    </section>
+
+                    <h1>项目发起人</h1>
+                    <section>
+                        <section>
+                            <p><img src="/images/axb3/cphcf.png" alt="" style="width: 24px; height: 24px; vertical-align: middle;"> 中国初级卫生保健基金会</p>
+                        </section>
+                    </section>
+
+                    <h1>发起人承诺书</h1>
+                    <section>
+                        <section>
+                            <p>这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,这里是承诺书内容,</p>
+                        </section>
+                    </section>
+
+                    <h1>
+                        资料证明
+                        <div class="fr">已审核</div>
+                    </h1>
+                    <div class="weui-panel weui-panel_access axb3-status-list">
+                        <div class="weui-panel__bd">
+                            <div class="weui-media-box weui-media-box_appmsg status-success">
+                                <div class="weui-media-box__hd">
+                                    <i class="weui-icon-success"></i>
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">受助人（患者）：陈xx</h4>
+                                    <p class="weui-media-box__desc">身份证明资料已提交</p>
+                                </div>
+                            </div>
+                            <div class="weui-media-box weui-media-box_appmsg status-success">
+                                <div class="weui-media-box__hd">
+                                    <i class="weui-icon-success"></i>
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">所患疾病：急性冠状动脉综合征</h4>
+                                    <p class="weui-media-box__desc">医学诊断证明已提交</p>
+                                </div>
+                            </div>
+                            <div class="weui-media-box weui-media-box_appmsg status-warn">
+                                <div class="weui-media-box__hd">
+                                    <i class="weui-icon-warn"></i>
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">个人及家庭收入证明</h4>
+                                    <p class="weui-media-box__desc">收入证明未提交</p>
+                                </div>
+                            </div>
+                            <div class="weui-media-box weui-media-box_appmsg status-success">
+                                <div class="weui-media-box__hd">
+                                    <i class="weui-icon-success"></i>
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">收款方:中国初级卫生保健基金会</h4>
+                                    <p class="weui-media-box__desc">组织机构证明已提交</p>
+                                    <p class="weui-media-box__desc"><a href="#">资金流向说明&gt;</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h1>
+                        ta的爱心帮助
+                        <div class="fr">984/人次</div>
+                    </h1>
+                    <div class="axb3-discuss" id="cnt-02">
+                        <div class="discuss-panel">
+                            <div class="discuss-user">
+                                <div class="user-avatar"><img src="/images/axb3/eduardo.jpg" alt=""></div>
+                                <div class="user-name">徐**</div>
+                                <div class="user-point">爱心帮助<span class="num">5.00</span>元</div>
+                            </div>
+                            <div class="discuss-body">
+                                <div class="discuss-cont">加油朋友，你一定会好起来！坚持就是胜利！</div>
+                                <div class="discuss-date">
+                                    <div class="date-ft">2016-08-12</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="discuss-panel">
+                            <div class="discuss-user">
+                                <div class="user-avatar"><img src="/images/axb3/eduardo.jpg" alt=""></div>
+                                <div class="user-name">徐**</div>
+                                <div class="user-point">爱心帮助<span class="num">10.00</span>元</div>
+                            </div>
+                            <div class="discuss-body">
+                                <div class="discuss-cont">加油朋友，你一定会好起来！坚持就是胜利！</div>
+                                <div class="discuss-date">
+                                    <div class="date-ft">2016-08-12</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="discuss-panel">
+                            <div class="discuss-user">
+                                <div class="user-avatar"><img src="/images/axb3/eduardo.jpg" alt=""></div>
+                                <div class="user-name">徐**</div>
+                                <div class="user-point">爱心帮助<span class="num">15.00</span>元</div>
+                            </div>
+                            <div class="discuss-body">
+                                <div class="discuss-cont">加油朋友，你一定会好起来！坚持就是胜利！</div>
+                                <div class="discuss-date">
+                                    <div class="date-ft">2016-08-12</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discuss-panel">
+                            <div class="discuss-user">
+                                <div class="user-avatar"><img src="/images/axb3/eduardo.jpg" alt=""></div>
+                                <div class="user-name">徐**</div>
+                                <div class="user-point">爱心帮助<span class="num">15.00</span>元</div>
+                            </div>
+                            <div class="discuss-body">
+                                <div class="discuss-cont">加油朋友，你一定会好起来！坚持就是胜利！</div>
+                                <div class="discuss-date">
+                                    <div class="date-ft">2016-08-12</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="discuss-panel">
+                            <div class="discuss-user">
+                                <div class="user-avatar"><img src="/images/axb3/eduardo.jpg" alt=""></div>
+                                <div class="user-name">徐**</div>
+                                <div class="user-point">爱心帮助<span class="num">15.00</span>元</div>
+                            </div>
+                            <div class="discuss-body">
+                                <div class="discuss-cont">加油朋友，你一定会好起来！坚持就是胜利！</div>
+                                <div class="discuss-date">
+                                    <div class="date-ft">2016-08-12</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="open-02" class="more-btn">展开全部内容</div>
+                    </div>
+                </article>
+                
+                <div class="axb-qr">
+                    <div class="axb-qr-hd"><img class="qr-img" src="/images/axb3/qrcode.jpg" alt=""></div>
+                    <div class="axb-qr-bd">
+                        <p>降低病患成本 提高生命质量</p>   
+                        长按二维码，关注“爱心帮导航”
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <% include _footer.html %>
+    <script>
+        $(document).on("open", ".weui-popup-modal", function() {
+            console.log("open popup");
+        }).on("close", ".weui-popup-modal", function() {
+            console.log("close popup");
+        });
+        $("#open-01").click(function(){
+            $("#cnt-01").css("height","auto");
+            $("#open-01").hide();
+        });
+        $("#open-02").click(function(){
+            $("#cnt-02").css("height","auto");
+            $("#open-02").hide();
+        });
+    </script>
+</body>
+
+</html>
