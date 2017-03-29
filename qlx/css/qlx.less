@@ -279,6 +279,9 @@ footer {
             .flex-1; text-align: center; line-height: 44px; color: #787878;
             &:active { background: @gray-d;}
             &.active { color: @cyan; background: #fff;}
+            &.item-photo {
+                .qlxicon { border-radius: 8px; background: @cyan; color: #fff; text-align: center; font-size: 16px; width: 26px; height: 26px; line-height: 26px; margin-right: 4px;}
+            }
         }
     }
     .weui_btn {
@@ -472,26 +475,38 @@ footer {
         position: relative; display: block; background: #fff;
         &:after { .b-line; }
         .product-box {
-            position: relative; display: block; min-height: 80px; margin: 0; overflow: hidden; padding: 10px 10px 10px 108px;
-            &:active { background: #e9e9e9;}
-            .product-photo {
-                position: absolute; left: 10px; top: 10px; vertical-align: middle; width: 87px; height: 87px; border-radius: 4px;
+            position: relative; .display-flex; margin: 0; padding: 10px;
+            .hd {
+                margin-right: 10px;
+                .product-photo {
+                    vertical-align: middle; width: 87px; height: 87px; border-radius: 4px;
+                    &.photo-big {
+                        height: 120px; width: 120px;
+                    }
+                }
             }
-            .product-txt {
-                font-size: 15px; overflow: hidden; color: #555; line-height: 20px; margin-bottom: 3px; .txt-line-two;
-            }
-            .product-price {
-                margin: 0; color: #999; font-size: 10px;
-                .price-sign { font-size: 13px; color: @orange;}
-                .price-big { font-size: 17px; color: @orange;}
-                .price-small { font-size: 13px; color: @orange;}
-            }
-            .product-count { font-size: 12px; color: #aaa; line-height: 12px;}
-            .product-tag {
-                font-size: 12px; color: #aaa; line-height: 15px;
-                span { border: @orange solid 1px; display: inline-block; border-radius: 10px; color: @orange; padding: 0 6px; margin: 0 5px 4px 0; }
+            .bd {
+                .flex-1;
+                .product-txt {
+                    font-size: 15px; overflow: hidden; color: #555; line-height: 20px; margin-bottom: 3px; .txt-line-two;
+                }
+                .product-price {
+                    margin: 0; color: #999; font-size: 10px;
+                    .price-sign { font-size: 13px; color: @orange;}
+                    .price-big { font-size: 17px; color: @orange;}
+                    .price-small { font-size: 13px; color: @orange;}
+                }
+                .product-count { font-size: 12px; color: #aaa; line-height: 12px;}
+                .product-tag {
+                    font-size: 12px; color: #aaa; line-height: 15px;
+                    span { border: @orange solid 1px; display: inline-block; border-radius: 10px; color: @orange; padding: 0 6px; margin: 0 5px 4px 0; }
+                }
+                .product-btn {
+                    .weui-btn { vertical-align: center;}
+                }
             }
         }
+        a.product-box:active { background: #e9e9e9;}
     }
 }
 

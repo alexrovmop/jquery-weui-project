@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>个人中心-我的订单</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+
+    <div class="qlx-header">
+        <div class="qlx-topbar">
+            <div class="qlx-back"><span class="qlxicon qlxicon-back"></span></div>
+            <div class="qlx-title">我的订单</div>
+            <!-- <div class="qlx-item"><span class="qlxicon qlxicon-heart"></span></div> -->
+            <div class="qlx-item"><span class="qlxicon qlxicon-fav"></span></div>
+            <div class="qlx-item"><span class="qlxicon qlxicon-share"></span></div>
+        </div>
+    </div>
+    <div class="qlx-footer">
+        <div class="qlx-nav">
+            <a href="#" class="item item-photo"><span class="qlxicon qlxicon-camera"></span>拍照晒图</a>
+            <a href="#" class="item item-photo"><span class="qlxicon qlxicon-album"></span>相册选图</a>
+        </div>
+    </div>
+
+    <div class="qlx-container with-hd with-ft">
+        <div class="qlx-uc">
+            <div class="hd">
+                <div class="uc-name" style="background-image: url('/images/qlx/my_bg.jpg');">
+                    <div class="avatar-border"><div class="avatar" style="background-image: url('/images/qlx/eduardo.jpg');"></div></div>
+                    <div class="name">
+                        <p>清风徐来</p>
+                        <div class="city">武汉市</div>
+                    </div>
+                    
+                </div>
+                <div class="uc-info">
+                    <div class="item s1">
+                        经验值<p>9999</p>
+                    </div>
+                    <div class="item s2">
+                        分享金<p>999999</p>
+                    </div>
+                    <div class="item s3">
+                        级别<p>99</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bd">
+                <div class="uc-nav">
+                    <a href="#" class="item active">我的图晒</a>
+                    <a href="#" class="item">图晒榜</a>
+                    <a href="#" class="item">图晒活动</a>
+                    <a href="#" class="item">活动介绍</a>
+                </div>
+
+                <div class="product-list">
+                    <div class="item">
+                        <div class="p-img" style="background-image: url('/images/qlx/01.jpg');"></div>
+                        <div class="p-count">
+                            <div class="num"><span>249</span>人次参团</div>
+                            <div class="raty" id="p11"></div>
+                        </div>
+                        <div class="p-title">【冰火两重天】神农架国际滑雪-天悦温泉动车</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <% include _footer.html %>
+</body>
+
+</html>
