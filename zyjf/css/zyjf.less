@@ -2,7 +2,7 @@
 @cyan-d: #3bafda;
 @blue: #5d9cec;
 @blue-d: #4a89dc;
-@red: #ed5565;
+@red: #CE505E;
 @red-d: #cf3c4b;
 @red-warn: #ff3c30;
 @purple: #ec87c0;
@@ -216,7 +216,7 @@ footer {
         background: #fff; opacity: 0.5;
     }
     .swiper-pagination-bullet-active {
-        background: @cyan; opacity: 1;
+        background: @red; opacity: 1;
     }
 }
 
@@ -866,23 +866,12 @@ footer {
 }
 
 /* 千里行导航 */
-.qlx-quick-nav {
-    background: #fff;
-    .weui-grid {
-        padding: 15px 2px;
-        &:before,&:after { border-bottom-color: #e4e4e4;}
-        .weui-grid__icon {
-            width: 38px; height: 38px;
-            .qlxicon {
-                font-size: 24px; width: 38px; height: 38px; line-height: 38px; background-color: @orange; color: #fff; text-align: center;border-radius: 10px;
-                &.s1 { background-color: @blue;}
-                &.s2 { background-color: @green;}
-                &.s3 { background-color: @yellow;}
-                &.s4 { background-color: @orange;}
-                &.s5 { background-color: @red;}
-                &.s6 { background-color: @cyan;}
-            }
-        }
+.quick-nav {
+    position: relative; width: 100%; background: #fff; overflow: hidden; margin-bottom: 10px;
+    &:before,&:after { display: none;}
+    .nav-item {
+        width: 25%; text-decoration: none; color: #444; text-align: center; overflow: hidden; padding: 15px 10px;
+        &:before,&:after { display: none;}
         .weui-grid__label {
             font-size: 13px; margin-top: 8px; line-height: 16px;
             p { color: @orange;}

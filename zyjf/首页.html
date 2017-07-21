@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>正元金服微课堂-首页</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="/images/zyjf/01.jpg" /></div>
+            <div class="swiper-slide"><img src="/images/zyjf/02.jpg" /></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="weui-grids quick-nav">
+        <a href="" class="weui-grid js_grid nav-item">
+            <div class="weui-grid__icon">
+                <img src="/images/zyjf/icon_nav_live.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                直播预告
+            </p>
+        </a>
+        <a href="" class="weui-grid js_grid nav-item">
+            <div class="weui-grid__icon">
+                <img src="/images/zyjf/icon_nav_course.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                品牌课程
+            </p>
+        </a>
+        <a href="" class="weui-grid js_grid nav-item">
+            <div class="weui-grid__icon">
+                <img src="/images/zyjf/icon_nav_free.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                免费专区
+            </p>
+        </a>
+        <a href="" class="weui-grid js_grid nav-item">
+            <div class="weui-grid__icon">
+                <img src="/images/zyjf/icon_nav_lesson.png" alt="">
+            </div>
+            <p class="weui-grid__label">
+                微课堂
+            </p>
+        </a>
+    </div>
+
+    <div class="list-box">
+        <div class="list-t">
+            <text class="title">专家课堂</text>
+            <a href="" class="more">
+                <text>查看全部</text><text class="arrow-right"></text>
+            </a>
+        </div>
+        <div class="index-list">
+            <a href="" class="list-item">
+                <div class="image">
+                    <div wx:if="{{ztitem.price}}" class="price">{{ztitem.price}}</div>
+                    <image style="width: 100%; background-color: #eee;" mode="{{ztitem.mode}}" src="{{ztitem.src}}"></image>
+                </div>
+                <div class="desc line-two">{{ztitem.desc}}</div>
+                <div class="ft weui-flex">
+                    <div class="subhd">
+                        <div class="lastnews">近期更新</div>
+                    </div>
+                    <div class="subbd weui-flex__item">
+                        {{ztitem.subtitle}}
+                    </div>
+                    <div class="subft">
+                        {{ztitem.subtime}}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <% include _footer.html %>
+    <script src="../js/swiper.js"></script>
+    <script>
+    $(".swiper-container").swiper({
+        loop: true,
+        autoplay: 3000
+    });
+    </script>
+</body>
+
+</html>

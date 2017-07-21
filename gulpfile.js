@@ -130,6 +130,19 @@ gulp.task('qlxless', function () {
   .pipe(gulp.dest('./dist/css/'));
 });
 
+gulp.task('zyjfless', function () {
+  return gulp.src(['./zyjf/css/*.less', '!./zyjf/css/_*.less'])
+  .pipe(sourcemaps.init())
+  .pipe(less().on('error', function (e) {
+      console.error(e.message);
+      this.emit('end');
+  }))
+  .pipe(autoprefixer())
+  .pipe(header(banner))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./dist/css/'));
+});
+
 gulp.task('cssmin', ["less"], function () {
   gulp.src(['./dist/css/*.css', '!./dist/css/*.min.css'])
     .pipe(cssmin())
@@ -156,6 +169,12 @@ gulp.task('qlxejs', function () {
     .pipe(gulp.dest("./dist/qlx/"));
 });
 
+gulp.task('zyjfejs', function () {
+  return gulp.src(["./zyjf/*.html", "!./zyjf/_*.html"])
+    .pipe(ejs({}))
+    .pipe(gulp.dest("./dist/zyjf/"));
+});
+
 gulp.task('copy', function() {
   gulp.src(['./src/lib/**/*'])
     .pipe(gulp.dest('./dist/lib/'));
@@ -169,8 +188,8 @@ gulp.task('copy', function() {
   gulp.src(['./qlx/images/*.*'])
     .pipe(gulp.dest('./dist/images/qlx/'));
 
-  /*gulp.src(['./demos/css/*.css'])
-    .pipe(gulp.dest('./dist/demos/css/'));*/
+  gulp.src(['./zyjf/images/*.*'])
+    .pipe(gulp.dest('./dist/images/zyjf/'));
 });
 
 gulp.task('watch', function () {
@@ -184,6 +203,9 @@ gulp.task('watch', function () {
   gulp.watch('qlx/images/*.*', ['copy']);
   gulp.watch('qlx/css/*.less', ['qlxless']);
   gulp.watch('qlx/*.html', ['qlxejs']);
+  gulp.watch('zyjf/images/*.*', ['copy']);
+  gulp.watch('zyjf/css/*.less', ['zyjfless']);
+  gulp.watch('zyjf/*.html', ['zyjfejs']);
 });
 
 /*gulp.task('server', function () {
@@ -203,9 +225,9 @@ gulp.task('server', function () {
             }
         },
         port: yargs.p,
-        startPath: '/axb3'
+        startPath: '/zyjf'
     });
 });
 
-gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'qlxejs', 'watch', 'server']);
+gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'zyjfejs', 'watch', 'server']);
 /*gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'qlxejs']);*/
