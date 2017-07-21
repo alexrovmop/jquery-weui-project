@@ -145,7 +145,7 @@
                             <p>&nbsp;</p>
                             <p><strong>医学条件</strong></p>
                             <ul>
-                                <li>患者必须是经病理学或细胞学证实的符合吉非替尼片适应症的原发性IIIB或者IV期的非小细胞肺癌；</li>
+                                <li>患者必须是经病理学或细胞学证实的  符合吉非替尼片适应症的原发性IIIB或者IV期的非小细胞肺癌；</li>
                                 <li>患者在吉非替尼片治疗之前必须经影像学检查，确认存在病灶；</li>
                                 <li>一线适应症患者，EGFR检测结果必须为阳性的(组织标本或血液标本检测均可接受）；</li>
                                 <li>二线适应症患者服用吉非替尼片前必须接受过至少一次抗肿瘤的化学治疗；</li>
@@ -321,9 +321,20 @@
         }).on("close", ".weui-popup-modal", function() {
             console.log("close popup");
         });
-        $("#open-01").click(function(){
-            $("#cnt-01").css("height","auto");
-            $("#open-01").hide();
+        $("#cnt-01").ready(function(){
+            var cnt_h1 = $("#cnt-01").height();
+            if (cnt_h1<300) {
+                $("#cnt-01").css("height","auto");
+                $("#open-01").hide();
+            }
+            else {
+                $("#cnt-01").css("height","300");
+                $("#open-01").show();
+            }
+            $("#open-01").click(function(){
+                $("#cnt-01").css("height","auto");
+                $("#open-01").hide();
+            });
         });
         $("#open-02").click(function(){
             $("#cnt-02").css("height","auto");
