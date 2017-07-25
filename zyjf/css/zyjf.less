@@ -20,6 +20,7 @@
 
 .fontorange { color: @orange;}
 .fontblue { color: @blue;}
+.fontyellow { color: @yellow;}
 
 body, html { height: 100%; -webkit-tap-highlight-color: transparent; background: #efefef;}
 a { color: #333;}
@@ -307,6 +308,11 @@ footer {
     &.with-ft {
         border-bottom: transparent solid 44px;
     }
+}
+
+/* banner */
+.banner {
+    img { vertical-align: middle; width: 100%;}
 }
 
 /*列表容器*/
@@ -794,7 +800,42 @@ footer {
     }
 }
 
-
+/*邀请列表*/
+.invite-list {
+    margin-top: 0; margin-bottom: 10px;
+    .invite-avatar {
+        width: 36px; margin-right: 10px; display: block; border-radius: 36px;
+    }
+    .invite-name {
+        font-size: 15px; .txt-line-one; color: #333;
+        span {
+            color: #999; font-size: 13px; margin-left: 5px;
+        }
+        .title-s1,.title-s2,.title-s3 {
+            display: inline-block; border-radius: 4px; font-size: 12px; padding: 0 5px; color: #fff; line-height: 20px;
+        }
+        .title-s1 { background: @yellow;}
+        .title-s2 { background: @cyan;}
+        .title-s3 { background: @green;}
+    }
+    .invite-info {
+        color: #999; font-size: 13px;
+    }
+    .invite-status {
+        line-height: 20px;
+        span {
+            display: inline-block; border-radius: 4px; font-size: 12px; padding: 0 10px;
+        }
+        .status-on { background: @yellow; }
+        .status-off { background: #eee; color: #aaa;}
+    }
+    .weui-cell__bd { min-width: 0;
+        p { margin: 4px 0;}
+    }
+    .weui-cell__ft {
+        .weui-btn { white-space: nowrap;}
+    }
+}
 
 
 
