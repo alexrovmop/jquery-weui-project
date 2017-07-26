@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>正元金服微课堂-邀请卡</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    <style type="text/css">
+        body { background: url('/images/zyjf/invitation-card.jpg') center bottom no-repeat; background-size: cover;}
+        .invite-card {
+            position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px; border-radius: 10px; background: rgba(255,255,255,0.9); border: #3bafda solid 5px; padding: 20px;
+        }
+        .invite-card .hd {
+            text-align: center;
+        }
+        .invite-card .hd .avatar {
+            display: inline-block; width: 64px; height: 64px; border-radius: 64px; background: center center no-repeat; -webkit-background-size: cover; background-size: cover;
+        }
+        .invite-card .hd .username { font-size: 16px; }
+        .invite-card .hd .info { font-size: 14px; color: #999; }
+        .share-box {
+            padding: 30px 0 20px; text-align: center;
+        }
+        .share-box .share-title { margin-bottom: 30px; font-size: 18px; line-height: 1.4; }
+        .share-box .share-info {}
+        .share-box .share-info .info-item { line-height: 1.4; }
+        .share-box .share-info .info-item .info-t { font-size: 12px; color: #999 }
+        .share-box .share-info .info-item .info-c { font-size: 15px; }
+        .invite-qr {
+            text-align: center; margin: 10px 0; font-size: 15px;
+        }
+        .invite-qr img { vertical-align: middle; width: 40%;}
+    </style>
+    
+    <div class="invite-card">
+        <div class="hd">
+            <div class="avatar" style=" background-image: url('/images/zyjf/eduardo.jpg'); "></div>
+            <div class="username">张三</div>
+            <div class="info">向你推荐一个很棒的课程</div>
+        </div>
+        <div class="bd">
+            <div class="share-box">
+                <div class="share-title">
+                    <a href="#">如何激发孩子内在学习力，培育最强大脑！</a>
+                </div>
+                <div class="share-info">
+                    <div class="info-item">
+                        <div class="info-t">开课时间</div>
+                        <div class="info-c">2017-07-21 星期五 20:00</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-t">主讲人</div>
+                        <div class="info-c">罗静</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ft">
+            <div class="invite-qr">
+                <img src="/images/zyjf/qrcode.png" alt="">
+                <p>长按识别二维码参加课程</p>
+            </div>
+        </div>
+    </div>
+
+    <% include _footer.html %>
+</body>
+
+</html>
