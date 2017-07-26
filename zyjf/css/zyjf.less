@@ -347,6 +347,17 @@ footer {
             }
         }
     }
+    .list-tab {
+        position: relative; padding: 10px 15px; line-height: 24px; text-align: center; .display-flex; justify-content: center;
+        a {
+            display: inline-block; position: relative; padding: 5px 15px;
+            &:after { .r-line; top: 25%; bottom: 25%;}
+            &.active {
+                color: @blue;
+                &:before { .b-line; left: 12px; right: 12px; border-color: @blue; border-width: 2px;}
+            }
+        }
+    }
     .list-c {
       padding: 10px 20px;
     }
@@ -377,6 +388,7 @@ footer {
             .subft {
                 font-size: 12px; line-height: 13px; text-align: right;
                 .live_now { background: @green; border-radius: 5px; line-height: 24px; color: #fff; padding: 0 9px; margin-right: 5px; font-size: 12px;}
+                .zyjf-icon { font-size: 14px;}
             }
         }
     }
@@ -408,7 +420,10 @@ footer {
                 color: #666; .txt-line-two; line-height: 13px;
                 span { font-size: 12px;}
             }
-            .subft { font-size: 12px; line-height: 13px; text-align: right; color: @blue; }
+            .subft {
+                font-size: 12px; line-height: 13px; text-align: right; color: @blue;
+                .zyjf-icon { font-size: 14px;}
+            }
         }
     }
 }
@@ -578,12 +593,12 @@ footer {
 
 /* 导航 */
 .quick-nav {
-    background: #fff;
+    background: #fff; margin-bottom: 10px;
     .weui-grid {
-        padding: 15px 2px;
+        padding: 15px 2px; width: 25%;
         &:before,&:after { border-bottom-color: #e4e4e4;}
         .weui-grid__icon {
-            width: 38px; height: 38px; line-height: 38px; text-align: center;
+            text-align: center;
             .zyjf-icon {
                 font-size: 32px;
                 &.s1 { color: @blue;}
