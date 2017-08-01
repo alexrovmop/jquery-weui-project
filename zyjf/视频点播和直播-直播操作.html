@@ -28,9 +28,7 @@
             <div class="detail-hd">
                 <div class="video-detail">
                     <iframe frameborder="0" src="https://v.qq.com/iframe/player.html?vid=l00237gbcoc&tiny=0&auto=0" allowfullscreen></iframe>
-                    <div class="video-playing">
-                        <div class="play-time">正在直播中 00:30:29</div>
-                    </div>
+                    <div class="video-playing"></div>
                     <div class="video-info">
                         <div class="weui-flex">
                             <div class="weui-flex__item">
@@ -68,49 +66,42 @@
                 </div>
                 <div class="weui-tab__bd">
                     <div class="weui-tab__bd-item weui-tab__bd-item--active">
-                        
-                        <div class="product-discuss">
-                            <div class="product-discuss-item">
-                                <div class="discuss-user">
-                                    <div class="hd"><img class="avatar" src="/images/zyjf/eduardo.jpg" alt="" style="width:24px;margin-right:5px;display:block"></div>
-                                    <div class="bd">
-                                        <p class="name">埃德华多</p>
-                                    </div>
-                                    <div class="ft">
-                                        <span class="time">2016-10-01</span>
-                                    </div>
+                        <div class="weui-grids play-nav">
+                            <button id="recordWelcomeAudio" href="javascript:;" class="weui-grid js_grid disabled">
+                                <div class="weui-grid__icon">
+                                    <img src="/images/zyjf/play.png" alt="">
                                 </div>
-                                <div class="discuss-content">
-                                    <p>酒店就在5号线地铁站旁边不远处，出行方便。早上10点提前到了，服务台也给办了入住，很人性化。</p>
+                                <p class="weui-grid__label">录制欢迎词</p>
+                            </button>
+                            <button id="startRecord" href="javascript:;" class="weui-grid js_grid">
+                                <div class="weui-grid__icon">
+                                    <img src="/images/zyjf/record.png" alt="">
                                 </div>
+                                <p class="weui-grid__label">开始直播</p>
+                            </button>
+                            <button id="stopRecord" href="javascript:;" class="weui-grid js_grid">
+                                <div class="weui-grid__icon">
+                                    <img src="/images/zyjf/stop.png" alt="">
+                                </div>
+                                <p class="weui-grid__label">
+                                    结束直播
+                                </p>
+                            </button>
+
+                        </div>
+                        <div class="list-box">
+                            <div class="list-t weui-flex">
+                                <div class="title weui-flex__item">重要提示</div>
                             </div>
-                            <div class="product-discuss-item">
-                                <div class="discuss-user">
-                                    <div class="hd"><img class="avatar" src="/images/zyjf/eduardo.jpg" alt="" style="width:24px;margin-right:5px;display:block"></div>
-                                    <div class="bd">
-                                        <p class="name">尼古拉斯</p>
-                                    </div>
-                                    <div class="ft">
-                                        <span class="time">2016-10-01</span>
-                                    </div>
-                                </div>
-                                <div class="discuss-content">
-                                    <p>地理位置非常好，对于我这个路痴来说，居然也能出地铁站走十分钟就找到酒店真的是一件非常愉快的事。一眼看到房间里的魔方和小鱼，就很有亲切的感觉。</p>
-                                </div>
-                            </div>
-                            <div class="product-discuss-item">
-                                <div class="discuss-user">
-                                    <div class="hd"><img class="avatar" src="/images/zyjf/eduardo.jpg" alt="" style="width:24px;margin-right:5px;display:block"></div>
-                                    <div class="bd">
-                                        <p class="name">亨利</p>
-                                    </div>
-                                    <div class="ft">
-                                        <span class="time">2016-10-01</span>
-                                    </div>
-                                </div>
-                                <div class="discuss-content">
-                                    <p>大床房的床真的很大，洗澡水量很足，淋浴起来非常舒服。亮点是窗口边的浴缸和蓝牙音箱，晚上泡在浴缸里既可以看电视，也可以欣赏窗外北三环的车水马龙。</p>
-                                </div>
+                            <div class="weui-cells__tips" style="padding: 10px 15px;">
+                                <p>
+                                    1、提前2分钟直播，按“开始直播”，确认后开始直播；<br/>
+                                    2、直播前保持手机充足电源，或插上充电器；<br/>
+                                    <span class="fontorange">3、直播时保持手机屏一直亮着，可设置锁屏时间为直播时长；</span><br/>
+                                    <span class="fontorange">4、手机屏幕变暗时，触摸屏幕点亮，切记直播中不可锁屏；</span><br/>
+                                    5、直播结束时按“结束直播”，确认结束直播；<br/>
+                                    6、预祝直播圆满结束
+                                </p>
                             </div>
                         </div>
                     </div>
