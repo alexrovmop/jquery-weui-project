@@ -122,12 +122,28 @@
     </div>
 
     <% include _footer.html %>
-  <script src="../js/swiper.js"></script>
-  <script>
-  $(".swiper-container").swiper({
-        loop: true,
-        autoplay: 3000
-    });
+    
+    <div class="weui-mask weui-mask--visible"></div>
+    <div class="weui-dialog weui-dialog--visible notice-model" id="mynotice">
+        <div class="user-icon">
+            <img src="/images/zyjf/04.jpg" alt="" class="photo">
+        </div>
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">中国美相学院微课直播间</strong></div>
+        <div class="weui-dialog__bd">
+            <p>开播前15分钟会自动发消息通知您</p>
+        </div>
+        <div class="weui-dialog__ft">
+            <div class="notice-countdown">
+                距离开播时间&nbsp;<span class="fontred">03时 23分 34秒</span>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn-cancel" id="close-mynotice"><i class="weui-icon-cancel"></i></a>
+    </div>
+    <script>
+        $("#close-mynotice").click(function(){
+            $(".weui-mask").removeClass("weui-mask--visible");
+            $("#mynotice").removeClass("weui-dialog--visible");
+        });
     </script>
 </body>
 
