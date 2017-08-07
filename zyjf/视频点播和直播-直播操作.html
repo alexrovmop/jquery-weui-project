@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>正元金服微课堂-视频点播-交流讨论</title>
+    <% include _header.html %>
+</head>
+
+<body ontouchstart>
+    
+    <div class="zyjf-footer">
+        <div class="zyjf-nav">
+
+            <div class="weui-search-bar flex-1">
+                <span class="zyjf-icon zyjf-icon-face"></span>
+                <form class="weui-search-bar__form">
+                    <div class="weui-search-bar__box" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1); padding-left: 10px">
+                        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="输入评论" required="">
+                    </div>
+                </form>
+            </div>
+            <a class="weui-btn weui-btn_primary" href="javascript:">发送</a>
+        </div>
+    </div>
+
+    <div class="zyjf-container with-ft">
+        <div class="detail-box">
+            <div class="detail-hd">
+                <div class="video-detail">
+                    <iframe frameborder="0" src="https://v.qq.com/iframe/player.html?vid=l00237gbcoc&tiny=0&auto=0" allowfullscreen></iframe>
+                    <div class="video-playing"></div>
+                    <div class="video-info">
+                        <div class="weui-flex">
+                            <div class="weui-flex__item">
+                                <div class="video-title">视频标题视频标题视频标题视频标题视频标题视频标题</div>
+                            </div>
+                            <div class="video-view-t"><span class="zyjf-icon zyjf-icon-user1"></span></div>
+                            <div class="video-view">1440</div>
+                            <div class="video-reply-t"><span class="zyjf-icon zyjf-icon-opinion"></span></div>
+                            <div class="video-reply">44</div>
+                            <!-- <div class="video-barrage-t">
+                                弹幕
+                            </div>
+                            <div class="video-barrage">
+                                <label for="switchCP" class="weui-switch-cp">
+                                    <input id="switchCP" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                                    <div class="weui-switch-cp__box"></div>
+                                </label>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-tab">
+                <div class="weui-navbar">
+                    <a class="weui-navbar__item weui-bar__item--on" href="#">
+                        讨论交流
+                    </a>
+                    <a class="weui-navbar__item" href="#">
+                        品牌课程
+                    </a>
+                    <a class="weui-navbar__item" href="#">
+                        课件下载
+                    </a>
+                </div>
+                <div class="weui-tab__bd">
+                    <div class="weui-tab__bd-item weui-tab__bd-item--active">
+                        <div class="weui-grids play-nav">
+                            <button id="recordWelcomeAudio" href="javascript:;" class="weui-grid js_grid disabled">
+                                <div class="weui-grid__icon">
+                                    <img src="/images/zyjf/play.png" alt="">
+                                </div>
+                                <p class="weui-grid__label">录制欢迎词</p>
+                            </button>
+                            <button id="startRecord" href="javascript:;" class="weui-grid js_grid">
+                                <div class="weui-grid__icon">
+                                    <img src="/images/zyjf/record.png" alt="">
+                                </div>
+                                <p class="weui-grid__label">开始直播</p>
+                            </button>
+                            <button id="stopRecord" href="javascript:;" class="weui-grid js_grid">
+                                <div class="weui-grid__icon">
+                                    <img src="/images/zyjf/stop.png" alt="">
+                                </div>
+                                <p class="weui-grid__label">
+                                    结束直播
+                                </p>
+                            </button>
+
+                        </div>
+                        <div class="list-box">
+                            <div class="list-t weui-flex">
+                                <div class="title weui-flex__item">重要提示</div>
+                            </div>
+                            <div class="weui-cells__tips" style="padding: 10px 15px;">
+                                <p>
+                                    1、提前2分钟直播，按“开始直播”，确认后开始直播；<br/>
+                                    2、直播前保持手机充足电源，或插上充电器；<br/>
+                                    <span class="fontorange">3、直播时保持手机屏一直亮着，可设置锁屏时间为直播时长；</span><br/>
+                                    <span class="fontorange">4、手机屏幕变暗时，触摸屏幕点亮，切记直播中不可锁屏；</span><br/>
+                                    5、直播结束时按“结束直播”，确认结束直播；<br/>
+                                    6、预祝直播圆满结束
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <% include _footer.html %>
+  <script src="../js/swiper.js"></script>
+  <script>
+  $(".swiper-container").swiper({
+        loop: true,
+        autoplay: 3000
+    });
+    </script>
+</body>
+
+</html>

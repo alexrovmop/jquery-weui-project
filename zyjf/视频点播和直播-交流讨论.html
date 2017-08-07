@@ -10,7 +10,9 @@
     
     <div class="zyjf-footer">
         <div class="zyjf-nav">
+
             <div class="weui-search-bar flex-1">
+                <span class="zyjf-icon zyjf-icon-face"></span>
                 <form class="weui-search-bar__form">
                     <div class="weui-search-bar__box" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1); padding-left: 10px">
                         <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="输入评论" required="">
@@ -26,23 +28,27 @@
             <div class="detail-hd">
                 <div class="video-detail">
                     <iframe frameborder="0" src="https://v.qq.com/iframe/player.html?vid=l00237gbcoc&tiny=0&auto=0" allowfullscreen></iframe>
-                </div>
-                <div class="video-info">
-                    <div class="video-title">视频标题视频标题视频标题视频标题视频标题视频标题</div>
-                    <div class="weui-flex">
-                        <div class="weui-flex__item"></div>
-                        <div class="video-view-t"><span class="xch-icon xch-icon-user1"></span></div>
-                        <div class="video-view">1440</div>
-                        <div class="video-reply-t"><span class="xch-icon xch-icon-opinion"></span></div>
-                        <div class="video-reply">44</div>
-                        <div class="video-barrage-t">
-                            弹幕
-                        </div>
-                        <div class="video-barrage">
-                            <label for="switchCP" class="weui-switch-cp">
-                                <input id="switchCP" class="weui-switch-cp__input" type="checkbox" checked="checked">
-                                <div class="weui-switch-cp__box"></div>
-                            </label>
+                    <div class="video-playing">
+                        <div class="play-time">正在直播中 00:30:29</div>
+                    </div>
+                    <div class="video-info">
+                        <div class="weui-flex">
+                            <div class="weui-flex__item">
+                                <div class="video-title">视频标题视频标题视频标题视频标题视频标题视频标题</div>
+                            </div>
+                            <div class="video-view-t"><span class="zyjf-icon zyjf-icon-user1"></span></div>
+                            <div class="video-view">1440</div>
+                            <div class="video-reply-t"><span class="zyjf-icon zyjf-icon-opinion"></span></div>
+                            <div class="video-reply">44</div>
+                            <!-- <div class="video-barrage-t">
+                                弹幕
+                            </div>
+                            <div class="video-barrage">
+                                <label for="switchCP" class="weui-switch-cp">
+                                    <input id="switchCP" class="weui-switch-cp__input" type="checkbox" checked="checked">
+                                    <div class="weui-switch-cp__box"></div>
+                                </label>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -62,6 +68,7 @@
                 </div>
                 <div class="weui-tab__bd">
                     <div class="weui-tab__bd-item weui-tab__bd-item--active">
+                        
                         <div class="product-discuss">
                             <div class="product-discuss-item">
                                 <div class="discuss-user">
@@ -115,12 +122,28 @@
     </div>
 
     <% include _footer.html %>
-  <script src="../js/swiper.js"></script>
-  <script>
-  $(".swiper-container").swiper({
-        loop: true,
-        autoplay: 3000
-    });
+    
+    <div class="weui-mask weui-mask--visible"></div>
+    <div class="weui-dialog weui-dialog--visible notice-model" id="mynotice">
+        <div class="user-icon">
+            <img src="/images/zyjf/04.jpg" alt="" class="photo">
+        </div>
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">中国美相学院微课直播间</strong></div>
+        <div class="weui-dialog__bd">
+            <p>开播前15分钟会自动发消息通知您</p>
+        </div>
+        <div class="weui-dialog__ft">
+            <div class="notice-countdown">
+                距离开播时间&nbsp;<span class="fontred">03时 23分 34秒</span>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn-cancel" id="close-mynotice"><i class="weui-icon-cancel"></i></a>
+    </div>
+    <script>
+        $("#close-mynotice").click(function(){
+            $(".weui-mask").removeClass("weui-mask--visible");
+            $("#mynotice").removeClass("weui-dialog--visible");
+        });
     </script>
 </body>
 

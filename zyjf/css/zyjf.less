@@ -18,6 +18,7 @@
 
 @import "_icon.less";
 
+.fontred { color: @red;}
 .fontorange { color: @orange;}
 .fontblue { color: @blue;}
 .fontyellow { color: @yellow;}
@@ -293,6 +294,9 @@ footer {
                 .qlxicon { border-radius: 8px; background: @cyan; color: #fff; text-align: center; font-size: 16px; width: 26px; height: 26px; line-height: 26px; margin-right: 4px;}
             }
         }
+        .weui-search-bar {
+            .zyjf-icon { color: @blue; margin-right: 5px;}
+        }
     }
     .weui-btn {
         border-radius: 0; margin-top: 0;
@@ -365,6 +369,9 @@ footer {
         border-top: #e9e9e9 solid 1px; line-height: 40px; text-align: center;
         .more { font-size: 14px; color: #A0978E;}
     }
+    .weui-cells__tips {
+        color: #555; line-height: 1.4;
+    }
 }
 
 /* 直播预告列表 */
@@ -380,7 +387,10 @@ footer {
         .desc { line-height: 20px; font-size: 14px; color: #999; margin: 10px 0; }
         .ft {
             color: #a9a9a9; font-size: 14px; align-items: center;
-            .subhd .lastnews { border: @blue solid 1px; border-radius: 5px; line-height: 24px; color: @blue; padding: 0 5px; margin-right: 5px; font-size: 12px;}
+            .subhd {
+                .lastnews { border: @blue solid 1px; border-radius: 5px; line-height: 24px; color: @blue; padding: 0 5px; margin-right: 5px; font-size: 12px;}
+                .zyjf-icon { font-size: 16px; color: @blue; margin-right: 5px;}
+            }
             .subbd {
                 color: #666; .txt-line-two;
                 span { font-size: 12px; margin-left: 5px;}
@@ -415,7 +425,10 @@ footer {
         .desc { line-height: 15px; font-size: 12px; color: #999; margin: 5px 0; }
         .ft {
             color: #a9a9a9; font-size: 14px; align-items: center;
-            .subhd .lastnews { border: @blue solid 1px; border-radius: 5px; line-height: 24px; color: @blue; padding: 0 5px; margin-right: 5px; font-size: 12px;}
+            .subhd {
+                .lastnews { border: @blue solid 1px; border-radius: 5px; line-height: 24px; color: @blue; padding: 0 5px; margin-right: 5px; font-size: 12px;}
+                .zyjf-icon { font-size: 24px; color: @blue;}
+            }
             .subbd {
                 color: #666; .txt-line-two; line-height: 13px;
                 span { font-size: 12px;}
@@ -475,17 +488,36 @@ footer {
         .video-detail {
             position: relative; height: 0; padding-top: 56.25%;
             img,iframe,video { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; vertical-align: middle; z-index: 998;}
+            .video-info {
+                position: absolute; left: 0; right: 0; bottom: 0;
+            }
+            .video-playing {
+                background: rgba(0, 0, 0, 0.4) url('/images/zyjf/playing.gif') center bottom no-repeat; position: absolute; left: 0; right: 0; bottom: 35px; top: 0; z-index: 999; background-size: 50% auto;
+            }
+            .play-time {
+                position: absolute; top: 50%; left: 0; right: 0; padding: 0 20px; text-align: center; color: #fff; line-height: 30px; margin: -15px 0 0;
+            }
         }
         .video-title {
-            position: absolute; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); color: #fff; padding: 3px 10px; font-size: 13px; z-index: 999;
+            position: absolute; left: 0; right: 0; top: 0; color: #fff; padding: 4px 10px 14px; font-size: 13px; z-index: 999;
+            background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7) , rgba(0, 0, 0, 0)); /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Firefox 3.6 - 15 */
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) , rgba(0, 0, 0, 0)); /* 标准的语法 */
         }
         .video-info {
-            background: #333; color: #fff; padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.5); color: #fff; padding: 8px 15px; position: relative; z-index: 1000;
             .video-title {
                 position: relative; color: #fff; background: transparent; padding: 0 0 10px; font-size: 15px; z-index: 999; .txt-line-one;
             }
             .weui-flex {
                 font-size: 12px;
+                .weui-flex__item {
+                    min-width: 0;
+                    .video-title {
+                        padding: 0; line-height: 1.3; background: transparent;
+                    }
+                }
                 .zyjf-icon { font-size: 16px;}
                 .video-view-t,.video-reply-t,.video-barrage-t { margin-left: 10px;}
                 .video-view,.video-reply,.video-barrage { margin-left: 3px;}
@@ -612,6 +644,35 @@ footer {
         .weui-grid__label {
             font-size: 13px; margin-top: 8px; line-height: 16px;
             p { color: @orange;}
+        }
+    }
+}
+
+/* 录音操作 */
+.play-nav {
+    margin: 15px;
+    &:before,&:after { display: none;}
+    .weui-grid {
+        padding: 15px 2px; display: block; border-width: 0; background: transparent;
+        &:before,&:after { border-bottom-color: #e4e4e4; display: none;}
+        .weui-grid__icon {
+            text-align: center; width: 48px; height: 48px;
+            .zyjf-icon {
+                font-size: 32px;
+                &.s1 { color: @blue;}
+                &.s2 { color: @green;}
+                &.s3 { color: @yellow;}
+                &.s4 { color: @orange;}
+                &.s5 { color: @red;}
+                &.s6 { color: @cyan;}
+            }
+        }
+        .weui-grid__label {
+            font-size: 12px; margin-top: 8px; line-height: 16px;
+            p { color: @orange;}
+        }
+        &.disabled {
+            opacity: 0.5;
         }
     }
 }
@@ -852,7 +913,25 @@ footer {
     }
 }
 
-
+/* 弹出消息 */
+.notice-model {
+    .user-icon {
+        background: url('/images/zyjf/model-t.jpg') center center no-repeat; background-size: cover; text-align: center; height: 50px; margin-bottom: 40px;
+        .photo {
+            height: 72px; width: 72px; vertical-align: middle; border-radius: 72px; border: #fff solid 2px; margin-top: 16px;
+        }
+    }
+    .btn-cancel {
+        position: absolute; top: 0px; right: 0px; color: #fff; padding: 5px;
+        .weui-icon-cancel {
+            color: #fff; vertical-align: middle;
+        }
+    }
+    .notice-countdown {
+        text-align: center; font-size: 15px; width: 100%;
+        span { font-size: 16px;}
+    }
+}
 
 
 
