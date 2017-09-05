@@ -143,6 +143,19 @@ gulp.task('zyjfless', function () {
   .pipe(gulp.dest('./dist/css/'));
 });
 
+gulp.task('banmaless', function () {
+  return gulp.src(['./banma/css/*.less', '!./banma/css/_*.less'])
+  .pipe(sourcemaps.init())
+  .pipe(less().on('error', function (e) {
+      console.error(e.message);
+      this.emit('end');
+  }))
+  .pipe(autoprefixer())
+  .pipe(header(banner))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./dist/css/'));
+});
+
 gulp.task('cssmin', ["less"], function () {
   gulp.src(['./dist/css/*.css', '!./dist/css/*.min.css'])
     .pipe(cssmin())
@@ -175,12 +188,21 @@ gulp.task('zyjfejs', function () {
     .pipe(gulp.dest("./dist/zyjf/"));
 });
 
+gulp.task('banmaejs', function () {
+  return gulp.src(["./banma/*.html", "!./banma/_*.html"])
+    .pipe(ejs({}))
+    .pipe(gulp.dest("./dist/banma/"));
+});
+
 gulp.task('copy', function() {
   gulp.src(['./src/lib/**/*'])
     .pipe(gulp.dest('./dist/lib/'));
 
   gulp.src(['./demos/images/*.*'])
     .pipe(gulp.dest('./dist/demos/images/'));
+
+  gulp.src(['./demos/images/*.*'])
+    .pipe(gulp.dest('./dist/images/'));
 
   gulp.src(['./axb3/images/*.*'])
     .pipe(gulp.dest('./dist/images/axb3/'));
@@ -190,6 +212,9 @@ gulp.task('copy', function() {
 
   gulp.src(['./zyjf/images/*.*'])
     .pipe(gulp.dest('./dist/images/zyjf/'));
+
+  gulp.src(['./banma/images/*.*'])
+    .pipe(gulp.dest('./dist/images/banma/'));
 });
 
 gulp.task('watch', function () {
@@ -206,6 +231,9 @@ gulp.task('watch', function () {
   gulp.watch('zyjf/images/*.*', ['copy']);
   gulp.watch('zyjf/css/*.less', ['zyjfless']);
   gulp.watch('zyjf/*.html', ['zyjfejs']);
+  gulp.watch('banma/images/*.*', ['copy']);
+  gulp.watch('banma/css/*.less', ['banmaless']);
+  gulp.watch('banma/*.html', ['banmaejs']);
 });
 
 /*gulp.task('server', function () {
@@ -225,9 +253,10 @@ gulp.task('server', function () {
             }
         },
         port: yargs.p,
-        startPath: '/zyjf'
+        startPath: '/banma'
     });
 });
 
-gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'zyjfejs', 'watch', 'server']);
+gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'banmaejs', 'watch', 'server']);
+//gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'zyjfejs', 'watch', 'server']);
 /*gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'qlxejs']);*/
