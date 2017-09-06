@@ -7,112 +7,107 @@
 </head>
 
 <body ontouchstart>
-    <div class="weui-tab">
-        <div class="weui-tab__bd">
-            <div class="weui-tab__bd-item weui-tab__bd-item--active">
-                <div class="swiper-container">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide"><img src="/images/banma/01.jpg" /></div>
-                        <div class="swiper-slide"><img src="/images/banma/02.jpg" /></div>
-                        <div class="swiper-slide"><img src="/images/banma/03.jpg" /></div>
-                    </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-
-                <div class="weui-grids">
-                    <a href="#" class="weui-grid js_grid">
-                        <div class="weui-grid__icon">
-                            <img src="/images/icon_nav_button.png" alt="">
-                        </div>
-                        <p class="weui-grid__label">
-                            Button
-                        </p>
-                    </a>
-                    <a href="#" class="weui-grid js_grid">
-                        <div class="weui-grid__icon">
-                            <img src="/images/icon_nav_cell.png" alt="">
-                        </div>
-                        <p class="weui-grid__label">
-                            List
-                        </p>
-                    </a>
-                    <a href="#" class="weui-grid js_grid">
-                        <div class="weui-grid__icon">
-                            <img src="/images/icon_nav_cell.png" alt="">
-                        </div>
-                        <p class="weui-grid__label">
-                            Form
-                        </p>
-                    </a>
-                    <a href="#" class="weui-grid js_grid">
-                        <div class="weui-grid__icon">
-                            <img src="/images/icon_nav_cell.png" alt="">
-                        </div>
-                        <p class="weui-grid__label">
-                            Form
-                        </p>
-                    </a>
-                </div>
-
-                <div class="weui-tab">
-                    <div class="weui-navbar">
-                        <a class="weui-navbar__item weui-bar__item--on" href="#tab1">
-                      选项一
-                    </a>
-                        <a class="weui-navbar__item" href="#tab2">
-                      选项二
-                    </a>
-                        <a class="weui-navbar__item" href="#tab3">
-                      选项三
-                    </a>
-                    </div>
-                    <div class="weui-tab__bd">
-                        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
-                            <h1>页面一</h1>
-                        </div>
-                        <div id="tab2" class="weui-tab__bd-item">
-                            <h1>页面二</h1>
-                        </div>
-                        <div id="tab3" class="weui-tab__bd-item">
-                            <h1>页面三</h1>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <div class="bm-footer">
+        <div class="weui-flex bm-tabbar">
+            <a href="#" class="weui-flex__item">
+                <div class="bm-tabbar__icon"><span class="bmicon bmicon-home"></span></div>
+                <div class="bm-tabbar__label">首页</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="bm-tabbar__icon"><span class="bmicon bmicon-together"></span></div>
+                <div class="bm-tabbar__label">合买计划</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="bm-tabbar__icon"><span class="bmicon bmicon-news"></span></div>
+                <div class="bm-tabbar__label">推荐资讯</div>
+            </a>
+            <a href="#" class="weui-flex__item">
+                <div class="bm-tabbar__icon"><span class="bmicon bmicon-user"></span></div>
+                <div class="bm-tabbar__label">个人中心</div>
+            </a>
         </div>
-        <div class="weui-tabbar">
-            <a href="javascript:;" class="weui-tabbar__item weui-bar__item--on">
-                <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
-                <div class="weui-tabbar__icon">
-                    <img src="/images/icon_nav_button.png" alt="">
+    </div>
+
+    <div class="bm-container">
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="/images/banma/01.jpg" /></div>
+                <div class="swiper-slide"><img src="/images/banma/02.jpg" /></div>
+                <div class="swiper-slide"><img src="/images/banma/03.jpg" /></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="weui-grids">
+            <a href="#" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <span class="bmicon bmicon-expert"></span>
                 </div>
-                <p class="weui-tabbar__label">首页</p>
+                <p class="weui-grid__label">
+                    推荐专家
+                </p>
             </a>
-            <a href="javascript:;" class="weui-tabbar__item">
-                <div class="weui-tabbar__icon">
-                    <img src="/images/icon_nav_msg.png" alt="">
+            <a href="#" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <span class="bmicon bmicon-together2"></span>
                 </div>
-                <p class="weui-tabbar__label">推荐资讯</p>
+                <p class="weui-grid__label">
+                    合买计划
+                </p>
             </a>
-            <a href="javascript:;" class="weui-tabbar__item">
-                <div class="weui-tabbar__icon">
-                    <img src="/images/icon_nav_article.png" alt="">
+            <a href="#" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <span class="bmicon bmicon-news2"></span>
                 </div>
-                <p class="weui-tabbar__label">合买计划</p>
+                <p class="weui-grid__label">
+                    推荐资讯
+                </p>
             </a>
-            <a href="javascript:;" class="weui-tabbar__item">
-                <div class="weui-tabbar__icon">
-                    <img src="/images/icon_nav_cell.png" alt="">
+            <a href="#" class="weui-grid js_grid">
+                <div class="weui-grid__icon">
+                    <span class="bmicon bmicon-help"></span>
                 </div>
-                <p class="weui-tabbar__label">个人中心</p>
+                <p class="weui-grid__label">
+                    新手指南
+                </p>
             </a>
+        </div>
+
+        <div class="weui-tab">
+            <div class="weui-navbar">
+                <a class="weui-navbar__item weui-bar__item--on" href="#tab1">
+              选项一
+            </a>
+                <a class="weui-navbar__item" href="#tab2">
+              选项二
+            </a>
+                <a class="weui-navbar__item" href="#tab3">
+              选项三
+            </a>
+            </div>
+            <div class="weui-tab__bd">
+                <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+                    <h1>页面一</h1>
+                </div>
+                <div id="tab2" class="weui-tab__bd-item">
+                    <h1>页面二</h1>
+                </div>
+                <div id="tab3" class="weui-tab__bd-item">
+                    <h1>页面三</h1>
+                </div>
+            </div>
         </div>
 
     </div>
+                
+
+                
+
+        
+
     
     <% include _foot.html %>
     <script src="/js/swiper.js"></script>
