@@ -2,34 +2,34 @@
 <html>
 
 <head>
-    <title>jQuery WeUI</title>
+    <title>专家推荐</title>
     <% include _head.html %>
 </head>
 
 <body ontouchstart>
     <div class="bm-footer">
-        <div class="weui-flex bm-tabbar">
-            <a href="#" class="weui-flex__item">
-                <div class="bm-tabbar__icon"><span class="bmicon bmicon-home"></span></div>
-                <div class="bm-tabbar__label">首页</div>
+        <div class="bm-nav">
+            <a href="#" class="item active">
+                <div class="bm-nav__icon"><span class="bmicon bmicon-home"></span></div>
+                <div class="bm-nav__label">首页</div>
             </a>
-            <a href="#" class="weui-flex__item">
-                <div class="bm-tabbar__icon"><span class="bmicon bmicon-together"></span></div>
-                <div class="bm-tabbar__label">合买计划</div>
+            <a href="#" class="item">
+                <div class="bm-nav__icon"><span class="bmicon bmicon-together"></span></div>
+                <div class="bm-nav__label">合买计划</div>
             </a>
-            <a href="#" class="weui-flex__item">
-                <div class="bm-tabbar__icon"><span class="bmicon bmicon-news"></span></div>
-                <div class="bm-tabbar__label">推荐资讯</div>
+            <a href="#" class="item">
+                <div class="bm-nav__icon"><span class="bmicon bmicon-news"></span></div>
+                <div class="bm-nav__label">推荐资讯</div>
             </a>
-            <a href="#" class="weui-flex__item">
-                <div class="bm-tabbar__icon"><span class="bmicon bmicon-user"></span></div>
-                <div class="bm-tabbar__label">个人中心</div>
+            <a href="#" class="item">
+                <div class="bm-nav__icon"><span class="bmicon bmicon-user"></span></div>
+                <div class="bm-nav__label">个人中心</div>
             </a>
         </div>
     </div>
 
-    <div class="bm-container">
-        <div class="swiper-container">
+    <div class="bm-container with-ftnav">
+        <div class="swiper-banner">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -38,12 +38,12 @@
                 <div class="swiper-slide"><img src="/images/banma/03.jpg" /></div>
             </div>
             <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination swiper-p1"></div>
         </div>
 
-        <div class="weui-grids">
+        <div class="weui-grids quick-nav">
             <a href="#" class="weui-grid js_grid">
-                <div class="weui-grid__icon">
+                <div class="weui-grid__icon s1">
                     <span class="bmicon bmicon-expert"></span>
                 </div>
                 <p class="weui-grid__label">
@@ -51,7 +51,7 @@
                 </p>
             </a>
             <a href="#" class="weui-grid js_grid">
-                <div class="weui-grid__icon">
+                <div class="weui-grid__icon s2">
                     <span class="bmicon bmicon-together2"></span>
                 </div>
                 <p class="weui-grid__label">
@@ -59,7 +59,7 @@
                 </p>
             </a>
             <a href="#" class="weui-grid js_grid">
-                <div class="weui-grid__icon">
+                <div class="weui-grid__icon s3">
                     <span class="bmicon bmicon-news2"></span>
                 </div>
                 <p class="weui-grid__label">
@@ -67,13 +67,33 @@
                 </p>
             </a>
             <a href="#" class="weui-grid js_grid">
-                <div class="weui-grid__icon">
+                <div class="weui-grid__icon s4">
                     <span class="bmicon bmicon-help"></span>
                 </div>
                 <p class="weui-grid__label">
                     新手指南
                 </p>
             </a>
+        </div>
+
+        <div class="bm-ann">
+            <div class="hd"><span class="bmicon bmicon-ann"></span>最新公告：</div>
+            <div class="bd">
+                <div class="swiper-ann">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                        <div class="swiper-slide"><a href="#">刚刚“九八竞猜”发布了新的推荐单</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="weui-tab">
@@ -112,9 +132,16 @@
     <% include _foot.html %>
     <script src="/js/swiper.js"></script>
     <script>
-    $(".swiper-container").swiper({
+    $(".swiper-banner").swiper({
+        pagination: '.swiper-p1',
         loop: true,
         autoplay: 3000
+    });
+    $(".swiper-ann").swiper({
+        pagination: '.swiper-p2',
+        loop: true,
+        autoplay: 3000,
+        direction: 'vertical'
     });
     </script>
 </body>

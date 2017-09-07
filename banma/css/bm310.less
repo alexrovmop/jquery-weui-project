@@ -1,16 +1,16 @@
 @cyan: #4fc1e9;
 @cyan-d: #3bafda;
-@blue: #5d9cec;
-@blue-d: #4a89dc;
-@red: #ed5565;
+@blue: #006DD9;
+@blue-d: darken(@blue, 10%);
+@red: #CE505E;
 @red-d: #cf3c4b;
 @red-warn: #ff3c30;
 @purple: #ec87c0;
 @purple-d: #d770ad;
 @yellow: #ffce54;
 @yellow-d: #f6bb42;
-@green: #a0d468;
-@green-d: #80b448;
+@green: #19D286;
+@green-d: darken(@green, 10%);
 @orange: #fc6e51;
 @orange-d: #e05034;
 @gray: #f0f2f5;
@@ -206,8 +206,8 @@ footer {
     color: @cyan;
 }
 
-.swiper-container {
-    width: 100%;
+.swiper-banner {
+    width: 100%; margin: 0 auto; position: relative; overflow: hidden; z-index: 1;
     img {
         display: block;
         width: 100%;
@@ -229,27 +229,20 @@ footer {
 .bm-footer {
     position: fixed; z-index: 2; bottom: 0; left: 0; right: 0; box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
     .bm-nav {
-        .display-flex; height: 44px; background: @gray;
-        .mypanel {
-            .bmicon {
-                display: block; top: 0; font-size: 24px; color: #fff; background: @cyan; width: 44px; height: 44px; line-height: 44px; text-align: center;
-            }
-        }
+        .display-flex; background: @gray;
         .item {
-            .flex-1; text-align: center; line-height: 44px; color: #787878;
+            .flex-1; text-align: center; padding: 5px 0 0; color: #999;
             &:active { background: @gray-d;}
-            &.active { color: @cyan; background: #fff;}
-            &.item-photo {
-                .bmicon { border-radius: 8px; background: @cyan; color: #fff; text-align: center; font-size: 16px; width: 26px; height: 26px; line-height: 26px; margin-right: 4px;}
+            &.active { color: @red; }
+            .bm-nav__icon {
+                display: inline-block; width: 27px; height: 27px; vertical-align: middle;
+                .bmicon { font-size: 27px; top: 0;}
             }
+            .bm-nav__label { font-size: 10px; line-height: 1.8;}
         }
     }
-    .weui_btn {
+    .weui-btn {
         border-radius: 0;
-    }
-    .bm-cr {
-        position: relative; height: 20px; background: #fff;
-        &:before { .t-line; border-color: #f2f2f2;}
     }
 }
 .qlx-mypanel {
@@ -371,17 +364,58 @@ footer {
     &.with-ft {
         border-bottom: transparent solid 44px;
     }
-    &.with-cr {
-        border-bottom: transparent solid 64px;
-    }
-    &.with-only-cr {
-        border-bottom: transparent solid 20px;
+    &.with-ftnav {
+        border-bottom: transparent solid 54px;
     }
     &.with-filter {
         border-top: transparent solid 87px;
     }
     &.with-only-filter {
         border-top: transparent solid 43px;
+    }
+}
+
+/* 导航 */
+.quick-nav {
+    background: #fff;
+    .weui-grid {
+        padding: 15px 2px; width: 25%;
+        &:before,&:after { border-bottom-color: #e4e4e4;}
+        .weui-grid__icon {
+            font-size: 24px; width: 36px; height: 36px; line-height: 36px; border-radius: 8px; color: #fff; text-align: center; margin-bottom: 6px;
+            &.s1 { background-color: @blue;}
+            &.s2 { background-color: @green;}
+            &.s3 { background-color: @yellow;}
+            &.s4 { background-color: @orange;}
+            &.s5 { background-color: @red;}
+            &.s6 { background-color: @cyan;}
+            .bmicon {
+                font-size: 24px; top: 0;
+            }
+        }
+        .weui-grid__label {
+            font-size: 13px; margin-top: 8px; line-height: 16px;
+            p { color: @orange;}
+        }
+    }
+}
+
+/* 公告 */
+.bm-ann {
+    .display-flex; position: relative; background: #fff;
+    &:after { .b-line;}
+    .hd {
+        padding: 6px; line-height: 24px; font-size: 15px; color: @red;
+        .bmicon { margin-right: 3px;}
+    }
+    .bd {
+        .flex-1; padding: 6px 6px 6px 0; min-width: 0;
+    }
+}
+.swiper-ann {
+    width: 100%; height: 24px; line-height: 24px; margin: 0 auto; position: relative; overflow: hidden; z-index: 1;
+    .swiper-slide {
+        a { display: block; color: #666; font-size: 15px; .txt-line-one;}
     }
 }
 
