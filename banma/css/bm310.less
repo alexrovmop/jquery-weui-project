@@ -2,17 +2,17 @@
 @cyan-d: #3bafda;
 @blue: #006DD9;
 @blue-d: darken(@blue, 10%);
-@red: #CE505E;
-@red-d: #cf3c4b;
+@red: #f13f3f;
+@red-d: darken(@red, 5%);
 @red-warn: #ff3c30;
 @purple: #ec87c0;
 @purple-d: #d770ad;
 @yellow: #ffce54;
 @yellow-d: #f6bb42;
 @green: #19D286;
-@green-d: darken(@green, 10%);
-@orange: #fc6e51;
-@orange-d: #e05034;
+@green-d: darken(@green, 5%);
+@orange: #f60;
+@orange-d: darken(@orange, 10%);
 @gray: #f0f2f5;
 @gray-d: #e3e5e8;
 
@@ -222,12 +222,29 @@ footer {
 
 .weui-article {
     img { vertical-align: middle;}
+    p { margin-bottom: 0;}
+}
+
+.article-info {
+    font-size: 12px; align-items: center; color: #999; margin-bottom: 10px;
+    .bmicon {
+        top: -1px; vertical-align: middle; margin-right: 4px;
+        &.active { color: @red;}
+    }
+    .article-like { margin-right: 10px;}
+    .article-view { margin-right: 10px;}
+    .article-time { text-align: right;}
 }
 
 /* 头部、底部以及页面包含头部和底部时bm-container的样式 */
-.bm-header {}
+.bm-header {
+    position: fixed; z-index: 1; top: 0; left: 0; right: 0; background: #fff; box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    .bm-filter {
+        margin-top: 0;
+    }
+}
 .bm-footer {
-    position: fixed; z-index: 2; bottom: 0; left: 0; right: 0; box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1);
+    position: fixed; z-index: 2; bottom: 0; left: 0; right: 0; box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1); background: #fff;
     .bm-nav {
         .display-flex; background: @gray;
         .item {
@@ -241,118 +258,11 @@ footer {
             .bm-nav__label { font-size: 10px; line-height: 1.8;}
         }
     }
+    .price {
+        padding: 10px 15px; box-sizing: border-box; line-height: 24px; font-size: 14px; color: #555;
+    }
     .weui-btn {
         border-radius: 0;
-    }
-}
-.qlx-mypanel {
-    position: fixed; top: 0; left: -70%; bottom: 0; width: 70%; z-index: 10000; background: #fff; overflow: auto;
-    .hd {
-        background: center center no-repeat; background-size: cover; padding-top: 33%;
-        .myname {
-            .display-flex; padding: 0 10px 10px;
-            .avatar {
-                width: 44px; height: 44px; border: #fff solid 2px; border-radius: 44px; background: center center no-repeat; background-size: cover; margin: -5px 10px 0 0;
-            }
-            .name {
-                .flex-1; font-size: 20px; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); line-height: 30px;
-            }
-        }
-        .myinfo {
-            position: relative; background: rgba(0, 0, 0, 0.5); .display-flex;
-            &:before { .t-line; border-color: rgba(255, 255, 255, 0.3); }
-            .item {
-                position: relative; white-space: nowrap; text-align: center; padding: 10px; .flex-1; color: rgba(255, 255, 255, 0.7); font-size: 13px; line-height: 15px;
-                &:before { .l-line; border-color: rgba(0, 0, 0, 0.1); }
-                &:after { .r-line; border-color: rgba(255, 255, 255, 0.1); }
-                &:first-child:before { display: none;}
-                &:last-child:after { display: none;}
-                p { font-size: 12px; padding: 5px 0; color: #fff;}
-            }
-        }
-    }
-    .bd {
-        .mypanel-nav {
-            padding: 15px 0;
-            .items {
-                margin-bottom: 15px;
-                a.item {
-                    display: block; padding: 10px 20px; .txt-line-one; line-height: 24px; font-size: 16px; color: #666;
-                    .qlxicon { color: @cyan-d; margin-right: 10px;}
-                    &:active { background: #f6f6f6;}
-                }
-            }
-        }
-    }
-}
-
-.filter-cont {
-    position: fixed; top: 0; right: -80%; bottom: 0; width: 80%; z-index: 10001; background: #fff;
-    .bd {
-        position: absolute; top: 0; left: 0; right: 0; bottom: 40px; overflow: auto;
-        .filter-title { padding: 5px 15px; line-height: 28px; font-size: 17px;}
-        .weui-cells {
-            margin: 0 0 10px;
-            &:before,&:after,.weui-cell:before { display: none;}
-        }
-        .filter-Interval {
-            .weui-cell {
-                padding: 5px 15px;
-                .weui-cell__bd {
-                    background: #eee; border-radius: 4px; padding: 6px; line-height: 13px;
-                    .weui-input { text-align: center; font-size: 12px; line-height: 13px;}
-                }
-                .m-line { padding: 0 5px; color: #ccc;}
-            }
-        }
-        .filter-radio {
-            padding: 0 15px; overflow: hidden;
-            .weui-check__label {
-                display: block; float: left; white-space: nowrap; margin: 0 10px 10px 0; height: 28px;
-                .weui-icon-checked {
-                    position: relative; display: block; float: left; background: #eee; border-radius: 5px; border: #eee solid 1px; padding: 0 10px 0 22px; height: 28px; line-height: 24px; font-size: 14px; box-sizing: content-box; color: #666;
-                    &:before {
-                        position: absolute; top: 7px; left: 3px; content: ""; height: 14px; width: 14px; line-height: 14px; font-size: 14px;
-                    }
-                }
-                .weui-check:checked+.weui-icon-checked {
-                    background: #fff; border: @red solid 1px; color: @red;
-                    &:before {
-                        content: "\EA08"; font-size: 14px; color: @red;
-                    }
-                }
-            }
-        }
-        .filter-checkbox {
-            padding: 0 15px;
-            .weui-check__label {
-                display: block; float: left; white-space: nowrap; margin: 0 10px 10px 0; height: 28px;
-                .weui-icon-checked {
-                    position: relative; display: block; float: left; background: #eee; border-radius: 5px; border: #eee solid 1px; padding: 0 10px 0 22px; height: 28px; line-height: 24px; font-size: 14px; box-sizing: content-box; color: #666;
-                    &:before {
-                        position: absolute; top: 7px; left: 3px; content: "\EA01"; height: 14px; width: 14px; line-height: 14px; font-size: 14px; color: #eee;
-                    }
-                }
-                .weui-check:checked+.weui-icon-checked {
-                    background: #fff; border: @red solid 1px; color: @red;
-                    &:before {
-                        content: "\EA06"; font-size: 14px; color: @red;
-                    }
-                }
-            }
-        }
-    }
-    .ft {
-        position: absolute; left: 0; right: 0; bottom: 0; height: 40px; .display-flex;
-        &:before { .t-line; border-color: #f2f2f2;}
-        &.filter-btn {
-            & > a {
-                .flex-1; display: block; line-height: 40px; text-align: center; color: #333;
-                &.submit {
-                    background: @red; color: #fff;
-                }
-            }
-        }
     }
 }
 
@@ -419,108 +329,215 @@ footer {
     }
 }
 
-/* 旅游产品列表 */
-.product-list {
-    .item {
-        display: block; float: left; width: 50%; box-sizing: border-box; border: #efefef solid 2px; background: #fff;
-        .p-img {
-            width: 100%; height: 0; background: center center no-repeat; background-size: cover; padding: 50% 0 0;
-        }
-        .p-count {
-            .display-flex; line-height:24px; padding:5px 5px 0;
-            .num {
-                .flex-1; font-size: 12px; color: #787878; white-space: nowrap;
-                span { margin-right: 4px; font-size: 13px;}
+.bm-tab {
+    height: auto;
+    .weui-navbar {
+        background: #fff;
+        .weui-navbar__item {
+            color: #666;
+            &:after { display: none;}
+            &.weui-bar__item--on {
+                background-color: transparent; color: @red;
+                &:before { .b-line; border-bottom-width: 3px; border-bottom-color: @red; width: auto; left: 15px; right: 15px; z-index: 100;} 
             }
-            .raty {
-                font-size: 0; white-space: nowrap;
-                img { vertical-align: middle; width: 12px; height: 12px; border: 0; margin-top: -2px;}
-            }
-        }
-        .p-title {
-            padding: 0 5px; font-size: 13px; .txt-line-two; line-height: 22px; height: 44px; color: #333;
-        }
-        .p-price {
-            padding: 5px 5px 8px; white-space: nowrap; .txt-line-one; color: @red; font-size: 12px;
-            span { font-size: 16px; margin: 0 3px;}
-        }
-        &:active {
-            background: #f6f6f6;
         }
     }
 }
 
-.product-hori-list {
-    margin-bottom: 10px;
-    .product-title {
-        position: relative; .display-flex; background: #fff; color: #555; font-size: 15px; line-height: 24px; padding: 8px 10px;
+.expert-list {
+    background: #fff; padding: 10px 0;
+    &:before,&:after { display: none;}
+    .weui-grid {
+        width: 25%; padding: 10px; min-height: 84px;
+        &:before,&:after { display: none;}
+    }
+    .weui-grid__icon {
+        width: 36px; height: 36px;
+        img {
+            width: 36px; height: 36px; border-radius: 100%;
+        }
+    }
+    .weui-grid__label { .txt-line-one; font-size: 12px;}
+    .expert-info {
+        height: 16px; line-height: 16px; text-align: center;
+        span {
+            display: inline-block; background: @orange; border-radius: 10px; font-size: 10px; color: #fff; padding: 0 5px; .txt-line-one;
+        }
+    }
+}
+
+.history-list {
+    margin-top: 0; font-size: 14px;
+}
+
+/* 专家详情 */
+.expert-hd {
+    position: relative; overflow: hidden;
+    &:before {
+        position: absolute; content: ""; top: 0; left: 0; right: 0; background: @red; height: 80px; z-index: 1;
+    }
+    .expert-box {
+        position: relative; background: #fff; box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1); border-radius: 5px; margin: 10px; z-index: 2;
+    }
+    .expert-info {
+        position: relative; .display-flex; align-items: center; padding: 10px; z-index: 3;
+        .info-hd {
+            margin-right: 10px;
+            .info-avatar { background-repeat: no-repeat; background-position: center center; background-size: cover; width: 64px; height: 64px; border-radius: 64px; }
+        }
+        .info-bd {
+            .flex-1; margin-right: 5px;
+            .info-name {
+                font-size: 16px; margin-bottom: 5px; .txt-line-one; line-height: 18px;
+            }
+            .info-count { font-size: 14px; color: #666;}
+            
+        }
+    }
+    .expert-about {
+        font-size: 14px; line-height: 17px; padding: 10px 15px; color: #555; position: relative;
+        &:before { .t-line; left: 10px; right: 10px; border-color: #eee;}
+    }
+}
+.expert-bd {
+    .expert-tab {
+        position: relative; .display-flex; align-items: center; z-index: 2; background: #fff;
+        .item {
+            position: relative; .flex-1; text-align: center; padding: 12px 5px; color: #666; font-size: 16px; line-height: 20px;
+            &:last-child { margin-right: 0;}
+            &:active { background: #f6f6f6;}
+            &.active {
+                background: @red; color: #fff;
+            }
+        }
+    }
+    .weui-article {
+        position: relative; padding: 10px; background: #fff;
         &:before { .t-line;}
         &:after { .b-line;}
-        .list-title {
-            position: relative; .flex-1; padding: 0 0 0 12px; color: @cyan-d;
-            &:before { .l-line; top: 18%; bottom: 18%; border-width: 3px; border-color: @cyan;}
-        }
-        .list-more {
-            position: relative; color: #a2a2a2; font-size: 14px; padding: 0 10px 0 0;
-            &:after { .arrow-r;}
-        }
-    }
-    .item {
-        position: relative; display: block; background: #fff;
-        &:after { .b-line; }
-        .product-box {
-            position: relative; .display-flex; margin: 0; padding: 10px;
-            .hd {
-                margin-right: 10px;
-                .product-photo {
-                    vertical-align: middle; width: 87px; height: 87px; border-radius: 4px;
-                    &.photo-big {
-                        height: 120px; width: 120px;
-                    }
-                }
-            }
-            .bd {
-                .flex-1;
-                .product-txt {
-                    font-size: 15px; overflow: hidden; color: #555; line-height: 20px; margin-bottom: 3px; .txt-line-two;
-                }
-                .product-price {
-                    margin: 0; color: #999; font-size: 10px;
-                    .price-sign { font-size: 13px; color: @orange;}
-                    .price-big { font-size: 17px; color: @orange;}
-                    .price-small { font-size: 13px; color: @orange;}
-                }
-                .product-count { font-size: 12px; color: #aaa; line-height: 12px;}
-                .product-tag {
-                    font-size: 12px; color: #aaa; line-height: 15px;
-                    span { border: lighten(@orange, 15%) solid 1px; display: inline-block; border-radius: 10px; color: @orange; padding: 0 6px; margin: 0 5px 4px 0; }
-                }
-                .product-btn {
-                    .weui-btn { vertical-align: center;}
-                }
-            }
-        }
-        a.product-box:active { background: #e9e9e9;}
     }
 }
 
-/* 旅游专题列表 */
-.subject-list {
-    .item {
-        display: block; background: #fff; margin-bottom: 10px; /* padding-bottom: 25px; */
-        .s-img {
-            width: 100%;
-            img { vertical-align: middle; width: 100%; height: auto;}
+.panel-box {
+  background: #fff; border-top: #eee solid 1px;
+    .panel-t {
+        position: relative; padding: 10px 15px 10px 25px; line-height: 24px;
+        &:before {
+            content: ""; display: block; position: absolute; left: 14px; top: 29%; bottom: 29%; width: 4px; background: @red; border-radius: 1px;
         }
-        .s-title {
-            padding: 15px; text-align: center; font-size: 19px; color: #555; line-height: 24px;
+        .title { color: #666; font-size: 15px;}
+        .more {
+            position: relative; padding-right: 15px; font-size: 14px; color: #A0978E;
+            &:after { .arrow-r;}
         }
-        .s-desc {
-            padding: 0 15px; .txt-line-two; color: #787878; line-height: 20px; font-size: 14px;
+        .change {
+            font-size: 14px; color: #A0978E;
         }
-        &:active {
-            background: #f6f6f6;
+        .right {
+            font-size: 14px; color: #A0978E;
         }
+        .change .zyjf-icon { margin: -5px 5px 0 0; vertical-align: middle;}
+        .button { 
+            button {
+                margin: 0; padding: 2px 14px; background: #4292ED; border-radius: 34px; color: #fff; font-size: 12px; line-height: 1.6;
+                &:after { border-width: 0; }
+                .button-hover { background: #FF8C00; }
+                .zyjf-icon { margin-top: -10px; margin-right: 4px; vertical-align: middle; font-size: 10px; }
+            }
+        }
+    }
+}
+
+/* 合买计划列表 */
+.together-project {
+    .together-user {
+        align-items: center;
+        .hd { margin-right: 10px;}
+        .bd { padding: 0; line-height: 16px;}
+        .user-avatar { background: center center no-repeat; background-size: cover; width: 48px; height: 48px; border-radius: 48px;}
+        .user-name { font-size: 16px; color: #333; margin-bottom: 4px;}
+        .together-info { font-size: 14px;}
+    }
+    .together-class {
+        margin-right: 10px;
+        .class-img {background: center center no-repeat; background-size: cover; width: 48px; height: 48px; border-radius: 5px;}
+
+    }
+    .together-title {
+        line-height: 24px;
+        .weui-media-box__title { font-size: 16px; margin-bottom: 4px;}
+        .together-tag {
+            overflow: visible; line-height: normal;
+            span { padding: 0 5px; border: @cyan solid 1px; border-radius: 5px; color: @cyan-d; font-size: 12px;}
+        }
+    }
+    .togther-btn { margin-left: 10px;}
+    .together-table {
+        margin-top: 10px; align-items: center;
+        table {
+            box-sizing: border-box; width: 100%; max-width: 100%; border-spacing: 0; border-collapse: collapse;
+            th,td {
+                font-weight: normal; text-align: center; padding: 2px 5px; border: #eee solid 1px; font-size: 14px;
+            }
+            th { background: lighten(@cyan, 35%); border: lighten(@cyan, 25%) solid 1px; color: @cyan-d; }
+            td { color: #555;}
+        }
+    }
+    .weui-media-box__info { font-size: 12px; margin-top: 10px;}
+}
+
+/* 合买计划详情 */
+.together-detail {
+    background: #fff;
+    .detail-title {
+        color: #fff; background: @red; padding: 10px; text-align: center; font-size: 18px;
+    }
+    .detail-count {
+        background: @orange; color: #fff;
+        .item {
+            padding: 10px 5px; text-align: center; line-height: 20px; font-size: 14px;
+        }
+    }
+    .detail-user {
+        align-items: center; padding: 10px 15px;
+        .hd { margin-right: 10px;}
+        .bd { padding: 0; line-height: 16px;}
+        .user-avatar { background: center center no-repeat; background-size: cover; width: 36px; height: 36px; border-radius: 36px;}
+        .user-name { font-size: 16px; color: #333; margin-bottom: 4px;}
+        .together-info { font-size: 14px;}
+    }
+    .together-bd {
+        .panel-box {
+            position: relative;
+            &:after { .b-line; border-color: #eee; left: 10px;}
+            .panel-t {
+                .title {
+                    color: #444;
+                }
+            }
+        }
+        .weui-article {
+            h2.title { color: #333; font-size: 14px;}
+            section {
+                color: #666; font-size: 13px;
+            }
+        }
+    }
+}
+
+.bm-qr {
+    background: #fff; border: #eee solid 1px; padding: 10px; font-size: 11px; line-height: 14px;
+    .slogan {
+        color: @red; font-size: 16px; overflow: hidden; line-height: 20px; padding: 4px 0;
+        .bmicon {
+            float: left; margin-right: 5px; font-size: 48px; margin-top: -4px;
+        }
+    }
+    a { color: #333;}
+    .qr-img {
+        text-align: right;
+        img { width: 64px; height: 64px; margin-bottom: 5px;}
+        p { white-space: nowrap; font-size: 10px; color: #999;}
     }
 }
 
