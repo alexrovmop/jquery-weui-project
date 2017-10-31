@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>个人中心-申请成为专家</title>
+    <% include _head.html %>
+</head>
+
+<body ontouchstart>
+    <div class="bm-header">
+        <div class="header-title">申请成为专家</div>
+    </div>
+    <div class="bm-footer">
+        <div class="weui-flex">
+            <div class="weui-flex__item">
+                <a href="javascript:;" class="weui-btn weui-btn_warn">申请入驻</a>
+            </div>
+        </div>
+    </div>
+    <div class="bm-container with-hd with-ft">
+        <div class="weui-cells__title">感谢您选择入驻斑马跟单平台，为完成您的专家资格认证，请认真填写以下信息：</div>
+        <div class="weui-cells weui-cells_form bm-form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">姓名</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入姓名">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">电话</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入联系电话">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">所在地</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入所在地">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">彩店地址</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入彩店地址">
+                </div>
+            </div>
+        </div>
+
+        <div class="weui-cells weui-cells_form bm-form">
+            <div class="weui-cell">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">专家名称</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="text" placeholder="请输入专家名称">
+                </div>
+            </div>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <div class="weui-uploader">
+                        <div class="weui-uploader__hd">
+                            <p class="weui-uploader__title">专家二维码</p>
+                            <div class="weui-uploader__info">0/2</div>
+                        </div>
+                        <div class="weui-uploader__bd">
+                            <ul class="weui-uploader__files" id="uploaderFiles">
+                                <!-- <li class="weui-uploader__file" style="background-image:url(/images/banma/qr.jpg)"></li> -->
+                            </ul>
+                            <div class="weui-uploader__input-box">
+                                <input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells__tips">
+            1.当您入驻为本平台专家后，“专家名称”将作为您在本平台的默认展示名称被其他彩民看到。<br/>
+            2.当您使用本平台发布合买计划时，参与您的合买计划的彩民将通过此二维码与您联系，请正确上传您的微信二维码图案。
+        </div>
+    </div>
+    <% include _foot.html %>
+</body>
+
+</html>

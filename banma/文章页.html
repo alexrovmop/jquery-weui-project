@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>专家详情</title>
+    <% include _head.html %>
+</head>
+
+<body ontouchstart>
+
+    <div class="bm-container">
+        <article class="weui-article">
+            <h1>竞彩足球9月12日分析：拜仁兵锋无人能挡</h1>
+            <div class="article-meta">
+                <span class="article-time">2017年09月12日18:40</span>
+                <span class="article-source">斑马310</span>
+            </div>
+            <section>
+                <section>
+                    <h3>恒大主场捍卫荣耀 切尔西全身而退</h3>
+                    <p>
+                        两队在中超、亚冠和足协杯赛场一共交手12次，恒大5胜5平2负完全占据上风，其中5个主场比赛，恒大3胜2平保持不败。而恒大做客面对上港1平2负未能取胜。今年首次和上港交手就是坐镇天体，虽然在2-0领先的情况下一度被上港追平，但高拉特的点射绝杀，帮助恒大3-2取胜。恒大主场值得支持。切尔西联赛已经三连胜，而对手都是实力强劲，可见状态爆表。唯一的问题是体力，因为球员大都参加世预赛，体能必然受到非常大的影响，另外就是未来赛程，周末要对阵阿森纳，必然会为主力队员提供休息时间，轮换应是必然的。切尔西取胜不易，但也不会让场面失控，应可全身而退。
+                    </p>
+                    <p>
+                        巴塞罗那上周末西甲联赛主场迎战实力平平的西班牙人，球队全场占优，最终5：0横扫对手，新赛季联赛豪取三连胜，打进9球并保持不失，整体发挥十分出色。球队在国家队比赛日期间包括梅西、苏亚雷斯等多名核心主力都几乎打满两场世预赛，不过球队在上周末联赛并没有给予主力轮休，5：0的屠杀也证明球队体能状况依旧良好；而尤文图斯上周末联赛主场迎战弱旅切沃以3：0大胜对手，新赛季联赛同样豪取三连胜，表现丝毫不落下风，值得一提的是，球队轮换了大部分出战世预赛的主力，整体得到相当不错的恢复。不过球队后防大将基耶利尼在国家队训练受伤，本场比赛极有可能缺阵，这对球队是一个不少的打击。
+                    </p>
+                </section>
+                <section>
+                    <h3>巴塞罗那主场占优 拜仁兵锋无人能挡</h3>
+                    <p>
+                        主客双方状态都非常好，在联赛都是一样的三连胜。巴萨上一场5-0西班牙人，狂虐弱旅。尤文图斯最近3-0切沃也是不甘示弱。此役伤缺了后防大将基耶利尼的尤文，难以抵挡巴萨的进攻。拜仁德甲五冠王的实力毋庸置疑，主场面对弱旅不容有失，上场0-2霍芬海姆虽然是体力的原因，此役在家门口如果还输，那德甲老大的脸面可不会太好看。拜仁必然会用一场大胜来提振士气。
+                    </p>
+                </section>
+                <section>
+                    <h3>曼联欧冠开门首胜 本菲卡主场称雄</h3>
+                    <p>曼联坐镇主场迎战巴塞尔。小组赛里，最需要堤防的是本菲卡，其它球队实力还是有很大差距。巴塞尔是瑞士超的冠军，并且已经八连冠。但是他们在国内可以纵横，来到欧冠赛场就显得不是那么耀眼了，此役面对红魔只能是少输当赢。本菲卡夏窗买入道格拉斯.桑托斯，加比哥尔，塞菲罗维奇以填补球队人员流失，效果不错，最近5胜1平就是明证，而莫斯科中央陆军资格赛战胜年青人，以第四档球队身份晋级欧冠，莫斯科中央陆军上轮联赛战胜阿姆卡尔，目前联赛5胜1平3负排名第5，球队双线作战，联赛成绩有所下滑。两队实力上主队占优，本战莫斯科中央陆军车马劳顿客战本菲卡，前途未卜。</p>
+                </section>
+            </section>
+            <div class="article-info weui-flex">
+                <div class="article-like" id="article-like"><span class="bmicon bmicon-like"></span><span class="like-sum">22</span></div>
+                <div class="article-view"><span class="bmicon bmicon-view"></span>5678</div>
+                <div class="weui-flex__item article-time">2017-08-31 20：00</div>
+            </div>
+            <div class="bm-qr weui-flex">
+                <div class="weui-flex__item">
+                    <p class="slogan">
+                        <span class="bmicon bmicon-home"></span>关注斑马跟单<br/>分享专家推荐
+                    </p>
+                    <p>长按右边二维码关注微信公众号“斑马跟单”<br/>微信号：“斑马跟单”  QQ群：1234567890</p>
+                </div>
+                <div class="qr-img">
+                    <img src="/images/banma/qr.png" alt="">
+                    <p>长按或扫码关注</p>
+                </div>
+            </div>
+        </article>
+
+    </div>
+    
+    <% include _foot.html %>
+    <script>
+        $(function(){
+            $("#article-like").click(function(){
+                var likethis = $(".bmicon-like");
+                var likesum = $(".like-sum");
+                var num=parseInt(likesum.text());
+                if(likethis.hasClass("active")){
+                    likethis.removeClass("active");
+                    num -=1;
+                    likesum.text(num)
+                }else{
+                    likethis.addClass("active");
+                    num +=1;
+                    likesum.text(num)
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
