@@ -8,8 +8,13 @@
 
 <body ontouchstart>
     <div class="bm-header">
-        <div class="weui-cells weui-flex bm-filter">
-            <div class="weui-cell weui-cell_select weui-flex__item">
+        <div class="weui-cells weui-cells_form weui-flex bm-filter">
+            <div class="weui-cell weui-flex__item">
+                <div class="weui-cell__bd">
+                    <input class="weui-input" id="home-city" type="text" placeholder="按城市筛选">
+                </div>
+            </div>
+            <!-- <div class="weui-cell weui-cell_select weui-flex__item">
                 <div class="weui-cell__bd">
                     <select class="weui-select" name="select1">
                         <option selected="" value="1">分类</option>
@@ -21,7 +26,7 @@
                         <option value="6">七星彩</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
             <div class="weui-cell weui-cell_select weui-flex__item">
                 <div class="weui-cell__bd">
                     <select class="weui-select" name="select2">
@@ -441,7 +446,16 @@
     </div>
     
     <% include _foot.html %>
-
+    <script src="/js/city-picker.js"></script>
+    <script>
+    $("#home-city").cityPicker({
+        title: "选择目的地",
+        showDistrict: false,
+        onChange: function(picker, values, displayValues) {
+            console.log(values, displayValues);
+        }
+    });
+    </script>
 </body>
 
 </html>
