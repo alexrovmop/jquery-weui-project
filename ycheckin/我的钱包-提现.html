@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>医签到</title>
+        <% include _head.html %>
+    </head>
+
+<body ontouchstart>
+    <div class="weui-dialog dialog-payment">
+        <div class="weui-dialog__hd">
+            <strong class="weui-dialog__title">选择提现方式</strong>
+        </div>
+        <div class="weui-dialog__bd" style="padding-left: .2em; padding-right: .2em;">
+            <div class="weui-cells weui-cells_radio payment-list">
+                <label class="weui-cell weui-check__label" for="x11">
+                    <div class="weui-cell__hd">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-wxpay"></use>
+                        </svg>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <p>微信钱包</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" class="weui-check" name="radio1" id="x11">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+                <label class="weui-cell weui-check__label" for="x12">
+                    <div class="weui-cell__hd">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-abc"></use>
+                        </svg>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <p>农业银行储蓄卡(1179)</p>
+                    </div>
+                    <div class="weui-cell__ft">
+                        <input type="radio" name="radio1" class="weui-check" id="x12" checked="checked">
+                        <span class="weui-icon-checked"></span>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn default">取消</a>
+            <a href="javascript:;" class="weui-dialog__btn ">确定</a>
+        </div>
+    </div>
+    <div class="weui-mask"></div>
+
+    <div class="ci-hd">
+      <div class="ci-topbar">
+        <div class="start-item">
+          <a href="#">取消</a>
+        </div>
+        <h1 class="title">提现</h1>
+      </div>
+    </div>
+
+    <div class="ci-bd with-hd with-graybg">
+        <div class="weui-cells__tips">可免费提现到微信钱包和银行卡。</div>
+        <div class="ci-withdraw">
+            <div class="hd">
+                <div class="card-t">到账至</div>
+                <a href="javascript:" id="select-payment" class="card-c">
+                    <div class="card-name">招商银行(1189)</div>
+                    <div class="card-remark">提现手续费率0.1%</div>
+                </a>
+            </div>
+            <div class="bd">
+                <div class="amount-t">提现金额</div>
+                <div class="amount-c">
+                    <div class="amount-hd"><label class="weui-label">￥</label></div>
+                    <div class="amount-bd">
+                        <input class="weui-input" type="number" pattern="[0-9]*" placeholder=""/>
+                    </div>
+                </div>
+            </div>
+            <div class="ft">
+                <div class="weui-cells__tips">可提现余额￥266.88 <a href="#">全部提现</a></div>
+                <div class="weui-btn-area">
+                    <a class="weui-btn weui-btn_orange" href="javascript:">提现</a>
+                </div>
+                <div class="weui-cells__tips" style=" text-align: center; ">24小时内到账</div>
+            </div>
+        </div>
+    </div>
+    
+    <% include _foot.html %>
+    <script type="text/javascript">
+        $('#select-payment').click(function(){
+            $('.dialog-payment').toggleClass("weui-dialog--visible");
+            $('.weui-mask').toggleClass("weui-mask--visible");
+        });
+        $('.weui-mask').click(function(){
+            $('.dialog-payment').removeClass("weui-dialog--visible");
+            $('.weui-mask').removeClass("weui-mask--visible");
+        });
+        $('.weui-dialog__btn').click(function(){
+            $('.weui-dialog').removeClass("weui-dialog--visible");
+            $('.weui-mask').removeClass("weui-mask--visible");
+        });
+    </script>
+</body>
+</html>

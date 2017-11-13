@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery WeUI</title>
+    <% include _head.html %>
+    <style>
+      *{margin: 0;padding: 0;list-style: none;}
+      /*
+      KISSY CSS Reset
+      理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
+      2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
+      3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
+      特色：1. 适应中文；2. 基于最新主流浏览器。
+      维护：玉伯<lifesinger@gmail.com>, 正淳<ragecarrier@gmail.com>
+       */
+
+      /** 清除内外边距 **/
+      body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+      dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+      pre, /* text formatting elements 文本格式元素 */
+      form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+      th, td /* table elements 表格元素 */ {
+        margin: 0;
+        padding: 0;
+      }
+
+      /** 设置默认字体 **/
+      body,
+      button, input, select, textarea /* for ie */ {
+        font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+      address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+      code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
+      small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+      /** 重置列表元素 **/
+      ul, ol { list-style: none; }
+
+      /** 重置文本格式元素 **/
+      a { text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+
+      /** 重置表单元素 **/
+      legend { color: #000; } /* for ie6 */
+      fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
+      button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
+      /* 注：optgroup 无法扶正 */
+
+      /** 重置表格元素 **/
+      table { border-collapse: collapse; border-spacing: 0; }
+
+      /* 清除浮动 */
+      .ks-clear:after, .clear:after {
+        content: '\20';
+        display: block;
+        height: 0;
+        clear: both;
+      }
+      .ks-clear, .clear {
+        *zoom: 1;
+      }
+
+      .main {
+        padding: 30px 100px;
+      width: 960px;
+      margin: 0 auto;
+      }
+      .main h1{font-size:36px; color:#333; text-align:left;margin-bottom:30px; border-bottom: 1px solid #eee;}
+
+      .helps{margin-top:40px;}
+      .helps pre{
+        padding:20px;
+        margin:10px 0;
+        border:solid 1px #e7e1cd;
+        background-color: #fffdef;
+        overflow: auto;
+      }
+
+      .icon_lists{
+        width: 100% !important;
+
+      }
+
+      .icon_lists li{
+        float:left;
+        width: 100px;
+        height:180px;
+        text-align: center;
+        list-style: none !important;
+      }
+      .icon_lists .icon{
+        font-size: 42px;
+        line-height: 100px;
+        margin: 10px 0;
+        color:#333;
+        -webkit-transition: font-size 0.25s ease-out 0s;
+        -moz-transition: font-size 0.25s ease-out 0s;
+        transition: font-size 0.25s ease-out 0s;
+
+      }
+      .icon_lists .icon:hover{
+        font-size: 100px;
+      }
+
+
+
+      .markdown {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .highlight {
+        line-height: 1.5;
+      }
+
+      .markdown img {
+        vertical-align: middle;
+        max-width: 100%;
+      }
+
+      .markdown h1 {
+        color: #404040;
+        font-weight: 500;
+        line-height: 40px;
+        margin-bottom: 24px;
+      }
+
+      .markdown h2,
+      .markdown h3,
+      .markdown h4,
+      .markdown h5,
+      .markdown h6 {
+        color: #404040;
+        margin: 1.6em 0 0.6em 0;
+        font-weight: 500;
+        clear: both;
+      }
+
+      .markdown h1 {
+        font-size: 28px;
+      }
+
+      .markdown h2 {
+        font-size: 22px;
+      }
+
+      .markdown h3 {
+        font-size: 16px;
+      }
+
+      .markdown h4 {
+        font-size: 14px;
+      }
+
+      .markdown h5 {
+        font-size: 12px;
+      }
+
+      .markdown h6 {
+        font-size: 12px;
+      }
+
+      .markdown hr {
+        height: 1px;
+        border: 0;
+        background: #e9e9e9;
+        margin: 16px 0;
+        clear: both;
+      }
+
+      .markdown p,
+      .markdown pre {
+        margin: 1em 0;
+      }
+
+      .markdown > p,
+      .markdown > blockquote,
+      .markdown > .highlight,
+      .markdown > ol,
+      .markdown > ul {
+        width: 80%;
+      }
+
+      .markdown ul > li {
+        list-style: circle;
+      }
+
+      .markdown > ul li,
+      .markdown blockquote ul > li {
+        margin-left: 20px;
+        padding-left: 4px;
+      }
+
+      .markdown > ul li p,
+      .markdown > ol li p {
+        margin: 0.6em 0;
+      }
+
+      .markdown ol > li {
+        list-style: decimal;
+      }
+
+      .markdown > ol li,
+      .markdown blockquote ol > li {
+        margin-left: 20px;
+        padding-left: 4px;
+      }
+
+      .markdown code {
+        margin: 0 3px;
+        padding: 0 5px;
+        background: #eee;
+        border-radius: 3px;
+      }
+
+      .markdown pre {
+        border-radius: 6px;
+        background: #f7f7f7;
+        padding: 20px;
+      }
+
+      .markdown pre code {
+        border: none;
+        background: #f7f7f7;
+        margin: 0;
+      }
+
+      .markdown strong,
+      .markdown b {
+        font-weight: 600;
+      }
+
+      .markdown > table {
+        border-collapse: collapse;
+        border-spacing: 0px;
+        empty-cells: show;
+        border: 1px solid #e9e9e9;
+        width: 95%;
+        margin-bottom: 24px;
+      }
+
+      .markdown > table th {
+        white-space: nowrap;
+        color: #333;
+        font-weight: 600;
+
+      }
+
+      .markdown > table th,
+      .markdown > table td {
+        border: 1px solid #e9e9e9;
+        padding: 8px 16px;
+        text-align: left;
+      }
+
+      .markdown > table th {
+        background: #F7F7F7;
+      }
+
+      .markdown blockquote {
+        font-size: 90%;
+        color: #999;
+        border-left: 4px solid #e9e9e9;
+        padding-left: 0.8em;
+        margin: 1em 0;
+        font-style: italic;
+      }
+
+      .markdown blockquote p {
+        margin: 0;
+      }
+
+      .markdown .anchor {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        margin-left: 8px;
+      }
+
+      .markdown .waiting {
+        color: #ccc;
+      }
+
+      .markdown h1:hover .anchor,
+      .markdown h2:hover .anchor,
+      .markdown h3:hover .anchor,
+      .markdown h4:hover .anchor,
+      .markdown h5:hover .anchor,
+      .markdown h6:hover .anchor {
+        opacity: 1;
+        display: inline-block;
+      }
+
+      .markdown > br,
+      .markdown > p > br {
+        clear: both;
+      }
+
+
+      .hljs {
+        display: block;
+        background: white;
+        padding: 0.5em;
+        color: #333333;
+        overflow-x: auto;
+      }
+
+      .hljs-comment,
+      .hljs-meta {
+        color: #969896;
+      }
+
+      .hljs-string,
+      .hljs-variable,
+      .hljs-template-variable,
+      .hljs-strong,
+      .hljs-emphasis,
+      .hljs-quote {
+        color: #df5000;
+      }
+
+      .hljs-keyword,
+      .hljs-selector-tag,
+      .hljs-type {
+        color: #a71d5d;
+      }
+
+      .hljs-literal,
+      .hljs-symbol,
+      .hljs-bullet,
+      .hljs-attribute {
+        color: #0086b3;
+      }
+
+      .hljs-section,
+      .hljs-name {
+        color: #63a35c;
+      }
+
+      .hljs-tag {
+        color: #333333;
+      }
+
+      .hljs-title,
+      .hljs-attr,
+      .hljs-selector-id,
+      .hljs-selector-class,
+      .hljs-selector-attr,
+      .hljs-selector-pseudo {
+        color: #795da3;
+      }
+
+      .hljs-addition {
+        color: #55a532;
+        background-color: #eaffea;
+      }
+
+      .hljs-deletion {
+        color: #bd2c00;
+        background-color: #ffecec;
+      }
+
+      .hljs-link {
+        text-decoration: underline;
+      }
+
+      pre{
+        background: #fff;
+      }
+
+      .icon {
+         width: 1em; height: 1em;
+         vertical-align: -0.15em;
+         fill: currentColor;
+         overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body ontouchstart>
+    <div class="main markdown">
+        <h1>IconFont 图标</h1>
+        <ul class="icon_lists">
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-money"></use>
+                    </svg>
+                    <div class="name">红包</div>
+                    <div class="fontclass">#icon-money</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-bcm"></use>
+                    </svg>
+                    <div class="name">交通银行</div>
+                    <div class="fontclass">#icon-bcm</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-spdb"></use>
+                    </svg>
+                    <div class="name">浦发银行</div>
+                    <div class="fontclass">#icon-spdb</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-boc"></use>
+                    </svg>
+                    <div class="name">中国银行</div>
+                    <div class="fontclass">#icon-boc</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-amount"></use>
+                    </svg>
+                    <div class="name">放款金额</div>
+                    <div class="fontclass">#icon-amount</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-gdb"></use>
+                    </svg>
+                    <div class="name">广发银行</div>
+                    <div class="fontclass">#icon-gdb</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-cmbc"></use>
+                    </svg>
+                    <div class="name">中国民生银行</div>
+                    <div class="fontclass">#icon-cmbc</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-cmb"></use>
+                    </svg>
+                    <div class="name">招商银行</div>
+                    <div class="fontclass">#icon-cmb</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-pab"></use>
+                    </svg>
+                    <div class="name">平安银行</div>
+                    <div class="fontclass">#icon-pab</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-success"></use>
+                    </svg>
+                    <div class="name">成功</div>
+                    <div class="fontclass">#icon-success</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-success-outline"></use>
+                    </svg>
+                    <div class="name">成功</div>
+                    <div class="fontclass">#icon-success-outline</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-psbc"></use>
+                    </svg>
+                    <div class="name">中国邮政储蓄银行</div>
+                    <div class="fontclass">#icon-psbc</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-ceb"></use>
+                    </svg>
+                    <div class="name">银行-中国光大-07</div>
+                    <div class="fontclass">#icon-ceb</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-icbc"></use>
+                    </svg>
+                    <div class="name">中国工商银行</div>
+                    <div class="fontclass">#icon-icbc</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-abc"></use>
+                    </svg>
+                    <div class="name">中国农业银行</div>
+                    <div class="fontclass">#icon-abc</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-wxpay"></use>
+                    </svg>
+                    <div class="name">微信 支付</div>
+                    <div class="fontclass">#icon-wxpay</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-hxb"></use>
+                    </svg>
+                    <div class="name">华夏银行</div>
+                    <div class="fontclass">#icon-hxb</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-cncb"></use>
+                    </svg>
+                    <div class="name">中信银行</div>
+                    <div class="fontclass">#icon-cncb</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-cib"></use>
+                    </svg>
+                    <div class="name">兴业银行</div>
+                    <div class="fontclass">#icon-cib</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-ccb"></use>
+                    </svg>
+                    <div class="name">中国建设银行</div>
+                    <div class="fontclass">#icon-ccb</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-wallet"></use>
+                    </svg>
+                    <div class="name">我的钱包</div>
+                    <div class="fontclass">#icon-wallet</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-about"></use>
+                    </svg>
+                    <div class="name">医签到简介</div>
+                    <div class="fontclass">#icon-about</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-contact"></use>
+                    </svg>
+                    <div class="name">联系我们</div>
+                    <div class="fontclass">#icon-contact</div>
+                </li>
+            
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-info"></use>
+                    </svg>
+                    <div class="name">个人基础资料</div>
+                    <div class="fontclass">#icon-info</div>
+                </li>
+            
+        </ul>
+
+
+        <h2 id="symbol-">symbol引用</h2>
+        <hr>
+
+        <p>这是一种全新的使用方式，应该说这才是未来的主流，也是平台目前推荐的用法。相关介绍可以参考这篇<a href="">文章</a>
+        这种用法其实是做了一个svg的集合，与另外两种相比具有如下特点：</p>
+        <ul>
+          <li>支持多色图标了，不再受单色限制。</li>
+          <li>通过一些技巧，支持像字体那样，通过<code>font-size</code>,<code>color</code>来调整样式。</li>
+          <li>兼容性较差，支持 ie9+,及现代浏览器。</li>
+          <li>浏览器渲染svg的性能一般，还不如png。</li>
+        </ul>
+        <p>使用步骤如下：</p>
+        <h3 id="-symbol-">第一步：引入项目下面生成的symbol代码：</h3>
+        <pre><code class="lang-js hljs javascript"><span class="hljs-comment">&lt;script src="./iconfont.js"&gt;&lt;/script&gt;</span></code></pre>
+        <h3 id="-css-">第二步：加入通用css代码（引入一次就行）：</h3>
+        <pre><code class="lang-js hljs javascript">&lt;style type=<span class="hljs-string">"text/css"</span>&gt;
+.icon {
+   width: <span class="hljs-number">1</span>em; height: <span class="hljs-number">1</span>em;
+   vertical-align: <span class="hljs-number">-0.15</span>em;
+   fill: currentColor;
+   overflow: hidden;
+}
+&lt;<span class="hljs-regexp">/style&gt;</span></code></pre>
+        <h3 id="-">第三步：挑选相应图标并获取类名，应用于页面：</h3>
+        <pre><code class="lang-js hljs javascript">&lt;svg <span class="hljs-class"><span class="hljs-keyword">class</span></span>=<span class="hljs-string">"icon"</span> aria-hidden=<span class="hljs-string">"true"</span>&gt;<span class="xml"><span class="hljs-tag">
+  &lt;<span class="hljs-name">use</span> <span class="hljs-attr">xlink:href</span>=<span class="hljs-string">"#icon-xxx"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">use</span>&gt;</span>
+</span>&lt;<span class="hljs-regexp">/svg&gt;
+        </span></code></pre>
+    </div>
+    <% include _foot.html %>
+  </body>
+</html>

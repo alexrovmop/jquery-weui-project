@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>医签到</title>
+    <% include _head.html %>
+  </head>
+
+  <body ontouchstart>
+    <div class="ci-hd">
+      <div class="ci-topbar">
+        <div class="start-item">
+          <a class="backbtn" href="#">上一步</a>
+        </div>
+        <h1 class="title">个人基础资料</h1>
+      </div>
+    </div>
+
+    <div class="ci-bd with-hd with-graybg">
+        <div class="ci-uc">
+            <div class="hd">
+                <div class="uc-name">
+                    <div class="avatar-border">
+                        <div class="avatar" style="background-image: url('/images/ycheckin/avatar.png');"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells weui-cells_form ci-form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">昵称</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入qq号">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入qq号">
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_select weui-cell_select-after">
+                    <div class="weui-cell__hd"><label class="weui-label">性别</label></div>
+                    <div class="weui-cell__bd">
+                        <select class="weui-select" name="select1">
+                            <option selected="" value="1">男</option>
+                            <option value="2">女</option>
+                            <option value="3">其他</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="" class="weui-label">生日</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="date" value="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells weui-cells_form ci-form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="city" class="weui-label">所在城市</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="city" type="text" value="湖北省 武汉市 武昌区">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="hospital" class="weui-label">医院</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="hospital" type="text" value="">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="department" class="weui-label">科室</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" id="department" type="text" value="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="weui-cells ci-form">
+                <a class="weui-cell weui-cell_access" href="javascript:;">
+                    <div class="weui-cell__bd">
+                        <p>身份证</p>
+                    </div>
+                    <div class="weui-cell__ft">未绑定</div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="javascript:;">
+                    <div class="weui-cell__bd">
+                        <p>银行卡号</p>
+                    </div>
+                    <div class="weui-cell__ft">农业银行(1192)</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <% include _foot.html %>
+    <script src="/js/city-picker.js"></script>
+
+    <script>
+      $("#city").cityPicker({
+        title: "选择所在城市",
+        onChange: function (picker, values, displayValues) {
+          console.log(values, displayValues);
+        }
+      });
+
+      $("#hospital").picker({
+        title: "请选择医院",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['首都医科大学附属北京儿童医院', '首都医科大学xxxxxxxxxx儿童医院']
+          }
+        ],
+        onChange: function(p, v, dv) {
+          console.log(p, v, dv);
+        },
+        onClose: function(p, v, d) {
+          console.log("close");
+        }
+      });
+      $("#department").picker({
+        title: "选择科室",
+        cols: [
+          {
+            textAlign: 'center',
+            values: ['全部', '内科', '外科']
+          },
+          {
+            textAlign: 'center',
+            values: ['全部', '皮肤科', '心血管科', '神经内科', '肿瘤科', '烧伤科', '泌尿内科', '骨科']
+          }
+        ]
+      });
+
+    </script>
+</body>
+</html>

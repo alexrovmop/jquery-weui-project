@@ -73,16 +73,9 @@ gulp.task('js', function(cb) {
     .on("end", end);
 
   gulp.src([
-    './src/js/jquery.raty.js',
+    './qlx/js/jquery.raty.js',
   ])
     .pipe(concat({ path: 'raty.js'}))
-    .pipe(gulp.dest('./dist/js/'))
-    .on("end", end);
-
-  gulp.src([
-    './ycheckin/js/iconfont.js',
-  ])
-    .pipe(concat({ path: 'iconfont.js'}))
     .pipe(gulp.dest('./dist/js/'))
     .on("end", end);
 
@@ -163,19 +156,6 @@ gulp.task('banmaless', function () {
   .pipe(gulp.dest('./dist/css/'));
 });
 
-gulp.task('ycheckinless', function () {
-  return gulp.src(['./ycheckin/css/*.less', '!./ycheckin/css/_*.less'])
-  .pipe(sourcemaps.init())
-  .pipe(less().on('error', function (e) {
-      console.error(e.message);
-      this.emit('end');
-  }))
-  .pipe(autoprefixer())
-  .pipe(header(banner))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./dist/css/'));
-});
-
 gulp.task('cssmin', ["less"], function () {
   gulp.src(['./dist/css/*.css', '!./dist/css/*.min.css'])
     .pipe(cssmin())
@@ -214,12 +194,6 @@ gulp.task('banmaejs', function () {
     .pipe(gulp.dest("./dist/banma/"));
 });
 
-gulp.task('ycheckinejs', function () {
-  return gulp.src(["./ycheckin/*.html", "!./ycheckin/_*.html"])
-    .pipe(ejs({}))
-    .pipe(gulp.dest("./dist/ycheckin/"));
-});
-
 gulp.task('copy', function() {
   gulp.src(['./src/lib/**/*'])
     .pipe(gulp.dest('./dist/lib/'));
@@ -241,9 +215,6 @@ gulp.task('copy', function() {
 
   gulp.src(['./banma/images/*.*'])
     .pipe(gulp.dest('./dist/images/banma/'));
-
-  gulp.src(['./ycheckin/images/*.*'])
-    .pipe(gulp.dest('./dist/images/ycheckin/'));
 });
 
 gulp.task('watch', function () {
@@ -263,9 +234,6 @@ gulp.task('watch', function () {
   gulp.watch('banma/images/*.*', ['copy']);
   gulp.watch('banma/css/*.less', ['banmaless']);
   gulp.watch('banma/*.html', ['banmaejs']);
-  gulp.watch('ycheckin/images/*.*', ['copy']);
-  gulp.watch('ycheckin/css/*.less', ['ycheckinless']);
-  gulp.watch('ycheckin/*.html', ['ycheckinejs']);
 });
 
 /*gulp.task('server', function () {
@@ -285,10 +253,10 @@ gulp.task('server', function () {
             }
         },
         port: yargs.p,
-        startPath: '/ycheckin'
+        startPath: '/banma'
     });
 });
 
-gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'ycheckinejs', 'watch', 'server']);
+gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'banmaejs', 'watch', 'server']);
 //gulp.task("default", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'zyjfejs', 'watch', 'server']);
 /*gulp.task("build", ['uglify', 'cssmin', 'copy', 'ejs', 'myejs', 'qlxejs']);*/

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>医签到</title>
+    <% include _head.html %>
+  </head>
+
+  <body ontouchstart>
+    <div class="ci-hd">
+      <div class="ci-topbar">
+        <div class="start-item">
+          <a class="backbtn" href="#">上一步</a>
+        </div>
+        <h1 class="title">我的钱包</h1>
+      </div>
+    </div>
+
+    <div class="ci-bd with-hd with-graybg">
+        <div class="ci-uc">
+            <div class="hd">
+                <div class="uc-name">
+                    <div class="avatar-border">
+                        <div class="avatar" style="background-image: url('/images/ycheckin/avatar.png');"></div>
+                    </div>
+                    <div class="name">
+                        <p>清风徐来</p>
+                    </div>
+                </div>
+                <div class="weui-cells uc-amount">
+                    <div class="weui-cell">
+                        <div class="weui-cell__bd">
+                            <p>可提现金额（元）</p>
+                            <p class="num">266.88</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <a href="javascript:;" id='show-alert' class="weui-btn weui-btn_orange">提现</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bd no-shadow">
+                <div class="weui-tab ci-tab">
+                    <div class="weui-navbar">
+                        <a class="weui-navbar__item weui-bar__item--on" href="#tab1">
+                            签到记录 6
+                        </a>
+                        <a class="weui-navbar__item" href="#tab2">
+                            提现记录
+                        </a>
+                    </div>
+                    <div class="weui-tab__bd">
+                        <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+                            <div class="no-data">
+                                <img src="/images/ycheckin/nodata-1.png" alt="没有签到记录">
+                                <p>您还没有签到记录</p>
+                            </div>
+                            <div class="weui-cells ci-list">
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__hd">
+                                        <img src="/images/ycheckin/01.png" alt="" style="width:50px;margin-right:5px;display:block">
+                                    </div>
+                                    <div class="weui-cell__bd">
+                                        <p>上海市徐汇区骨关节炎座谈会</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft list-amount"><span class="myicon myicon-money"></span>58.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__hd">
+                                        <img src="/images/ycheckin/02.png" alt="" style="width:50px;margin-right:5px;display:block">
+                                    </div>
+                                    <div class="weui-cell__bd">
+                                        <p>上海市徐汇区骨关节炎座谈会</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft list-amount"><span class="myicon myicon-money"></span>78.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__hd">
+                                        <img src="/images/ycheckin/03.png" alt="" style="width:50px;margin-right:5px;display:block">
+                                    </div>
+                                    <div class="weui-cell__bd">
+                                        <p>上海市徐汇区骨关节炎座谈会</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft list-amount"><span class="myicon myicon-money"></span>88.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__hd">
+                                        <img src="/images/ycheckin/01.png" alt="" style="width:50px;margin-right:5px;display:block">
+                                    </div>
+                                    <div class="weui-cell__bd">
+                                        <p>上海市徐汇区骨关节炎座谈会</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft list-amount"><span class="myicon myicon-money"></span>58.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__hd">
+                                        <img src="/images/ycheckin/02.png" alt="" style="width:50px;margin-right:5px;display:block">
+                                    </div>
+                                    <div class="weui-cell__bd">
+                                        <p>上海市徐汇区骨关节炎座谈会</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft list-amount"><span class="myicon myicon-money"></span>78.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__hd">
+                                        <img src="/images/ycheckin/03.png" alt="" style="width:50px;margin-right:5px;display:block">
+                                    </div>
+                                    <div class="weui-cell__bd">
+                                        <p>上海市徐汇区骨关节炎座谈会</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft list-amount"><span class="myicon myicon-money"></span>88.00</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="tab2" class="weui-tab__bd-item">
+                            <div class="no-data">
+                                <img src="/images/ycheckin/nodata-2.png" alt="没有提现记录">
+                                <p>您还没有签到记录</p>
+                            </div>
+                            <div class="weui-cells ci-list">
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__bd">
+                                        <p>提现时间</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft">-58.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__bd">
+                                        <p>提现时间</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft">-78.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__bd">
+                                        <p>提现时间</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft">-88.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__bd">
+                                        <p>提现时间</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft">-58.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__bd">
+                                        <p>提现时间</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft">-78.00</div>
+                                </a>
+                                <a class="weui-cell" href="javascript:;">
+                                    <div class="weui-cell__bd">
+                                        <p>提现时间</p>
+                                        <p class="time">10-25 15:10</p>
+                                    </div>
+                                    <div class="weui-cell__ft">-88.00</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include _foot.html %>
+    <script>
+        $(document).on("click", "#show-alert", function() {
+            $.modal({
+              text: "对不起金额要大于0才能提现。",
+              buttons: [
+                { text: "确定", className: "yellow"},
+              ]
+            });
+        });
+    </script>
+</body>
+</html>

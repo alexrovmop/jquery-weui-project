@@ -885,7 +885,7 @@ footer {
     .invite-name {
         font-size: 15px; .txt-line-one; color: #333;
         span {
-            color: #999; font-size: 13px; margin-left: 5px;
+            display: inline-block; color: #999; font-size: 13px; margin-left: 5px; line-height: 16px; vertical-align: middle;
         }
         .title-s1,.title-s2,.title-s3 {
             display: inline-block; border-radius: 4px; font-size: 12px; padding: 0 5px; color: #fff; line-height: 20px;
@@ -905,6 +905,7 @@ footer {
         .status-on { background: @yellow; }
         .status-off { background: #eee; color: #aaa;}
     }
+    .vipicon { height: 16px;}
     .weui-cell__bd { min-width: 0;
         p { margin: 4px 0;}
     }
@@ -933,6 +934,15 @@ footer {
     }
 }
 
-
-
+/*浮动qr*/
+.qr-float {
+    position: fixed; left: 10px; bottom: 50px; z-index: 300; width: 40%;
+    img { vertical-align: middle; width: 100%;}
+    .btn-cancel {
+        position: absolute; top: 0px; right: 0px; color: #fff;
+        .weui-icon-cancel {
+            color: @orange; vertical-align: middle;
+        }
+    }
+}
 
