@@ -15,7 +15,7 @@
 @a-bg1: #e8bb5e;
 @a-bg2: #f0cb72;
 @a-t1: #a37e26;
-@a-b1: #d46424;
+@a-b1: #C59121;
 @import "_icon.less";
 
 .fontorange { color: @fontorange;}
@@ -605,7 +605,7 @@ footer {
         position: absolute; bottom: 100px; left: 0; right: 0;
         &:after { display: none;}
         .allowance-btn {
-            position: relative; display: block; width: 79px; height: 79px; border-radius: 50%; margin: 0 auto; background: @a-b1; margin-bottom: -36px; text-align: center; line-height: 79px; color: rgba(255, 255, 255, 0.6); font-size: 22px;
+            position: relative; display: block; width: 79px; height: 79px; border-radius: 50%; margin: 0 auto; background: @a-b1; margin-bottom: -36px; text-align: center; line-height: 79px; color: rgba(0, 0, 0, 0.5); font-size: 22px;
             &:before {
                 content: ""; position: absolute; width: 71px; height: 71px; border-radius: 71px; border: rgba(255, 255, 255, 0.2) solid 1px; top: 3px; left: 3px;
             }
@@ -620,3 +620,20 @@ footer {
         }
     }
 }
+
+.allowance-success {
+    padding-top: 200px; position: relative;
+    .allowance-success-hd {
+        position: absolute; top: -280px; left: 0; background: @a-bg2; width: 120%; height: 400px; margin-left: -10%; border-radius: 0 0 100% 100%;
+        .logo {
+            position: absolute; width: 80px; height: 80px; bottom: -35px; left: 50%; margin-left: -40px;
+            img {
+                width: 100%; vertical-align: middle;
+            }
+        }
+    }
+}
+
+
+
+
