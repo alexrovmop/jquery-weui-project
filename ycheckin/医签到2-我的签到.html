@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>医签到</title>
+    <% include _head.html %>
+  </head>
+
+  <body ontouchstart>
+    <div class="ci-bd with-graybg">
+        <div class="ci-uc">
+            <div class="hd">
+                <div class="uc-name" style="background-image: url('/images/ycheckin/uc-bg.png');">
+                    <div class="avatar-border">
+                        <div class="avatar" style="background-image: url('/images/ycheckin/avatar.png');"></div>
+                    </div>
+                    <div class="name">
+                        <p>清风徐来 共签到会议</p>
+                        <p class="info"><span class="fontred" style="font-size: 18px">30</span> 场</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bd no-shadow">
+                <h3 class="ci-title">签到记录</h3>
+                <div class="weui-cells ci-list">
+                  <a class="weui-cell" href="javascript:;">
+                    <div class="weui-cell__hd">
+                      <img src="/images/ycheckin/01.png" alt="" style="width:50px;margin-right:5px;display:block">
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>上海市徐汇区骨关节炎座谈会</p>
+                      <p class="time">10-25 15:10</p>
+                    </div>
+                    <div class="weui-cell__ft list-amount">
+                      ￥58.00<br/>
+                      <div class="weui-btn weui-btn_yellow weui-btn_mini">查看签到表</div>
+                    </div>
+                  </a>
+                  <a class="weui-cell" href="javascript:;">
+                    <div class="weui-cell__hd">
+                      <img src="/images/ycheckin/02.png" alt="" style="width:50px;margin-right:5px;display:block">
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>上海市徐汇区骨关节炎座谈会</p>
+                      <p class="time">10-25 15:10</p>
+                    </div>
+                    <div class="weui-cell__ft list-amount">
+                      ￥78.00<br/>
+                      <div class="weui-btn weui-btn_yellow weui-btn_mini">查看签到表</div>
+                    </div>
+                  </a>
+                  <a class="weui-cell" href="javascript:;">
+                    <div class="weui-cell__hd">
+                      <img src="/images/ycheckin/03.png" alt="" style="width:50px;margin-right:5px;display:block">
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>上海市徐汇区骨关节炎座谈会</p>
+                      <p class="time">10-25 15:10</p>
+                    </div>
+                    <div class="weui-cell__ft list-amount">
+                      ￥88.00<br/>
+                      <div class="weui-btn weui-btn_yellow weui-btn_mini">查看签到表</div>
+                    </div>
+                  </a>
+                  <a class="weui-cell" href="javascript:;">
+                    <div class="weui-cell__hd">
+                      <img src="/images/ycheckin/01.png" alt="" style="width:50px;margin-right:5px;display:block">
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>上海市徐汇区骨关节炎座谈会</p>
+                      <p class="time">10-25 15:10</p>
+                    </div>
+                    <div class="weui-cell__ft list-amount">
+                      ￥58.00<br/>
+                      <div class="weui-btn weui-btn_yellow weui-btn_mini">查看签到表</div>
+                    </div>
+                  </a>
+                  <a class="weui-cell" href="javascript:;">
+                    <div class="weui-cell__hd">
+                      <img src="/images/ycheckin/02.png" alt="" style="width:50px;margin-right:5px;display:block">
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>上海市徐汇区骨关节炎座谈会</p>
+                      <p class="time">10-25 15:10</p>
+                    </div>
+                    <div class="weui-cell__ft list-amount">
+                      ￥78.00<br/>
+                      <div class="weui-btn weui-btn_yellow weui-btn_mini">查看签到表</div>
+                    </div>
+                  </a>
+                  <a class="weui-cell" href="javascript:;">
+                    <div class="weui-cell__hd">
+                      <img src="/images/ycheckin/03.png" alt="" style="width:50px;margin-right:5px;display:block">
+                    </div>
+                    <div class="weui-cell__bd">
+                      <p>上海市徐汇区骨关节炎座谈会</p>
+                      <p class="time">10-25 15:10</p>
+                    </div>
+                    <div class="weui-cell__ft list-amount">
+                      ￥88.00<br/>
+                      <div class="weui-btn weui-btn_yellow weui-btn_mini">查看签到表</div
+                    </div>
+                  </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% include _foot.html %>
+    <script>
+        $(document).on("click", "#show-alert", function() {
+            $.modal({
+              text: "对不起金额要大于0才能提现。",
+              buttons: [
+                { text: "确定", className: "yellow"},
+              ]
+            });
+        });
+    </script>
+</body>
+</html>
